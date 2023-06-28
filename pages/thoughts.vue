@@ -1,8 +1,6 @@
 <template>
-  <section>
+  <main class="col-start-5 col-span-8">
     <Title>Thoughts</Title>
-    <h1 class="mb-10">My thoughts</h1>
-
     <ContentList path="/thoughts" v-slot="{ list }">
       <div class="mb-10" v-for="thought in list" :key="thought._path">
         <h2 class="font-semibold">
@@ -12,6 +10,5 @@
         <ContentDoc :path="thought._path" />
       </div>
     </ContentList>
-
-  </section>
+  </main>
 </template>

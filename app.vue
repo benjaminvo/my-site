@@ -1,9 +1,14 @@
 <template>
-  <div class="bg-white dark:bg-black">
-    <div class="w-1/2 mx-auto pt-12">
-      <Title>Benjamin Ottensten</Title>
-      <Header />
-      <NuxtPage />
-    </div>
+  <div class="grid grid-cols-16 gap-x-8 py-20 max-w-7xl mx-auto">
+    <Header />
+    <NuxtPage />
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  bodyAttrs: {
+    class: 'bg-white'
+  }
+})
+</script>
