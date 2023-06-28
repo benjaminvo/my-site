@@ -8,7 +8,7 @@
       <div class="text-slate-400">Copenhagen, Denmark</div>
     </nav>
     <div class="justify-self-end w-60 -mt-6 -mr-4">
-      <PhotoStack />
+      <PhotoStackNew />
     </div>
   </header>
 </template>
