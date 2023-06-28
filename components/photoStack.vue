@@ -32,9 +32,9 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.photos) {
-      this.photos = JSON.parse(localStorage.photos);
-    }
+    // if (localStorage.photos) {
+    //   this.photos = JSON.parse(localStorage.photos);
+    // }
     this.photoPositionsLoaded = true;
     this.updatePhotoDimensions();
   },
@@ -51,7 +51,7 @@ export default {
     },
     stopDragging() {
       // Save positions 
-      localStorage.setItem("photos", JSON.stringify(this.photos));
+      // localStorage.setItem("photos", JSON.stringify(this.photos));
 
       // Stop dragging
       this.isDragging = false;
