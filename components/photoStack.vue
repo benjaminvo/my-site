@@ -17,9 +17,9 @@ export default {
   data() {
     return {
       photos: [
-        { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0 },
-        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 0 },
-        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 0 },
+        { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: 220, height: 165, rotate: 'rotate-1', zIndex: 0 },
+        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: 220, height: 165, rotate: 'rotate-6', zIndex: 0 },
+        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: 227, height: 151, rotate: '-rotate-2', zIndex: 0 },
       ],
       offset: { x: 0, y: 0 },
       draggedPhotoIndex: null,
@@ -33,7 +33,7 @@ export default {
       this.photos = JSON.parse(localStorage.photos);
     }
     this.photoPositionsLoaded = true;
-    this.updatePhotoDimensions();
+    //this.updatePhotoDimensions();
   },
   methods: {
     startDragging(index, event) {
@@ -123,16 +123,16 @@ export default {
         y1 + h1 > y2
       );
     },
-    updatePhotoDimensions() {
-      this.$nextTick(() => {
-        const photoElements = this.$refs.photo;
-        photoElements.forEach((element, index) => {
-          const rect = element.getBoundingClientRect();
-          this.photos[index].width = rect.width;
-          this.photos[index].height = rect.height;
-        });
-      });
-    },
+    // updatePhotoDimensions() {
+    //   this.$nextTick(() => {
+    //     const photoElements = this.$refs.photo;
+    //     photoElements.forEach((element, index) => {
+    //       const rect = element.getBoundingClientRect();
+    //       this.photos[index].width = rect.width;
+    //       this.photos[index].height = rect.height;
+    //     });
+    //   });
+    // },
   },
 };
 </script>
