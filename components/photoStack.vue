@@ -3,9 +3,8 @@
     <div v-show="photoPositionsLoaded" class="relative">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photo"
         :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
-        @mouseenter.once="updatePhotoDimensions()" @mousedown="startDragging(index, $event)"
-        @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)" @mouseleave="leaveDragging(index)"
-        class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
+        @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
+        @mouseleave="leaveDragging(index)" class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
         isDragging ? 'cursor-grabbing' : 'cursor-grab',
         isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
         ]">
@@ -30,11 +29,11 @@ export default {
     };
   },
   mounted() {
+    this.updatePhotoDimensions();
     if (localStorage.photos) {
       this.photos = JSON.parse(localStorage.photos);
     }
     this.photoPositionsLoaded = true;
-    //this.updatePhotoDimensions();
   },
   methods: {
     startDragging(index, event) {
