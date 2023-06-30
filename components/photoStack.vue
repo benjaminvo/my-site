@@ -1,6 +1,6 @@
 <template>
   <Transition name="fade">
-    <div class="relative">
+    <div v-show="photoPositionsLoaded" class="relative">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photo"
         :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
         @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
@@ -29,9 +29,9 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.photos) {
-      this.photos = JSON.parse(localStorage.photos);
-    }
+    //if (localStorage.photos) {
+    //  this.photos = JSON.parse(localStorage.photos);
+    //}
     this.photoPositionsLoaded = true;
     this.updatePhotoDimensions();
   },
@@ -48,7 +48,7 @@ export default {
     },
     stopDragging() {
       // Save positions 
-      localStorage.setItem("photos", JSON.stringify(this.photos));
+      // Storage.setItem("photos", JSON.stringify(this.photos));
 
       // Reset
       this.isDragging = false;
@@ -127,6 +127,8 @@ export default {
       this.$nextTick(() => {
         const photoElements = this.$refs.photo;
         photoElements.forEach((element, index) => {
+          // const width = element.offsetWidth;
+          // const height = element.offsetHeight;
           const rect = element.getBoundingClientRect();
           this.photos[index].width = rect.width;
           this.photos[index].height = rect.height;
