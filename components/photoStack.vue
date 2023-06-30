@@ -1,19 +1,15 @@
 <template>
-  <div>
-    <Transition name="fade">
-      <div v-show="photoPositionsLoaded">
-        <div v-for="(photo, index) in photos" :class="photo.rotate">
-          <img :key="index" :src="photo.src" :srcset="photo.srcset" ref="draggablePhoto"
-            :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px' }"
-            @mousedown="startDragging(index, $event)" @mousemove="drag($event)" @mouseup="stopDragging"
-            @mouseleave="leaveDragging(index)" class="absolute border-4 border-white transition select-none" :class="[
-              isDragging ? 'cursor-grabbing' : 'cursor-grab',
-              shouldApplyEffect(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
-            ]">
-        </div>
-      </div>
-    </Transition>
-  </div>
+  <Transition name="fade">
+    <div v-show="photoPositionsLoaded" class="relative">
+      <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photo"
+        :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
+        @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
+        @mouseleave="leaveDragging(index)" class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
+        isDragging ? 'cursor-grabbing' : 'cursor-grab',
+        isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
+        ]">
+    </div>
+  </Transition>
 </template>
 
 <script>
@@ -21,20 +17,21 @@ export default {
   data() {
     return {
       photos: [
-        { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1' },
-        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6' },
-        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2' },
+        { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0 },
+        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 0 },
+        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 0 },
       ],
-      isDragging: false,
-      draggedPhotoIndex: null,
       offset: { x: 0, y: 0 },
+      draggedPhotoIndex: null,
+      draggedPhotoZIndexUpdated: false,
       photoPositionsLoaded: false,
+      isDragging: false,
     };
   },
   mounted() {
-    // if (localStorage.photos) {
-    //   this.photos = JSON.parse(localStorage.photos);
-    // }
+    if (localStorage.photos) {
+      this.photos = JSON.parse(localStorage.photos);
+    }
     this.photoPositionsLoaded = true;
     this.updatePhotoDimensions();
   },
@@ -51,79 +48,72 @@ export default {
     },
     stopDragging() {
       // Save positions 
-      // localStorage.setItem("photos", JSON.stringify(this.photos));
+      localStorage.setItem("photos", JSON.stringify(this.photos));
 
-      // Stop dragging
+      // Reset
       this.isDragging = false;
       this.draggedPhotoIndex = null;
+      this.draggedPhotoZIndexUpdated = false;
     },
     leaveDragging(index) {
-      if (this.isDraggedPhoto(index) && this.isNotBehindOtherPhotos(index)) {
+      if (this.isNotBehindOtherPhotos(index)) {
         this.stopDragging();
-        // BUG: When leave dragging on a photo that is behind another photo
+        // BUGS: 
+        // 1) When leave dragging on a photo that is behind another photo.
+        // 2) Clone of photo appears because of browser's native drag and drop
       }
     },
-    drag(event) {
-      event.preventDefault();
+    drag(index) {
 
-      // Escape if not dragging
+      // Don't update positions if dragging has ended
       if (!this.isDragging) {
         return false;
       }
 
-      // Update X and Y position
+      // Update position
       const newPosition = {
         x: event.clientX + this.offset.x,
         y: event.clientY + this.offset.y,
       };
       this.photos[this.draggedPhotoIndex].position = newPosition;
 
-      // Could we move the moving to top here to make shouldApplyEffect cleaner?
-    },
-    shouldApplyEffect(index) {
-      if (this.isDraggedPhoto(index) && this.isNotBehindOtherPhotos(index)) {
-        this.moveDraggedPhotoToTop();
-        return true;
+      // Update the z-index of the dragged photo to bring it to the top
+      if (this.isNotBehindOtherPhotos(index) && this.draggedPhotoZIndexUpdated == false) {
+        this.photos[this.draggedPhotoIndex].zIndex = this.getMaxZIndex() + 1;
+        this.draggedPhotoZIndexUpdated = true;
       }
     },
-    moveDraggedPhotoToTop() {
-      // If dragged photo is not already at the top
-      if (this.draggedPhotoIndex !== this.photos.length - 1) {
-        // Push dragged photo to be last in the array
-        const draggedPhoto = this.photos.splice(this.draggedPhotoIndex, 1)[0];
-        this.photos.push(draggedPhoto);
-
-        // Update the draggedPhotoIndex to the new index
-        this.draggedPhotoIndex = this.photos.length - 1;
-      }
+    getMaxZIndex() {
+      return Math.max(...this.photos.map((photo) => photo.zIndex));
     },
     isNotBehindOtherPhotos(index) {
-      const draggedPhoto = this.photos[this.draggedPhotoIndex];
+
+      // Make sure this is the dragged photo
+      if (index !== this.draggedPhotoIndex) {
+        return false;
+      }
+
+      // Check if the dragged photo 1) overlaps another photo, and 2) has a lower z-index than that photo
+      const draggedPhoto = this.photos[index];
       const otherPhotos = this.photos.filter((_, i) => i !== index);
 
-      for (const photo of otherPhotos) {
-        if (
-          this.doPhotosOverlap(
-            draggedPhoto.position.x,
-            draggedPhoto.position.y,
-            draggedPhoto.width,
-            draggedPhoto.height,
-            photo.position.x,
-            photo.position.y,
-            photo.width,
-            photo.height
-          ) && index < this.photos.indexOf(photo) // Is dragged photo lower in array than overlapping photos
-        ) {
-          return false; // Dragged photo is behind another photo
+      for (const otherPhoto of otherPhotos) {
+        if (this.doPhotosOverlap(
+          draggedPhoto.position.x,
+          draggedPhoto.position.y,
+          draggedPhoto.width,
+          draggedPhoto.height,
+          otherPhoto.position.x,
+          otherPhoto.position.y,
+          otherPhoto.width,
+          otherPhoto.height
+        ) && draggedPhoto.zIndex < otherPhoto.zIndex) {
+          return false
         }
       }
-      return true; // Dragged photo is not behind another photo
-    },
-    isDraggedPhoto(index) {
-      if (index === this.draggedPhotoIndex) {
-        return true;
-      }
-      return false;
+
+      // Dragged photo is not behind another photo
+      return true;
     },
     doPhotosOverlap(x1, y1, w1, h1, x2, y2, w2, h2) {
       return (
@@ -135,8 +125,7 @@ export default {
     },
     updatePhotoDimensions() {
       this.$nextTick(() => {
-        // const photoElements = this.$el.querySelectorAll('.draggable-photo');
-        const photoElements = this.$refs.draggablePhoto;
+        const photoElements = this.$refs.photo;
         photoElements.forEach((element, index) => {
           const rect = element.getBoundingClientRect();
           this.photos[index].width = rect.width;
