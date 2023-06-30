@@ -3,8 +3,9 @@
     <div v-show="photoPositionsLoaded" class="relative">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photo"
         :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
-        @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
-        @mouseleave="leaveDragging(index)" class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
+        @mouseenter.once="updatePhotoDimensions()" @mousedown="startDragging(index, $event)"
+        @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)" @mouseleave="leaveDragging(index)"
+        class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
         isDragging ? 'cursor-grabbing' : 'cursor-grab',
         isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
         ]">
@@ -29,11 +30,11 @@ export default {
     };
   },
   mounted() {
-    //if (localStorage.photos) {
-    //  this.photos = JSON.parse(localStorage.photos);
-    //}
+    if (localStorage.photos) {
+      this.photos = JSON.parse(localStorage.photos);
+    }
     this.photoPositionsLoaded = true;
-    this.updatePhotoDimensions();
+    //this.updatePhotoDimensions();
   },
   methods: {
     startDragging(index, event) {
@@ -48,7 +49,7 @@ export default {
     },
     stopDragging() {
       // Save positions 
-      // Storage.setItem("photos", JSON.stringify(this.photos));
+      localStorage.setItem("photos", JSON.stringify(this.photos));
 
       // Reset
       this.isDragging = false;
@@ -124,11 +125,12 @@ export default {
       );
     },
     updatePhotoDimensions() {
+      // The correct widths and heights are not added when in production  
+      console.log('hey');
       this.$nextTick(() => {
+        console.log('next tick');
         const photoElements = this.$refs.photo;
         photoElements.forEach((element, index) => {
-          // const width = element.offsetWidth;
-          // const height = element.offsetHeight;
           const rect = element.getBoundingClientRect();
           this.photos[index].width = rect.width;
           this.photos[index].height = rect.height;
