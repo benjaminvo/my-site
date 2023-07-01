@@ -1,6 +1,6 @@
 <template>
   <Transition name="fade">
-    <div v-show="photoPositionsLoaded" class="relative">
+    <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photo"
         :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
         @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
@@ -18,8 +18,8 @@ export default {
     return {
       photos: [
         { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0 },
-        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 0 },
-        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 0 },
+        { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 1 },
+        { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 2 },
       ],
       offset: { x: 0, y: 0 },
       draggedPhotoIndex: null,
@@ -29,11 +29,11 @@ export default {
     };
   },
   mounted() {
-    this.updatePhotoDimensions();
     if (localStorage.photos) {
       this.photos = JSON.parse(localStorage.photos);
     }
     this.photoPositionsLoaded = true;
+    //this.updatePhotoDimensions();
   },
   methods: {
     startDragging(index, event) {
