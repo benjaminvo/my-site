@@ -125,9 +125,7 @@ export default {
     },
     updatePhotoDimensions() {
       // The correct widths and heights are not added when in production  
-      console.log('hey');
       this.$nextTick(() => {
-        console.log('next tick');
         const photoElements = this.$refs.photo;
         photoElements.forEach((element, index) => {
           const rect = element.getBoundingClientRect();

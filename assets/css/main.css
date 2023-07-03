@@ -13,7 +13,8 @@
 
   p {
     @apply text-slate-500;
-    /* @apply font-serif; */
+    @apply font-serif;
+    @apply text-[17px];
   }
 
   a:hover {

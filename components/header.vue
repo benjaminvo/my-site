@@ -1,14 +1,16 @@
 <template>
-  <header class="col-start-5 col-span-8 grid grid-cols-2 mb-20">
-    <nav>
+  <header
+    class="flex justify-between mb-20 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
+    <div>
       <h1>
-        <NuxtLink to="/" class="hover:no-underline">Benjamin Ottensten</NuxtLink>
+        <NuxtLink to="/" class="hover:no-underline ">
+          <!-- text-black sm:text-red-600 md:text-green-600 lg:text-purple-600 xl:text-orange-500 -->
+          Benjamin Ottensten
+        </NuxtLink>
       </h1>
       <div class="text-slate-400">Designer & Product lead</div>
       <div class="text-slate-400">Copenhagen, Denmark</div>
-    </nav>
-    <div class="justify-self-end w-60 -mt-6 -mr-4">
-      <PhotoStack />
     </div>
+    <Navigation />
   </header>
 </template>
