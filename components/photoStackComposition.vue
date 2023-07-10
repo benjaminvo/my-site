@@ -20,7 +20,6 @@ const photos = ref([
   { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 1 },
   { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 2 },
 ]);
-const photoElements = ref([]);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
@@ -63,7 +62,7 @@ function dragPhoto(index, event) {
   document.addEventListener('mousemove', movePhoto);
 
   // Drop the photo
-  photoElements.value[index].onmouseup = function () {
+  document.onmouseup = function () {
     // Save positions 
     localStorage.setItem("photos", JSON.stringify(photos.value));
 
@@ -117,6 +116,7 @@ function doPhotosOverlap(x1, y1, w1, h1, x2, y2, w2, h2) {
   );
 }
 
+const photoElements = ref([]);
 function updatePhotoDimensions() {
   nextTick(() => {
     photoElements.value.forEach((element, index) => {
