@@ -3,7 +3,8 @@
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photoElements"
         :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
-        @mousedown="dragPhoto(index, $event)" class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
+        @mousedown="dragPhoto(index, $event)" @mouseenter="showCaption(index, $event)" @mouseleave="removeCaption"
+        class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
         isDragging ? 'cursor-grabbing' : 'cursor-grab',
         isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
         ]">
@@ -16,13 +17,42 @@ import { ref, nextTick, onMounted } from 'vue';
 
 // Global data
 const photos = ref([
-  { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0 },
-  { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 1 },
-  { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 2 },
+  { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0, caption: 'Lemon trees in Mallorca' },
+  { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 1, caption: 'My son Eik' },
+  { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 2, caption: 'Me, happy at a concert' },
 ]);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
+
+function showCaption(index, event) {
+  if (isDragging) {
+    return false;
+  }
+
+  // Create a new div element
+  const newDiv = document.createElement("div");
+  newDiv.setAttribute('id', 'caption');
+  newDiv.setAttribute('class', 'absolute bg-black text-white text-sm px-3 py-1 z-[99999] rounded-full shadow-xl');
+
+  // Add text to the div
+  const newContent = document.createTextNode(photos.value[index].caption);
+  newDiv.appendChild(newContent);
+
+  // Add div to the DOM
+  document.body.appendChild(newDiv);
+
+  const onMouseMove = (e) => {
+    newDiv.style.left = e.pageX + 16 + 'px';
+    newDiv.style.top = e.pageY - 32 + 'px';
+  }
+  document.addEventListener('mousemove', onMouseMove);
+}
+
+function removeCaption() {
+  const caption = document.getElementById("caption");
+  caption.remove();
+}
 
 // On mounted
 onMounted(() => {
