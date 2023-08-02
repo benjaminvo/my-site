@@ -1,5 +1,11 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens
+    },
     extend: {
       spacing: {
         '14': '3.5rem',
@@ -11,6 +17,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         '16': 'repeat(16, minmax(0, 1fr))',
+      },
+      gridColumn: {
+        'span-14': 'span 14 / span 14',
       }
     }
   }

@@ -1,13 +1,13 @@
 <template>
-  <main class="grid gap-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
+  <main
+    class="grid gap-12 sm:gap-14 sm:col-start-2 sm:col-span-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
     <Title>Benjamin Ottensten</Title>
     <Meta name="Product lead & designer based in Copenhagen, Denmark" />
-    <section class="grid grid-cols-8 gap-8">
-      <p class="col-span-5">Most recently Head of Product at The Org for 3 years. Did product design and frontend
-        development at GoMore
-        before that. I enjoy designing and developing high-quality user experiences that create real value. And
-        potentially some more text here.</p>
-      <div class="w-60 -mt-5 ml-2">
+    <section class="sm:grid sm:grid-cols-8 sm:gap-8">
+      <p class="mb-10 sm:mb-0 sm:col-span-5">Most recently Head of Product at The Org for 3 years. Did product design and
+        frontend development at GoMore before that. I enjoy designing and developing high-quality user experiences that
+        create real value. And potentially some more text here.</p>
+      <div class="m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:-mt-5 sm:ml-2">
         <PhotoStackComposition />
       </div>
     </section>

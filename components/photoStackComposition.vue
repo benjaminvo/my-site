@@ -33,7 +33,7 @@ function showCaption(index, event) {
   // Create a new div element
   const newDiv = document.createElement("div");
   newDiv.setAttribute('id', 'caption');
-  newDiv.setAttribute('class', 'absolute bg-black text-white text-sm px-3 py-1 z-[99999] rounded-full shadow-xl');
+  newDiv.setAttribute('class', 'absolute bg-black text-white text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl');
 
   // Add text to the div
   const newContent = document.createTextNode(photos.value[index].caption);

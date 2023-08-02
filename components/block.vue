@@ -1,8 +1,8 @@
 <template>
-  <div class="grid grid-cols-8 gap-8">
-    <div v-if="label" class="col-span-2 text-slate-400">{{ label }}</div>
-    <div class="col-span-6 grid gap-2">
-      <h3 v-if="title">
+  <div class="flex gap-8 sm:grid sm:grid-cols-8">
+    <div v-if="label" class="shrink-0 sm:col-span-2 text-slate-400 w-[88px] sm:w-auto">{{ label }}</div>
+    <div class="grid gap-2 sm:col-span-6">
+      <h3 class="break-word" v-if="title">
         <template v-if="link">
           <NuxtLink :to="link" target="_blank">
             {{ title }}
