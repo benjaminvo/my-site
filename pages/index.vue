@@ -9,12 +9,12 @@
         create real value. And potentially some more text here.</p>
       <div class="sm:hidden w-[100vw] -ml-6 xs:-ml-10 overflow-hidden">
         <div class="relative h-[300px] w-[380px] left-3 mx-auto">
-          <img class="border-4 border-white shadow absolute z-20 rotate-3" src="img/1.png"
-            srcset="img/1@2x.png 2x, img/1@3x.png 3x">
-          <img class="border-4 border-white shadow absolute z-10 -rotate-6 left-[155px] top-[80px]" src="img/2.png"
-            srcset="img/2@2x.png 2x, img/2@3x.png 3x">
-          <img class="border-4 border-white shadow absolute z-0 -rotate-1 left-[30px] top-[120px]" src="img/3.png"
-            srcset="img/3@2x.png 2x, img/3@3x.png 3x">
+          <img class="border-4 border-white shadow absolute z-20 rotate-3" src="/img/1.png"
+            srcset="/img/1@2x.png 2x, /img/1@3x.png 3x">
+          <img class="border-4 border-white shadow absolute z-10 -rotate-6 left-[155px] top-[80px]" src="/img/2.png"
+            srcset="/img/2@2x.png 2x, /img/2@3x.png 3x">
+          <img class="border-4 border-white shadow absolute z-0 -rotate-1 left-[30px] top-[120px]" src="/img/3.png"
+            srcset="/img/3@2x.png 2x, /img/3@3x.png 3x">
         </div>
       </div>
       <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:-mt-5 sm:ml-2">
