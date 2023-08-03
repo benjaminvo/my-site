@@ -9,7 +9,7 @@
 <script setup lang="ts">
 useHead({
   bodyAttrs: {
-    class: 'bg-white'
+    class: 'bg-white overflow-x-hidden'
   }
 })
 </script>
