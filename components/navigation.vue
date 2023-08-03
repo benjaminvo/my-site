@@ -1,19 +1,19 @@
 <template>
   <nav class="flex self-start bg-slate-100 rounded-full xs:rounded-[11px] p-1">
     <NuxtLink
-      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline"
+      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline tap-highligt-none"
       to="/">
       About
     </NuxtLink>
     <NuxtLink
-      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline"
+      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline tap-highligt-none"
       to="/work">Work
     </NuxtLink>
-    <!-- <NuxtLink
-      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline"
+    <NuxtLink
+      class="flex-1 py-1 px-3 rounded-full xs:rounded-lg text-center text-slate-400 hover:text-slate-500 hover:no-underline tap-highligt-none"
       to="/thoughts">
       Thoughts
-    </NuxtLink> -->
+    </NuxtLink>
   </nav>
 </template>
 <style scoped>

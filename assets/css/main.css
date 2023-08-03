@@ -24,3 +24,7 @@
 .break-word {
   word-break: break-word;
 }
+
+.tap-highligt-none {
+  -webkit-tap-highlight-color: transparent;
+}

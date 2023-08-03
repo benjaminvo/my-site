@@ -3,11 +3,21 @@
     class="grid gap-12 sm:gap-14 sm:col-start-2 sm:col-span-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
     <Title>Benjamin Ottensten</Title>
     <Meta name="Product lead & designer based in Copenhagen, Denmark" />
-    <section class="sm:grid sm:grid-cols-8 sm:gap-8">
+    <section class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8">
       <p class="mb-10 sm:mb-0 sm:col-span-5">Most recently Head of Product at The Org for 3 years. Did product design and
         frontend development at GoMore before that. I enjoy designing and developing high-quality user experiences that
         create real value. And potentially some more text here.</p>
-      <div class="m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:-mt-5 sm:ml-2">
+      <div class="sm:hidden w-[100vw] -ml-6 xs:-ml-10 overflow-hidden">
+        <div class="relative h-[300px] w-[380px] left-3 mx-auto">
+          <img class="border-4 border-white shadow absolute z-20 rotate-3" src="img/1.png"
+            srcset="img/1@2x.png 2x, img/1@3x.png 3x">
+          <img class="border-4 border-white shadow absolute z-10 -rotate-6 left-[155px] top-[80px]" src="img/2.png"
+            srcset="img/2@2x.png 2x, img/2@3x.png 3x">
+          <img class="border-4 border-white shadow absolute z-0 -rotate-1 left-[30px] top-[120px]" src="img/3.png"
+            srcset="img/3@2x.png 2x, img/3@3x.png 3x">
+        </div>
+      </div>
+      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:-mt-5 sm:ml-2">
         <PhotoStackComposition />
       </div>
     </section>
