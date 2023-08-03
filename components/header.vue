@@ -7,7 +7,7 @@
           Benjamin Ottensten
         </NuxtLink>
       </h1>
-      <div class="text-slate-400">Designer & Product lead</div>
+      <div class="text-slate-400">Design & Product lead</div>
       <div class="text-slate-400">Copenhagen, Denmark</div>
     </div>
     <Navigation />
