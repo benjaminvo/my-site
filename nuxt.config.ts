@@ -4,6 +4,5 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content'
   ],
-  css: ['~/assets/css/main.css'],
-  target: 'static'
+  css: ['~/assets/css/main.css']
 })
