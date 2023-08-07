@@ -3,7 +3,8 @@
     class="grid gap-12 sm:gap-14 sm:col-start-2 sm:col-span-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
     <Title>Benjamin Ottensten</Title>
     <Meta name="Design & Product lead based in Copenhagen, Denmark" />
-    <section class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8">
+    <section
+      class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8 sm:h-[144px] lg:h-[120px] xl:h-[144px]">
       <p class="mb-10 sm:mb-0 sm:col-span-5">Most recently Head of Product at The Org for 3 years. Did product design and
         frontend development at GoMore before that. I enjoy designing and developing high-quality user experiences that
         create real value. And potentially some more text here.</p>

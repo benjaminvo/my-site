@@ -19,7 +19,7 @@ import { ref, nextTick, onMounted } from 'vue';
 const photos = useState(() => [
   { src: 'img/lemons.png', srcset: 'img/lemons@2x.png 2x, img/lemons@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Lemon trees in Mallorca' },
   { src: 'img/eik.png', srcset: 'img/eik@2x.png 2x, img/eik@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My son Eik' },
-  { src: 'img/me-same-size.png', srcset: 'img/me-same-size@2x.png 2x, img/me-same-size@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, happy at a concert' },
+  { src: 'img/me.png', srcset: 'img/me@2x.png 2x, img/me@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, happy at a concert' },
 ]);
 let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
