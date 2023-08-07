@@ -46,7 +46,7 @@ function showCaption(index, event) {
   const onMouseMove = (e) => {
     caption.style.left = e.pageX + 16 + 'px';
     caption.style.top = e.pageY - 32 + 'px';
-    //caption.style.zIndex = photos.value[index].zIndex;
+    caption.style.zIndex = photos.value[index].zIndex;
   }
   document.addEventListener('mousemove', onMouseMove);
 }
