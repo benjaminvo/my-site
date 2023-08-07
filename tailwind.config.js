@@ -20,7 +20,10 @@ module.exports = {
       },
       gridColumn: {
         'span-14': 'span 14 / span 14',
-      }
+      },
+      transitionProperty: {
+        'custom': 'top, left, transform, box-shadow',
+      },
     }
   }
 }

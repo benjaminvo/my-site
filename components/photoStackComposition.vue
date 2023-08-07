@@ -2,10 +2,11 @@
   <Transition name="fade">
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
       <img v-for="(photo, index) in photos" :key="index" :src="photo.src" :srcset="photo.srcset" ref="photoElements"
-        :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }"
-        @mousedown="dragPhoto(index, $event)" @mouseenter="showCaption(index, $event)" @mouseleave="removeCaption"
-        class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
+        @click="updatePosition(index)" @mousedown="dragPhoto(index, $event)" @mouseenter="showCaption(index, $event)"
+        @mouseleave="removeCaption" class="absolute border-4 border-white select-none ease-in-out"
+        :style="{ left: photo.position.x + 'px', top: photo.position.y + 'px', zIndex: photo.zIndex }" :class="[photo.rotate,
         isDragging ? 'cursor-grabbing' : 'cursor-grab',
+        animatePhotos ? 'transition-custom duration-500' : 'transition duration-150',
         isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
         ]">
     </div>
@@ -15,12 +16,12 @@
 <script setup>
 import { ref, nextTick, onMounted } from 'vue';
 
-// Global data
-const photos = ref([
-  { src: 'img/3.png', srcset: 'img/3@2x.png 2x, img/3@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-1', zIndex: 0, caption: 'Lemon trees in Mallorca' },
-  { src: 'img/2.png', srcset: 'img/2@2x.png 2x, img/2@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: 'rotate-6', zIndex: 1, caption: 'My son Eik' },
-  { src: 'img/1.png', srcset: 'img/1@2x.png 2x, img/1@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '-rotate-2', zIndex: 2, caption: 'Me, happy at a concert' },
+const photos = useState(() => [
+  { src: 'img/lemons.png', srcset: 'img/lemons@2x.png 2x, img/lemons@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Lemon trees in Mallorca' },
+  { src: 'img/eik.png', srcset: 'img/eik@2x.png 2x, img/eik@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My son Eik' },
+  { src: 'img/me-same-size.png', srcset: 'img/me-same-size@2x.png 2x, img/me-same-size@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, happy at a concert' },
 ]);
+let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
@@ -31,38 +32,63 @@ function showCaption(index, event) {
   }
 
   // Create a new div element
-  const newDiv = document.createElement("div");
-  newDiv.setAttribute('id', 'caption');
-  newDiv.setAttribute('class', 'absolute bg-black text-white text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl');
+  const caption = document.createElement("div");
+  caption.setAttribute('id', 'caption');
+  caption.setAttribute('class', 'absolute bg-black text-white text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl');
 
   // Add text to the div
-  const newContent = document.createTextNode(photos.value[index].caption);
-  newDiv.appendChild(newContent);
+  const captionText = document.createTextNode(photos.value[index].caption);
+  caption.appendChild(captionText);
 
   // Add div to the DOM
-  document.body.appendChild(newDiv);
+  document.body.appendChild(caption);
 
   const onMouseMove = (e) => {
-    newDiv.style.left = e.pageX + 16 + 'px';
-    newDiv.style.top = e.pageY - 32 + 'px';
+    caption.style.left = e.pageX + 16 + 'px';
+    caption.style.top = e.pageY - 32 + 'px';
+    //caption.style.zIndex = photos.value[index].zIndex;
   }
   document.addEventListener('mousemove', onMouseMove);
 }
 
 function removeCaption() {
-  const caption = document.getElementById("caption");
-  caption.remove();
+  if (!isDragging) {
+    const caption = document.getElementById("caption");
+    caption.remove();
+  }
 }
 
-// On mounted
 onMounted(() => {
   if (localStorage.photos) {
     photos.value = JSON.parse(localStorage.photos);
+    animatePhotos.value = false;
   }
   photoPositionsLoaded.value = true;
+
+  // Animate photos on load
+  if (animatePhotos.value) {
+    setTimeout(() => {
+      photos.value[2].position.x = -20;
+      photos.value[2].position.y = -15;
+      photos.value[2].rotate = '-rotate-2';
+    }, "400");
+    setTimeout(() => {
+      photos.value[1].position.x = 48;
+      photos.value[1].position.y = -4;
+      photos.value[1].rotate = 'rotate-6';
+    }, "500");
+    setTimeout(() => {
+      photos.value[0].position.x = 8;
+      photos.value[0].position.y = 16;
+      photos.value[0].rotate = 'rotate-1';
+    }, "600");
+
+    setTimeout(() => {
+      animatePhotos.value = false;
+    }, "1300");
+  }
 })
 
-// Drag
 function dragPhoto(index, event) {
   isDragging = true;
   draggedPhotoIndex.value = index;
