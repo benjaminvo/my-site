@@ -2,12 +2,18 @@
   <main
     class="grid gap-12 sm:gap-14 sm:col-start-2 sm:col-span-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10 xl:col-start-5 xl:col-span-8">
     <Title>Benjamin Ottensten</Title>
-    <Meta name="Design & Product lead based in Copenhagen, Denmark" />
+    <Meta name="Product & Design lead based in Copenhagen, Denmark" />
     <section
-      class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8 sm:h-[144px] lg:h-[120px] xl:h-[144px]">
-      <p class="mb-10 sm:mb-0 sm:col-span-5">Most recently Head of Product at The Org for 3 years. Did product design and
-        frontend development at GoMore before that. I enjoy designing and developing high-quality user experiences that
-        create real value. And potentially some more text here.</p>
+      class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8 sm:items-center">
+      <div class="mb-10 sm:mb-0 sm:col-span-5">
+        <p class="mb-3">I’m an experienced product builder (open to work!) with a background in both product, design and
+          frontend roles. Most recently I was Head of Product at The Org leading multiple product teams.
+        </p>
+        <p>I enjoy building high-quality user experiences that spark joy and drive growth. I have the best experience
+          doing that when the team is small and made up of talented, empathetic and kind people that care about the
+          details.
+        </p>
+      </div>
       <div class="sm:hidden w-[100vw] -ml-6 xs:-ml-10 overflow-hidden">
         <div class="relative h-[300px] w-[380px] left-3 mx-auto">
           <Transition name="fade">
@@ -22,24 +28,30 @@
           </Transition>
         </div>
       </div>
-      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:-mt-5 sm:ml-2">
+      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:mt-[20px] sm:ml-[32px] test">
         <PhotoStackComposition />
       </div>
     </section>
     <section>
       <h2 class="mb-8">Work experience</h2>
       <div class="grid gap-8">
-        <Block label="Now" title="Open to work" description="Currently figuring out what to do next." />
+        <Block label="Now" title="Open to work"
+          description="Currently figuring out what to do next. Feel free to reach out." />
         <Block label="2020–2023" title="Head of Product at The Org" subTitle="Copenhagen & New York"
-          description="Led the product development incl. product strategy, roadmapping,
-                    hiring, managing other PMs, coordinating feature work from start to finish across multiple teams." />
-        <Block label="2016–2020" title="Product Designer at GoMore" subTitle="Copenhagen" description="A text here" />
-        <Block label="2012–2013" title="Web Designer at Starfly Media" subTitle="Copenhagen" description="A text here" />
+          description="The Org is a professional network for companies backed by Sequoia, Founders Fund and more. I led the product development across multiple teams and managed the PMs."
+          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6-75 team members, rebranded, and raised a series B funding round."
+          description3="It ended in April 2023 when most of the team was laid off. Apparently it's important to find a recurring revenue stream." />
+        <Block label="2016–2020" title="Product Designer at GoMore" subTitle="Copenhagen"
+          description="GoMore is a Danish peer-to-peer car sharing platform live in multiple markets across Europe. I did product design for web and apps, frontend development and various PM work."
+          description2="I'm most proud of leading the launch of the very popular and also complex GoMore Keyless product, which allowed car owners to rent out the car without meeting the renter." />
+        <Block label="2012–2013" title="Web Designer at Starfly Media" subTitle="Copenhagen · Part-time"
+          description="A text here" />
       </div>
     </section>
     <section>
       <h2 class="mb-8">Education</h2>
-      <Block label="2011–2016" title="Digital Design at the IT University of Copenhagen" description="A text here" />
+      <Block label="2011–2016" title="Digital Design at the IT University of Copenhagen" subTitle="Bachelor & Master"
+        description="I met a lot of wonderful people. The most important thing I learned was to buy rye bread at the local super market instead of in the school canteen. Way too expensive." />
     </section>
     <section>
       <h2 class="mb-8">Contact</h2>

@@ -17,14 +17,60 @@
 import { ref, nextTick, onMounted } from 'vue';
 
 const photos = useState(() => [
-  { src: 'img/lemons.png', srcset: 'img/lemons@2x.png 2x, img/lemons@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Lemon trees in Mallorca' },
-  { src: 'img/eik.png', srcset: 'img/eik@2x.png 2x, img/eik@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My son Eik' },
-  { src: 'img/me.png', srcset: 'img/me@2x.png 2x, img/me@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, happy at a concert' },
+  { src: 'img/lemons.png', srcset: 'img/lemons@2x.png 2x, img/lemons@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Beautiful lemon trees in Mallorca' },
+  { src: 'img/eik.png', srcset: 'img/eik@2x.png 2x, img/eik@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My 2-year-old son Eik' },
+  { src: 'img/me.png', srcset: 'img/me@2x.png 2x, img/me@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, at a concert, very happy' },
 ]);
 let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
+
+onMounted(() => {
+  if (localStorage.photos) {
+    photos.value = JSON.parse(localStorage.photos);
+    animatePhotos.value = false;
+  }
+  photoPositionsLoaded.value = true;
+
+  // Animate photos on load
+  if (animatePhotos.value) {
+    // setTimeout(() => {
+    //   photos.value[2].position.x = -10;
+    //   photos.value[2].position.y = -32;
+    //   photos.value[2].rotate = '-rotate-2';
+    // }, "400");
+    // setTimeout(() => {
+    //   photos.value[1].position.x = 48;
+    //   photos.value[1].position.y = -4;
+    //   photos.value[1].rotate = 'rotate-6';
+    // }, "550");
+    // setTimeout(() => {
+    //   photos.value[0].position.x = 12;
+    //   photos.value[0].position.y = 30;
+    //   photos.value[0].rotate = 'rotate-1';
+    // }, "700");
+    setTimeout(() => {
+      photos.value[2].position.x = -5;
+      photos.value[2].position.y = 27;
+      photos.value[2].rotate = '-rotate-2';
+    }, "400");
+    setTimeout(() => {
+      photos.value[1].position.x = 43;
+      photos.value[1].position.y = 2;
+      photos.value[1].rotate = 'rotate-6';
+    }, "550");
+    setTimeout(() => {
+      photos.value[0].position.x = 12;
+      photos.value[0].position.y = -17;
+      photos.value[0].rotate = 'rotate-1';
+    }, "700");
+
+    setTimeout(() => {
+      animatePhotos.value = false;
+    }, "1400");
+  }
+})
 
 function showCaption(index, event) {
   if (isDragging) {
@@ -46,7 +92,7 @@ function showCaption(index, event) {
   const onMouseMove = (e) => {
     caption.style.left = e.pageX + 16 + 'px';
     caption.style.top = e.pageY - 32 + 'px';
-    caption.style.zIndex = photos.value[index].zIndex;
+    //caption.style.zIndex = photos.value[index].zIndex;
   }
   document.addEventListener('mousemove', onMouseMove);
 }
@@ -57,37 +103,6 @@ function removeCaption() {
     caption.remove();
   }
 }
-
-onMounted(() => {
-  if (localStorage.photos) {
-    photos.value = JSON.parse(localStorage.photos);
-    animatePhotos.value = false;
-  }
-  photoPositionsLoaded.value = true;
-
-  // Animate photos on load
-  if (animatePhotos.value) {
-    setTimeout(() => {
-      photos.value[2].position.x = -20;
-      photos.value[2].position.y = -15;
-      photos.value[2].rotate = '-rotate-2';
-    }, "400");
-    setTimeout(() => {
-      photos.value[1].position.x = 48;
-      photos.value[1].position.y = -4;
-      photos.value[1].rotate = 'rotate-6';
-    }, "500");
-    setTimeout(() => {
-      photos.value[0].position.x = 8;
-      photos.value[0].position.y = 16;
-      photos.value[0].rotate = 'rotate-1';
-    }, "600");
-
-    setTimeout(() => {
-      animatePhotos.value = false;
-    }, "1300");
-  }
-})
 
 function dragPhoto(index, event) {
   isDragging = true;
