@@ -10,6 +10,5 @@
       <div class="text-slate-400">Product & Design lead</div>
       <div class="text-slate-400">Copenhagen, Denmark</div>
     </div>
-    <Navigation />
   </header>
 </template>
