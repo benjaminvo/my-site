@@ -6,11 +6,11 @@
     <section
       class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:w-auto sm:grid sm:grid-cols-8 sm:gap-8 sm:items-center">
       <div class="mb-10 sm:mb-0 sm:col-span-5">
-        <p class="mb-3">I’m an experienced product builder (open to work!) with a background in both product, design and
-          frontend roles. Most recently I was Head of Product at The Org leading multiple product teams.
+        <p class="mb-3">I’m an experienced product builder with a background in both product, design and frontend. Most
+          recently I was Head of Product at The Org leading multiple product teams.
         </p>
         <p>I enjoy building high-quality user experiences that spark joy and drive growth. I have the best experience
-          doing that when the team is small and made up of talented, empathetic and kind people that care about the
+          doing that when the team is kept small and made up of talented, empathetic and kind people that care about the
           details.
         </p>
       </div>
@@ -28,7 +28,7 @@
           </Transition>
         </div>
       </div>
-      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:mt-[20px] sm:ml-[32px] test">
+      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:mt-5 sm:ml-6">
         <PhotoStackComposition />
       </div>
     </section>
@@ -36,22 +36,24 @@
       <h2 class="mb-8">Work experience</h2>
       <div class="grid gap-8">
         <Block label="Now" title="Open to work"
-          description="Currently figuring out what to do next. Feel free to reach out." />
+          description="Currently figuring out what to do next. Feel free to reach out!" />
         <Block label="2020–2023" title="Head of Product at The Org" subTitle="Copenhagen & New York"
           description="The Org is a professional network for companies backed by Sequoia, Founders Fund and more. I led the product development across multiple teams and managed the PMs."
-          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6-75 team members, rebranded, and raised a series B funding round."
-          description3="It ended in April 2023 when most of the team was laid off. Apparently it's important to find a recurring revenue stream." />
+          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round."
+          description3="It ended in May 2023 when most of the team was laid off. Apparently it's important to find a recurring revenue stream." />
         <Block label="2016–2020" title="Product Designer at GoMore" subTitle="Copenhagen"
-          description="GoMore is a Danish peer-to-peer car sharing platform live in multiple markets across Europe. I did product design for web and apps, frontend development and various PM work."
-          description2="I'm most proud of leading the launch of the very popular and also complex GoMore Keyless product, which allowed car owners to rent out the car without meeting the renter." />
+          description="GoMore is a Danish peer-to-peer car sharing platform operating in multiple European markets. I did product design for web and apps, frontend development and various PM work."
+          description2="I'm most proud of leading the launch of the now very popular, and also complex, GoMore Keyless product, which allows car owners to rent out their car to strangers without ever meeting." />
+        <Block label="2014–2015" title="Teaching Assistant at the IT University of Copenhagen"
+          subTitle="Copenhagen · Part-time"
+          description="I planned and conducted weekly exercises for 2nd year bachelor studens on the two courses Context-Based App Design and Co-Design (twice). I also supervised their design projects." />
         <Block label="2012–2013" title="Web Designer at Starfly Media" subTitle="Copenhagen · Part-time"
-          description="A text here" />
+          description="Starfly Media is an online marketing agency. I designed and built landing pages and other websites for different campaigns." />
       </div>
     </section>
     <section>
       <h2 class="mb-8">Education</h2>
-      <Block label="2011–2016" title="Digital Design at the IT University of Copenhagen" subTitle="Bachelor & Master"
-        description="I met a lot of wonderful people. The most important thing I learned was to buy rye bread at the local super market instead of in the school canteen. Way too expensive." />
+      <Block label="2011–2016" title="MSc in Digital Design at the IT University of Copenhagen" />
     </section>
     <section>
       <h2 class="mb-8">Contact</h2>

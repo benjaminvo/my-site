@@ -35,40 +35,25 @@ onMounted(() => {
 
   // Animate photos on load
   if (animatePhotos.value) {
-    // setTimeout(() => {
-    //   photos.value[2].position.x = -10;
-    //   photos.value[2].position.y = -32;
-    //   photos.value[2].rotate = '-rotate-2';
-    // }, "400");
-    // setTimeout(() => {
-    //   photos.value[1].position.x = 48;
-    //   photos.value[1].position.y = -4;
-    //   photos.value[1].rotate = 'rotate-6';
-    // }, "550");
-    // setTimeout(() => {
-    //   photos.value[0].position.x = 12;
-    //   photos.value[0].position.y = 30;
-    //   photos.value[0].rotate = 'rotate-1';
-    // }, "700");
     setTimeout(() => {
       photos.value[2].position.x = -5;
       photos.value[2].position.y = 27;
       photos.value[2].rotate = '-rotate-2';
-    }, "400");
+    }, "500");
     setTimeout(() => {
       photos.value[1].position.x = 43;
       photos.value[1].position.y = 2;
       photos.value[1].rotate = 'rotate-6';
-    }, "550");
+    }, "650");
     setTimeout(() => {
       photos.value[0].position.x = 12;
-      photos.value[0].position.y = -17;
+      photos.value[0].position.y = -25;
       photos.value[0].rotate = 'rotate-1';
-    }, "700");
+    }, "800");
 
     setTimeout(() => {
       animatePhotos.value = false;
-    }, "1400");
+    }, "1500");
   }
 })
 
