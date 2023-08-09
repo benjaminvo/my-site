@@ -10,7 +10,7 @@
           recently I was Head of Product at The Org leading multiple product teams.
         </p>
         <p>I enjoy building high-quality user experiences that spark joy and drive growth. I have the best experience
-          doing that when the team is kept small and made up of talented, empathetic and kind people that care about the
+          doing that when the team is small and made up of talented, empathetic and kind people that care about the
           details.
         </p>
       </div>
@@ -28,7 +28,7 @@
           </Transition>
         </div>
       </div>
-      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:mt-5 sm:ml-6">
+      <div class="hidden sm:block m-auto sm:col-span-3 w-60 h-44 sm:h-auto sm:mt-5 sm:ml-4">
         <PhotoStackComposition />
       </div>
     </section>
@@ -46,14 +46,14 @@
           description2="I'm most proud of leading the launch of the now very popular, and also complex, GoMore Keyless product, which allows car owners to rent out their car to strangers without ever meeting." />
         <Block label="2014–2015" title="Teaching Assistant at the IT University of Copenhagen"
           subTitle="Copenhagen · Part-time"
-          description="I planned and conducted weekly exercises for 2nd year bachelor studens on the two courses Context-Based App Design and Co-Design (twice). I also supervised their design projects." />
+          description="I planned and conducted weekly exercises for 2nd year bachelor students on the two courses Context-Based App Design and Co-Design (twice). I also supervised their design projects." />
         <Block label="2012–2013" title="Web Designer at Starfly Media" subTitle="Copenhagen · Part-time"
-          description="Starfly Media is an online marketing agency. I designed and built landing pages and other websites for different campaigns." />
+          description="Starfly Media is an online marketing agency. I designed and built landing pages and other websites for various campaigns." />
       </div>
     </section>
     <section>
       <h2 class="mb-8">Education</h2>
-      <Block label="2011–2016" title="MSc in Digital Design at the IT University of Copenhagen" />
+      <Block label="2011–2016" title="MSc in Digital Design from the IT University of Copenhagen" />
     </section>
     <section>
       <h2 class="mb-8">Contact</h2>
