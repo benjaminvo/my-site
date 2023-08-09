@@ -17,9 +17,9 @@
 import { ref, nextTick, onMounted } from 'vue';
 
 const photos = useState(() => [
-  { src: 'img/lemons.png', srcset: 'img/lemons@2x.png 2x, img/lemons@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Beautiful lemon trees in Mallorca' },
-  { src: 'img/eik.png', srcset: 'img/eik@2x.png 2x, img/eik@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My 2-year-old son Eik' },
-  { src: 'img/me.png', srcset: 'img/me@2x.png 2x, img/me@3x.png 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, at a concert, very happy' },
+  { src: 'img/lemons.jpg', srcset: 'img/lemons@2x.jpg 2x, img/lemons@3x.jpg 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 0, caption: 'Beautiful lemon trees in Mallorca' },
+  { src: 'img/eik.jpg', srcset: 'img/eik@2x.jpg 2x, img/eik@3x.jpg 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 1, caption: 'My 2-year-old son Eik' },
+  { src: 'img/me.jpg', srcset: 'img/me@2x.jpg 2x, img/me@3x.jpg 3x', position: { x: 0, y: 0 }, width: null, height: null, rotate: '', zIndex: 2, caption: 'Me, at a concert, very happy' },
 ]);
 let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);

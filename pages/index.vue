@@ -18,12 +18,12 @@
         <div class="relative h-[300px] w-[380px] left-3 mx-auto">
           <Transition name="fade">
             <div v-if="loadPhotos">
-              <img class="border-4 border-white shadow absolute z-20 rotate-3" src="/img/me.png"
-                srcset="/img/me@2x.png 2x, /img/me@3x.png 3x">
-              <img class="border-4 border-white shadow absolute z-10 -rotate-6 left-[155px] top-[80px]" src="/img/eik.png"
-                srcset="/img/eik@2x.png 2x, /img/eik@3x.png 3x">
+              <img class="border-4 border-white shadow absolute z-20 rotate-3" src="/img/me.jpg"
+                srcset="/img/me@2x.jpg 2x, /img/me@3x.jpg 3x">
+              <img class="border-4 border-white shadow absolute z-10 -rotate-6 left-[155px] top-[80px]" src="/img/eik.jpg"
+                srcset="/img/eik@2x.jpg 2x, /img/eik@3x.jpg 3x">
               <img class="border-4 border-white shadow absolute z-0 -rotate-1 left-[30px] top-[120px]"
-                src="/img/lemons.png" srcset="/img/lemons@2x.png 2x, /img/lemons@3x.png 3x">
+                src="/img/lemons.jpg" srcset="/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x">
             </div>
           </Transition>
         </div>
