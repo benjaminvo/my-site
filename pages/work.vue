@@ -24,20 +24,20 @@
       <div
         class="border border-black/[.05] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4">
         <img
-          src="img/regnsky/1.jpg"
-          srcset="img/regnsky/1@2x.jpg 2x, img/regnsky/1@3x.jpg 3x"
+          src="/img/regnsky/1.jpg"
+          srcset="/img/regnsky/1@2x.jpg 2x, /img/regnsky/1@3x.jpg 3x"
           class="w-full" />
       </div>
       <div class="border border-black/[.05] sm:col-span-4 lg:col-span-4 xl:col-span-4">
         <img
-          src="img/regnsky/2.jpg"
-          srcset="img/regnsky/2@2x.jpg 2x, img/regnsky/2@3x.jpg 3x"
+          src="/img/regnsky/2.jpg"
+          srcset="/img/regnsky/2@2x.jpg 2x, /img/regnsky/2@3x.jpg 3x"
           class="w-full" />
       </div>
       <div class="border border-black/[.05] sm:col-span-4 lg:col-span-4 xl:col-span-4">
         <img
-          src="img/regnsky/3.jpg"
-          srcset="img/regnsky/3@2x.jpg 2x, img/regnsky/3@3x.jpg 3x"
+          src="/img/regnsky/3.jpg"
+          srcset="/img/regnsky/3@2x.jpg 2x, /img/regnsky/3@3x.jpg 3x"
           class="w-full" />
       </div>
     </section>
