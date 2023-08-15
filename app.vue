@@ -15,7 +15,7 @@ useHead({
 useSeoMeta({
   title: "Benjamin Ottensten",
   ogTitle: "Benjamin Ottensten",
-  description: "Product & Design lead based in Copenhagen, Denmark",
+  description: "Product & Design lead based in Copenhagen, Denmark.",
   ogDescription: "Product & Design lead based in Copenhagen, Denmark",
 });
 </script>
