@@ -13,9 +13,15 @@ useHead({
   },
 });
 useSeoMeta({
-  title: "Benjamin Ottensten",
-  ogTitle: "Benjamin Ottensten",
-  description: "Product & Design lead based in Copenhagen, Denmark.",
-  ogDescription: "Product & Design lead based in Copenhagen, Denmark",
+  ogSiteName: "Benjamin Ottensten",
+  title: "Benjamin Ottensten, Product & Design lead",
+  ogTitle: "Benjamin Ottensten, Product & Design lead",
+  description:
+    "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
+  ogDescription:
+    "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
+  ogImageUrl: "https://benjaminottensten.com/img/social.png",
+  twitterCard: "summary_large_image",
+  twitterSite: "@benjavo",
 });
 </script>
