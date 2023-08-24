@@ -13,7 +13,6 @@ useHead({
   },
 });
 useSeoMeta({
-  ogUrl: "",
   ogSiteName: "Benjamin Ottensten",
   title: "Benjamin Ottensten, Product & Design lead",
   ogTitle: "Benjamin Ottensten, Product & Design lead",
