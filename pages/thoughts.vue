@@ -14,8 +14,8 @@
 </template>
 <script setup>
 useSeoMeta({
-  title: "Thoughts | Benjamin Ottensten",
-  ogTitle: "Thoughts | Benjamin Ottensten",
+  title: "Thoughts | Benjamin Ottensten, Product & Design lead",
+  ogTitle: "Thoughts | Benjamin Ottensten, Product & Design lead",
 });
 </script>
 <style scoped>

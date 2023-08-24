@@ -96,8 +96,8 @@
 
 <script setup>
 useSeoMeta({
-  title: "Benjamin Ottensten",
-  ogTitle: "Benjamin Ottensten",
+  title: "Benjamin Ottensten, Product & Design lead",
+  ogTitle: "Benjamin Ottensten, Product & Design lead",
 });
 
 import { ref, onMounted } from "vue";
