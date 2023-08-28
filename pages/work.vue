@@ -27,7 +27,7 @@
           src="/img/work/company-page/mobile-front-page-new.jpg"
           sizes="xs:100vw sm:276px md:276px lg:276px xl:276px"
           class="w-full" /> -->
-        <nuxt-img
+        <!-- <nuxt-img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page.jpg"
           quality="75"
@@ -35,6 +35,11 @@
             /img/work/company-page/mobile-front-page@2x.jpg 2x,
             /img/work/company-page/mobile-front-page@3x.jpg 3x
           "
+          class="w-full" /> -->
+        <nuxt-img
+          loading="lazy"
+          src="/img/work/company-page/mobile-front-page@2x.jpg"
+          quality="75"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
