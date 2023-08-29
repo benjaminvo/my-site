@@ -42,11 +42,7 @@
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
-        <nuxt-img
-          loading="lazy"
-          src="/img/work/company-page/mobile-job@2x.jpg"
-          quality="100"
-          class="w-full" />
+        <img loading="lazy" src="/img/work/company-page/mobile-job@2x.jpg" class="w-full" />
       </div>
       <div
         class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
