@@ -22,14 +22,14 @@
         <!-- <nuxt-img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page@2x.jpg"
-          quality="80"
+          quality="100"
           width="780"
           height="2248"
           class="w-full" /> -->
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page-552w.jpg"
-          quality="80"
+          quality="100"
           width="552"
           height="1591"
           class="w-full" />
@@ -38,14 +38,14 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/mobile-position@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/mobile-job@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -53,7 +53,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/front-page@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -61,7 +61,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/job@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -69,7 +69,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/position@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -77,7 +77,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/company-page/team@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
     </section>
@@ -98,7 +98,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/dashboard/overview@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -106,7 +106,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/dashboard/org-chart@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -114,7 +114,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/dashboard/jobs-integrations@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -122,7 +122,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/dashboard/jobs-edit@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -130,7 +130,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/dashboard/members@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
     </section>
@@ -155,7 +155,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/keyless/landing-page@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
@@ -163,18 +163,22 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/keyless/overview@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
         <nuxt-img
           loading="lazy"
           src="/img/work/keyless/photos@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
-        <nuxt-img loading="lazy" src="/img/work/keyless/guide@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img
+          loading="lazy"
+          src="/img/work/keyless/guide@2x.jpg"
+          quality="100"
+          class="w-full" />
       </div>
     </section>
     <section
@@ -193,18 +197,18 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/location/setting@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
         <nuxt-img
           loading="lazy"
           src="/img/work/location/details@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
-        <nuxt-img loading="lazy" src="/img/work/location/map@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/location/map@2x.jpg" quality="100" class="w-full" />
       </div>
     </section>
 
@@ -229,12 +233,12 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/leasing/business@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
       <div
         class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
-        <nuxt-img loading="lazy" src="/img/work/leasing/car@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/leasing/car@2x.jpg" quality="100" class="w-full" />
       </div>
     </section>
     <section
@@ -255,17 +259,17 @@
       </div>
       <div
         class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4">
-        <nuxt-img loading="lazy" src="/img/work/regnsky/1@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/regnsky/1@2x.jpg" quality="100" class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
-        <nuxt-img loading="lazy" src="/img/work/regnsky/2@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/regnsky/2@2x.jpg" quality="100" class="w-full" />
       </div>
       <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
-        <nuxt-img loading="lazy" src="/img/work/regnsky/3@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/regnsky/3@2x.jpg" quality="100" class="w-full" />
       </div>
       <div
         class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
-        <nuxt-img loading="lazy" src="/img/work/regnsky/4@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/regnsky/4@2x.jpg" quality="100" class="w-full" />
       </div>
     </section>
     <section
@@ -285,11 +289,15 @@
       </div>
       <div
         class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
-        <nuxt-img loading="lazy" src="/img/work/quasi/article@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img
+          loading="lazy"
+          src="/img/work/quasi/article@2x.jpg"
+          quality="100"
+          class="w-full" />
       </div>
       <div
         class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
-        <nuxt-img loading="lazy" src="/img/work/quasi/search@2x.jpg" quality="80" class="w-full" />
+        <nuxt-img loading="lazy" src="/img/work/quasi/search@2x.jpg" quality="100" class="w-full" />
       </div>
     </section>
     <section
@@ -307,7 +315,7 @@
         <nuxt-img
           loading="lazy"
           src="/img/work/old-news/concept@2x.jpg"
-          quality="80"
+          quality="100"
           class="w-full" />
       </div>
     </section>
