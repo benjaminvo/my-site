@@ -21,7 +21,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 defineProps(["label", "title", "link", "subTitle", "description", "description2", "description3"]);
 </script>

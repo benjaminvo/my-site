@@ -1,23 +1,29 @@
 <template>
   <main
-    class="sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-start-2 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
-    <!-- <p class="mb-12 sm:mb-20 sm:col-start-2 sm:col-span-14 md:col-start-3 md:col-span-12 lg:col-start-4 lg:col-span-10
-      xl:col-start-5 xl:col-span-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum metus
-      necmirutrum scelerisque. Cras aliquet libero purus, ut bibendum justo commodo id.</p> -->
+    class="sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Company profiles</h2>
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>Transparent employer branding</h2>
         <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
-        <p>I redesigned and coded the popular Danish music blog regnsky.dk.</p>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          Every company is competing to hire the best talent. At The Org I helped build an employer
+          branding platform where companies attract new talent by being radically transparent about
+          their team and how they work. Because great people want to work with great people.
+        </p>
+        <p>
+          Thousands of companies are on The Org today and the public profiles get >1 million organic
+          visits/month.
+        </p>
+        <p>
+          Primary designer:
+          <a href="https://www.linkedin.com/in/alexanderjuhl/" target="_blank"
+            >Alexander Juhl <span class="font-sans">↗</span></a
+          >. My role: Leading the product development.
         </p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page.jpg"
@@ -26,8 +32,9 @@
             /img/work/company-page/mobile-front-page@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-position.jpg"
@@ -36,8 +43,9 @@
             /img/work/company-page/mobile-position@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-job.jpg"
@@ -46,9 +54,9 @@
             /img/work/company-page/mobile-job@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/front-page.jpg"
@@ -57,17 +65,17 @@
             /img/work/company-page/front-page@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/job.jpg"
           srcset="/img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <!-- <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/position.jpg"
@@ -76,46 +84,60 @@
             /img/work/company-page/position@3x.jpg 3x
           "
           class="w-full" />
-      </div>
-      <div
-        class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+        <Border />
+      </div> -->
+      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/team.jpg"
           srcset="/img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Dashboard</h2>
         <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
-        <p>Blablabla</p>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          Companies on The Org asked for better user onboarding and an easier way to build their
+          profiles. We built a Dashboard to solve those problems. A lot of work went into the
+          integrations that can pull in all relevant data from your Slack, HRIS and ATS.
+        </p>
+        <p>
+          The release improved the user activation rate and made companies fill out more of their
+          profile.
+        </p>
+        <p>
+          Primary designers:
+          <a href="https://www.linkedin.com/in/ejlers/">
+            Carl Ejlers <span class="font-sans">↗</span></a
+          >
+          and
+          <a href="https://www.linkedin.com/in/mikkelsonnenschein/">
+            Mikkel Sonnenschein <span class="font-sans">↗</span></a
+          >. My role: Leading the product development.
         </p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/overview.jpg"
           srcset="/img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/org-chart.jpg"
           srcset="/img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/jobs-integrations.jpg"
@@ -124,42 +146,43 @@
             /img/work/dashboard/jobs-integrations@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <!-- <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/jobs-edit.jpg"
           srcset="/img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
           class="w-full" />
-      </div>
-      <div
-        class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+        <Border />
+      </div> -->
+      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/members.jpg"
           srcset="/img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Keyless car rental</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2019</small>
-        <p>I redesigned and coded the popular Danish music blog regnsky.dk.</p>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          GoMore is a platform where people share cars. I led the development of GoMore Keyless
+          which allows car owners to rent out their car to strangers without ever meeting.
         </p>
         <p>
-          The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from
-          the old design.
+          The project included installing physical hardware in the cars to read the fuel level and
+          mileage, get its location and control the lock. That was fun, and not easy.
         </p>
+        <p>The Keyless hardware is now installed in >1,000 cars across Europe.</p>
+        <p>My role: Product management, design, frontend.</p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/keyless/landing-page.jpg"
@@ -168,186 +191,224 @@
             /img/work/keyless/landing-page@3x.jpg 3x
           "
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4 xl:col-start-5 xl:mb-0">
+      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/keyless/overview.jpg"
           srcset="/img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
+      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/keyless/photos.jpg"
           srcset="/img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
+      <div
+        class="relative mb-8 sm:col-span-4 sm:mb-0 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/keyless/guide.jpg"
           srcset="/img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Location sharing</h2>
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>Finding your driver</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          GoMore is also a platform where people share rides with other people heading in the same
+          direction.
         </p>
+        <p>
+          One friction point is that it can sometimes be hard to find your driver or passengers when
+          it’s time to meet. I designed a location sharing feature to solve that problem.
+        </p>
+        <p>
+          We decided not to build the feature, but I still like the concept and design (looks a
+          biiit dated but hey).
+        </p>
+        <p>My role: Design.</p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4 xl:mb-0">
+      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/location/setting.jpg"
           srcset="/img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
+      <div
+        class="relative mb-8 sm:col-span-4 sm:mb-0 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/location/details.jpg"
           srcset="/img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4 xl:mb-0">
+      <div class="relative sm:col-span-4 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/location/map.jpg"
           srcset="/img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Car leasing</h2>
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>Colorful car leasing</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
-        <p>I redesigned and coded the popular Danish music blog regnsky.dk.</p>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          On GoMore you can lease a car and share it with other people to decrease the monthly
+          lease.
         </p>
         <p>
-          The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from
-          the old design.
+          I was the primary designer on everything leasing related. Our goal was to build a leasing
+          platform that aligned with GoMore's human, social and playful design principles.
         </p>
+        <p>My role: Design, frontend.</p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
-          src="/img/work/leasing/business.jpg"
-          srcset="/img/work/leasing/business@2x.jpg 2x, /img/work/leasing/business@3x.jpg 3x"
+          src="/img/work/leasing/private.jpg"
+          srcset="/img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/leasing/car.jpg"
           srcset="/img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
           class="w-full" />
+        <Border />
+      </div>
+      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+        <img
+          loading="lazy"
+          src="/img/work/leasing/quotes.jpg"
+          srcset="/img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
+          class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
         <small class="text-xs uppercase text-slate-400">Regnsky, 2016</small>
-        <p>I redesigned and coded the popular Danish music blog regnsky.dk.</p>
+        <p>Regnsky was a popular music blog among the Danish indie youth.</p>
         <p>
           We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          still think the design does a good job of capturing those keywords.
         </p>
         <p>
           The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from
           the old design.
         </p>
+        <p>My role: Design, frontend.</p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 lg:col-start-1 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/regnsky/1.jpg"
           srcset="/img/work/regnsky/1@2x.jpg 2x, /img/work/regnsky/1@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
         <img
           loading="lazy"
           src="/img/work/regnsky/2.jpg"
           srcset="/img/work/regnsky/2@2x.jpg 2x, /img/work/regnsky/2@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div class="mb-8 border border-black/[.15] sm:col-span-4 lg:col-span-4 xl:col-span-4">
+      <div class="relative mb-8 sm:col-span-4 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/regnsky/3.jpg"
           srcset="/img/work/regnsky/3@2x.jpg 2x, /img/work/regnsky/3@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/regnsky/4.jpg"
           srcset="/img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Quasi – A study tool</h2>
-        <small class="text-xs uppercase text-slate-400">Concept, 2016</small>
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>Motivating students to read</h2>
+        <small class="text-xs uppercase text-slate-400">Research, 2016</small>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind
+          and Andreas Refstrup to see if we could build a platform that motivated students to read
+          more academic literature.
         </p>
         <p>
-          The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from
-          the old design.
+          We built Quasi as a prototype and tested it with 6 students during a week of real study.
         </p>
+        <p>
+          Our research showed that a digital study platform can indeed motivate students to read
+          more if it focuses on making the literature more relevant and easier to understand. Social
+          features can also add some healthy peer pressure.
+        </p>
+        <p>My role: Design, research.</p>
       </div>
-      <div
-        class="mb-8 border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/quasi/article.jpg"
           srcset="/img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
-      <div
-        class="border border-black/[.15] sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/quasi/search.jpg"
           srcset="/img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
           class="w-full" />
+        <Border />
       </div>
     </section>
     <section
-      class="mb-40 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
-        class="mb-10 grid gap-3 sm:col-span-8 lg:col-start-3 xl:sticky xl:top-20 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Old News – News archives</h2>
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>Bringing news archives back to life</h2>
         <small class="text-xs uppercase text-slate-400">Concept, 2016</small>
         <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing that.
+          Old news organizations sit on a huge archive of old articles. There's a big opportunity to
+          digitize all of that content and make it relevant again today.
         </p>
+        <p>
+          The design looks dated and old, I know. Look at that iPhone 5 frame. But I regularly think
+          about the concept. Doesn't it make a lot of sense?
+        </p>
+        <p>My role: Design.</p>
       </div>
       <div class="sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
         <img
