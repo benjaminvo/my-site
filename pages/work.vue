@@ -23,7 +23,8 @@
           >. My role: Leading the product development.
         </p>
       </div>
-      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page.jpg"
@@ -34,7 +35,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-position.jpg"
@@ -45,7 +47,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
         <img
           loading="lazy"
           src="/img/work/company-page/mobile-job.jpg"
@@ -56,7 +59,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/front-page.jpg"
@@ -67,7 +71,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/job.jpg"
@@ -75,7 +80,7 @@
           class="w-full" />
         <Border />
       </div>
-      <!-- <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4 lg:mx-0">
         <img
           loading="lazy"
           src="/img/work/company-page/position.jpg"
@@ -86,7 +91,8 @@
           class="w-full" />
         <Border />
       </div> -->
-      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/company-page/team.jpg"
@@ -121,7 +127,8 @@
           >. My role: Leading the product development.
         </p>
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/overview.jpg"
@@ -129,7 +136,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/org-chart.jpg"
@@ -137,7 +145,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/jobs-integrations.jpg"
@@ -148,7 +157,8 @@
           class="w-full" />
         <Border />
       </div>
-      <!-- <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4
+lg:mx-0">
         <img
           loading="lazy"
           src="/img/work/dashboard/jobs-edit.jpg"
@@ -156,7 +166,8 @@
           class="w-full" />
         <Border />
       </div> -->
-      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/dashboard/members.jpg"
@@ -182,7 +193,8 @@
         <p>The Keyless hardware is now installed in >1,000 cars across Europe.</p>
         <p>My role: Product management, design, frontend.</p>
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/keyless/landing-page.jpg"
@@ -193,7 +205,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4 xl:col-start-5">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/keyless/overview.jpg"
@@ -201,7 +214,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
         <img
           loading="lazy"
           src="/img/work/keyless/photos.jpg"
@@ -210,7 +224,7 @@
         <Border />
       </div>
       <div
-        class="relative mb-8 sm:col-span-4 sm:mb-0 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
+        class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/keyless/guide.jpg"
@@ -233,13 +247,11 @@
           One friction point is that it can sometimes be hard to find your driver or passengers when
           it’s time to meet. I designed a location sharing feature to solve that problem.
         </p>
-        <p>
-          We decided not to build the feature, but I still like the concept and design (looks a
-          biiit dated but hey).
-        </p>
+        <p>We decided not to build the feature, but I still like the concept and design.</p>
         <p>My role: Design.</p>
       </div>
-      <div class="relative mb-8 sm:col-span-4 sm:mb-0 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
         <img
           loading="lazy"
           src="/img/work/location/setting.jpg"
@@ -248,7 +260,7 @@
         <Border />
       </div>
       <div
-        class="relative mb-8 sm:col-span-4 sm:mb-0 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
+        class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/location/details.jpg"
@@ -256,7 +268,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative sm:col-span-4 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto max-w-[370px] xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
         <img
           loading="lazy"
           src="/img/work/location/map.jpg"
@@ -281,7 +294,8 @@
         </p>
         <p>My role: Design, frontend.</p>
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/leasing/private.jpg"
@@ -289,7 +303,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/leasing/car.jpg"
@@ -297,7 +312,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/leasing/quotes.jpg"
@@ -323,7 +339,8 @@
         </p>
         <p>My role: Design, frontend.</p>
       </div>
-      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
         <img
           loading="lazy"
           src="/img/work/regnsky/1.jpg"
@@ -331,7 +348,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 md:col-span-5 lg:col-span-4">
+      <div
+        class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
         <img
           loading="lazy"
           src="/img/work/regnsky/2.jpg"
@@ -339,7 +357,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative mb-8 sm:col-span-4 sm:hidden md:col-span-5 lg:col-span-4 lg:block">
+      <div
+        class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
         <img
           loading="lazy"
           src="/img/work/regnsky/3.jpg"
@@ -347,7 +366,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/regnsky/4.jpg"
@@ -377,7 +397,8 @@
         </p>
         <p>My role: Design, research.</p>
       </div>
-      <div class="relative mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/quasi/article.jpg"
@@ -385,7 +406,8 @@
           class="w-full" />
         <Border />
       </div>
-      <div class="relative sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div
+        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/quasi/search.jpg"
@@ -394,7 +416,7 @@
         <Border />
       </div>
     </section>
-    <section
+    <!-- <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
@@ -410,14 +432,14 @@
         </p>
         <p>My role: Design.</p>
       </div>
-      <div class="sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5">
+      <div class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <img
           loading="lazy"
           src="/img/work/old-news/concept.jpg"
           srcset="/img/work/old-news/concept@2x.jpg 2x, /img/work/old-news/concept@3x.jpg 3x"
           class="w-full" />
       </div>
-    </section>
+    </section> -->
   </main>
 </template>
 <script setup>
