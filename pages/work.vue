@@ -25,86 +25,76 @@
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <!-- <img
-          loading="lazy"
-          src="/img/work/company-page/mobile-front-page.jpg"
-          srcset="
-            /img/work/company-page/mobile-front-page@2x.jpg 2x,
-            /img/work/company-page/mobile-front-page@3x.jpg 3x
-          "
-          class="w-full" /> -->
         <UnLazyImage
-          src="/img/work/company-page/mobile-front-page.jpg"
-          srcset="
+          src-set="
+            /img/work/company-page/mobile-front-page.jpg 1x,
             /img/work/company-page/mobile-front-page@2x.jpg 2x,
             /img/work/company-page/mobile-front-page@3x.jpg 3x
           "
-          blurhash="L4SF;Lxt_MD%tjX3ovR%%gE0D$WT"
+          thumbhash="PAgCAgD3dcg0XVnqj+5WICM"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
         <UnLazyImage
-          src="/UnLazyImage/work/company-page/mobile-position.jpg"
-          srcset="
+          src-set="
+            /img/work/company-page/mobile-position.jpg 1x,
             /img/work/company-page/mobile-position@2x.jpg 2x,
             /img/work/company-page/mobile-position@3x.jpg 3x
           "
-          blurhash="L8R{#^Ri~oxv-ff+x^R%^]a~bdj?"
+          thumbhash="+vcFEgClcvhnf3u5qIePafc"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
         <UnLazyImage
-          src="/img/work/company-page/mobile-job.jpg"
-          srcset="
+          src-set="
+            /img/work/company-page/mobile-job@2x.jpg 1x,
             /img/work/company-page/mobile-job@2x.jpg 2x,
             /img/work/company-page/mobile-job@3x.jpg 3x
           "
-          blurhash="LGRW0gRi-.t7IUWBj?ay~lWXIWRj"
+          thumbhash="+/cFCgDFh7mIcI1eqX2fyvU"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/company-page/front-page.jpg"
-          srcset="
+        <UnLazyImage
+          src-set="
+            /img/work/company-page/front-page.jpg 1x,
             /img/work/company-page/front-page@2x.jpg 2x,
             /img/work/company-page/front-page@3x.jpg 3x
           "
+          thumbhash="PAgCAgD3dcg0XVnqj+5WICM"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/company-page/job.jpg"
-          srcset="/img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/company-page/job.jpg 1x, /img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
+          thumbhash="/fcBBQD1mXNrkjfpFmxxafiDORsH"
           class="w-full" />
         <Border />
       </div>
       <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4 lg:mx-0">
-        <img
-          loading="lazy"
-          src="/img/work/company-page/position.jpg"
-          srcset="
+        <UnLazyImage
+          src-set="
+            /img/work/company-page/position.jpg 1x,
             /img/work/company-page/position@2x.jpg 2x,
             /img/work/company-page/position@3x.jpg 3x
           "
+          thumbhash="/fcBBQChmnF6tiTKJJdXCfl0fU/6"
           class="w-full" />
         <Border />
       </div> -->
       <div
         class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/company-page/team.jpg"
-          srcset="/img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/company-page/team.jpg 1x, /img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
+          thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH"
           class="w-full" />
         <Border />
       </div>
@@ -137,49 +127,45 @@
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/dashboard/overview.jpg"
-          srcset="/img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/dashboard/overview.jpg 1x, /img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
+          thumbhash="/AcCDQDGynCXWJi3eIzUyMiAdPO2"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/dashboard/org-chart.jpg"
-          srcset="/img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/dashboard/org-chart.jpg 1x, /img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
+          thumbhash="PQgCBIBCQFZnpYhq1KGkz0gwCA"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/dashboard/jobs-integrations.jpg"
-          srcset="
+        <UnLazyImage
+          src-set="
+            /img/work/dashboard/jobs-integrations.jpg 1x,
             /img/work/dashboard/jobs-integrations@2x.jpg 2x,
             /img/work/dashboard/jobs-integrations@3x.jpg 3x
           "
+          thumbhash="/AcCDYK3qHRPhIiZh5dombpvVwap"
           class="w-full" />
         <Border />
       </div>
       <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4
 lg:mx-0">
-        <img
-          loading="lazy"
-          src="/img/work/dashboard/jobs-edit.jpg"
-          srcset="/img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/dashboard/jobs-edit.jpg 1x, /img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
+          thumbhash="PfgBBIAkunBhmYhmmoinr3swFw"
           class="w-full" />
         <Border />
       </div> -->
       <div
         class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/dashboard/members.jpg"
-          srcset="/img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/dashboard/members.jpg 1x, /img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
+          thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH"
           class="w-full" />
         <Border />
       </div>
@@ -203,40 +189,37 @@ lg:mx-0">
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/keyless/landing-page.jpg"
-          srcset="
+        <UnLazyImage
+          src-set="
+            /img/work/keyless/landing-page.jpg 1x,
             /img/work/keyless/landing-page@2x.jpg 2x,
             /img/work/keyless/landing-page@3x.jpg 3x
           "
+          thumbhash="97cJDYiEaXlgiIabd8l5eKtQZQim"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/keyless/overview.jpg"
-          srcset="/img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/keyless/overview.jpg 1x, /img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
+          thumbhash="+PcFCwKFg/iKd2Wueoy/t/g"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <img
-          loading="lazy"
-          src="/img/work/keyless/photos.jpg"
-          srcset="/img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/keyless/photos.jpg 1x, /img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
+          thumbhash="+ucFCwTWl0t4f4lexouArAg"
           class="w-full" />
         <Border />
       </div>
       <div
         class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <img
-          loading="lazy"
-          src="/img/work/keyless/guide.jpg"
-          srcset="/img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/keyless/guide.jpg 1x, /img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
+          thumbhash="udcJCwa3iUp4f3c+54tw2gg"
           class="w-full" />
         <Border />
       </div>
@@ -260,28 +243,25 @@ lg:mx-0">
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <img
-          loading="lazy"
-          src="/img/work/location/setting.jpg"
-          srcset="/img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/location/setting.jpg 1x, /img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
+          thumbhash="uucFEgbGgBh4cHIhh4CCBwc"
           class="w-full" />
         <Border />
       </div>
       <div
         class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <img
-          loading="lazy"
-          src="/img/work/location/details.jpg"
-          srcset="/img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/location/details.jpg 1x, /img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
+          thumbhash="uOcFEgZkkFmIZHQieIGAFwg"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto max-w-[370px] xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <img
-          loading="lazy"
-          src="/img/work/location/map.jpg"
-          srcset="/img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/location/map.jpg 1x, /img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
+          thumbhash="NwgCDAKBB7/XQ7hJlFmKf6z2qA"
           class="w-full" />
         <Border />
       </div>
@@ -304,28 +284,25 @@ lg:mx-0">
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/leasing/private.jpg"
-          srcset="/img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/leasing/private.jpg 1x, /img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
+          thumbhash="+vcFBoKts5d4hqdqh7d2+WSwr3W/SPg"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/leasing/car.jpg"
-          srcset="/img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/leasing/car.jpg 1x, /img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
+          thumbhash="+vcFBoLCvZdTmYifVcZahIl3o2JPK/U"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/leasing/quotes.jpg"
-          srcset="/img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/leasing/quotes.jpg 1x, /img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
+          thumbhash="+/cBAoLDyKtqpvdY/lfYf5U"
           class="w-full" />
         <Border />
       </div>
@@ -349,37 +326,33 @@ lg:mx-0">
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <img
-          loading="lazy"
-          src="/img/work/regnsky/1.jpg"
-          srcset="/img/work/regnsky/1@2x.jpg 2x, /img/work/regnsky/1@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/regnsky/1.jpg 1x, /img/work/regnsky/1@2x.jpg 2x, /img/work/regnsky/1@3x.jpg 3x"
+          thumbhash="MbgFCgKVYJhnYnUheI+P1/g"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <img
-          loading="lazy"
-          src="/img/work/regnsky/2.jpg"
-          srcset="/img/work/regnsky/2@2x.jpg 2x, /img/work/regnsky/2@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/regnsky/2.jpg 1x, /img/work/regnsky/2@2x.jpg 2x, /img/work/regnsky/2@3x.jpg 3x"
+          thumbhash="a+cNEgKXdvd3hHKIaI+Ftgk"
           class="w-full" />
         <Border />
       </div>
       <div
         class="sm: sm:mx-0col-span-4 relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <img
-          loading="lazy"
-          src="/img/work/regnsky/3.jpg"
-          srcset="/img/work/regnsky/3@2x.jpg 2x, /img/work/regnsky/3@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/regnsky/3.jpg 1x, /img/work/regnsky/3@2x.jpg 2x, /img/work/regnsky/3@3x.jpg 3x"
+          thumbhash="MxkGCgKWYHhncXQyl4OAGAg"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/regnsky/4.jpg"
-          srcset="/img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/regnsky/4.jpg 1x, /img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
+          thumbhash="s0gGDQqHeHB3h2cnd3Q4OIiMgHgI"
           class="w-full" />
         <Border />
       </div>
@@ -407,19 +380,17 @@ lg:mx-0">
       </div>
       <div
         class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/quasi/article.jpg"
-          srcset="/img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/quasi/article.jpg 1x, /img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
+          thumbhash="/fcBBIDzmKdpdph/hbqxVhD7Jw"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/quasi/search.jpg"
-          srcset="/img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/quasi/search.jpg 1x, /img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
+          thumbhash="3fcNBIAHqJd+g4l3iIShWCD+Jg"
           class="w-full" />
         <Border />
       </div>
@@ -441,10 +412,9 @@ lg:mx-0">
         <p>My role: Design.</p>
       </div>
       <div class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <img
-          loading="lazy"
-          src="/img/work/old-news/concept.jpg"
-          srcset="/img/work/old-news/concept@2x.jpg 2x, /img/work/old-news/concept@3x.jpg 3x"
+        <UnLazyImage
+          src-set="/img/work/old-news/concept@2x.jpg 2x, /img/work/old-news/concept@3x.jpg 3x"
+          thumbhash=""
           class="w-full" />
       </div>
     </section> -->
