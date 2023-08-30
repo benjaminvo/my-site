@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@unlazy/nuxt"],
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {

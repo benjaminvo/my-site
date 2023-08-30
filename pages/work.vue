@@ -20,42 +20,50 @@
           Primary designer:
           <a href="https://www.linkedin.com/in/alexanderjuhl/" target="_blank"
             >Alexander Juhl <span class="font-sans">↗</span></a
-          >. My role: Leading the product development.
+          >. My role: Working closely with Design and leading the product development.
         </p>
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <img
+        <!-- <img
           loading="lazy"
           src="/img/work/company-page/mobile-front-page.jpg"
           srcset="
             /img/work/company-page/mobile-front-page@2x.jpg 2x,
             /img/work/company-page/mobile-front-page@3x.jpg 3x
           "
+          class="w-full" /> -->
+        <UnLazyImage
+          src="/img/work/company-page/mobile-front-page.jpg"
+          srcset="
+            /img/work/company-page/mobile-front-page@2x.jpg 2x,
+            /img/work/company-page/mobile-front-page@3x.jpg 3x
+          "
+          blurhash="L4SF;Lxt_MD%tjX3ovR%%gE0D$WT"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <img
-          loading="lazy"
-          src="/img/work/company-page/mobile-position.jpg"
+        <UnLazyImage
+          src="/UnLazyImage/work/company-page/mobile-position.jpg"
           srcset="
             /img/work/company-page/mobile-position@2x.jpg 2x,
             /img/work/company-page/mobile-position@3x.jpg 3x
           "
+          blurhash="L8R{#^Ri~oxv-ff+x^R%^]a~bdj?"
           class="w-full" />
         <Border />
       </div>
       <div
         class="relative mx-auto mb-6 max-w-[370px] xs:mb-8 xs:max-w-[320px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <img
-          loading="lazy"
+        <UnLazyImage
           src="/img/work/company-page/mobile-job.jpg"
           srcset="
             /img/work/company-page/mobile-job@2x.jpg 2x,
             /img/work/company-page/mobile-job@3x.jpg 3x
           "
+          blurhash="LGRW0gRi-.t7IUWBj?ay~lWXIWRj"
           class="w-full" />
         <Border />
       </div>
@@ -124,7 +132,7 @@
           and
           <a href="https://www.linkedin.com/in/mikkelsonnenschein/">
             Mikkel Sonnenschein <span class="font-sans">↗</span></a
-          >. My role: Leading the product development.
+          >. My role: Working closely with Design and leading the product development.
         </p>
       </div>
       <div
