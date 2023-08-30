@@ -116,11 +116,11 @@
         </p>
         <p>
           Primary designers:
-          <a href="https://www.linkedin.com/in/ejlers/">
+          <a href="https://www.linkedin.com/in/ejlers/" target="_blank">
             Carl Ejlers <span class="font-sans">↗</span></a
           >
           and
-          <a href="https://www.linkedin.com/in/mikkelsonnenschein/">
+          <a href="https://www.linkedin.com/in/mikkelsonnenschein/" target="_blank">
             Mikkel Sonnenschein <span class="font-sans">↗</span></a
           >. My role: Working closely with Design and leading the product development.
         </p>
