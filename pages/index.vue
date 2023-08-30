@@ -16,9 +16,9 @@
       </div>
       <div class="-ml-6 w-[100vw] overflow-hidden xs:-ml-10 sm:hidden">
         <div class="relative left-3 mx-auto h-[300px] w-[380px]">
-          <Transition name="fade">
-            <div v-if="loadPhotos">
-              <img
+          <!-- <Transition name="fade"> -->
+          <!-- <div v-if="loadPhotos"> -->
+          <!-- <img
                 class="absolute z-20 rotate-3 border-4 border-white shadow"
                 src="/img/me.jpg"
                 srcset="/img/me@2x.jpg 2x, /img/me@3x.jpg 3x" />
@@ -29,9 +29,27 @@
               <img
                 class="absolute left-[30px] top-[120px] z-0 -rotate-1 border-4 border-white shadow"
                 src="/img/lemons.jpg"
-                srcset="/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x" />
-            </div>
-          </Transition>
+                srcset="/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x" /> -->
+          <UnLazyImage
+            class="absolute z-20 rotate-3 border-4 border-white shadow"
+            src-set="/img/me.jpg 1x, /img/me@2x.jpg 2x, /img/me@3x.jpg 3x"
+            thumbhash="WPgJHYYLp2ycpXmHdYqHijd6kEEJ"
+            width="220"
+            height="165" />
+          <UnLazyImage
+            class="absolute left-[155px] top-[80px] z-10 -rotate-6 border-4 border-white shadow"
+            src-set="/img/eik.jpg 1x, /img/eik@2x.jpg 2x, /img/eik@3x.jpg 3x"
+            thumbhash="XDkKFYR2DFlKpZZZyGeIeIqYAGsI"
+            width="220"
+            height="165" />
+          <UnLazyImage
+            class="absolute left-[30px] top-[120px] z-0 -rotate-1 border-4 border-white shadow"
+            src-set="/img/lemons.jpg 1x, /img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x"
+            thumbhash="H+gZLYJoiHd/eIeJeGh3d3mAlQnY"
+            width="220"
+            height="165" />
+          <!-- </div> -->
+          <!-- </Transition> -->
         </div>
       </div>
       <div class="m-auto hidden h-44 w-60 sm:col-span-3 sm:mt-5 sm:block sm:h-auto">
