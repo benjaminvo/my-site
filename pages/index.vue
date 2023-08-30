@@ -1,8 +1,6 @@
 <template>
   <main
     class="grid gap-12 sm:col-span-8 sm:gap-14 md:col-start-2 lg:col-start-3 xl:col-span-8 xl:col-start-5">
-    <!-- <Title>Benjamin Ottensten</Title>
-    <Meta name="Product & Design lead based in Copenhagen, Denmark" /> -->
     <section
       class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-10 sm:col-span-5 sm:mb-0">
@@ -36,7 +34,7 @@
           </Transition>
         </div>
       </div>
-      <div class="m-auto hidden h-44 w-60 sm:col-span-3 sm:ml-4 sm:mt-5 sm:block sm:h-auto">
+      <div class="m-auto hidden h-44 w-60 sm:col-span-3 sm:mt-5 sm:block sm:h-auto">
         <PhotoStackComposition />
       </div>
     </section>
@@ -46,7 +44,7 @@
         <Block
           label="Now"
           title="Open to work"
-          description="Currently figuring out what to do next. Feel free to reach out!" />
+          description="Currently figuring out what to do next. My plan is to start a new full time job in December and work freelance until then. Feel free to reach out if you need help moving your product forward! I'm open to product roles, design roles, or a mix. Maybe even a bit of frontend." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
@@ -69,7 +67,7 @@
           label="2012–2013"
           title="Web Designer at Starfly Media"
           subTitle="Copenhagen · Part-time"
-          description="Starfly Media is an online marketing agency. I designed and built landing pages and other websites for various campaigns." />
+          description="Starfly Media is an online marketing agency. I designed and built landing pages and other sites for various campaigns." />
       </div>
     </section>
     <section>
