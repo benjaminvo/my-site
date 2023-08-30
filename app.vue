@@ -21,6 +21,7 @@ useSeoMeta({
   ogDescription:
     "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
   ogImage: "https://benjaminottensten.com/img/social.jpg",
+  ogType: "website",
   twitterCard: "summary_large_image",
   twitterSite: "@benjavo",
 });
