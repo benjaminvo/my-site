@@ -313,7 +313,10 @@ lg:mx-0">
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
         <small class="text-xs uppercase text-slate-400">Regnsky, 2016</small>
-        <p>Regnsky was a popular music blog among the Danish indie youth.</p>
+        <p>
+          Regnsky was a popular music blog among the Danish indie youth. They asked if I could do a
+          redesign.
+        </p>
         <p>
           We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
           still think the design does a good job of capturing those keywords.
