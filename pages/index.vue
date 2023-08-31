@@ -51,7 +51,7 @@
           subTitle="Copenhagen & New York"
           description="The Org is a professional network for companies backed by Sequoia, Founders Fund and more. I led the product development across multiple teams and managed the PMs."
           description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round."
-          description3="It ended in May 2023 when most of the team was laid off. Apparently it's important to find a recurring revenue stream." />
+          description3="It ended in May 2023 when most of the team was laid off." />
         <Block
           label="2016–2020"
           title="Product Designer at GoMore"
