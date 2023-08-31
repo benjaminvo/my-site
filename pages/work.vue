@@ -361,7 +361,7 @@ lg:mx-0">
       </div>
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Motivating students to read</h2>
@@ -410,7 +410,7 @@ lg:mx-0">
         </p>
         <p>
           The design looks dated and old, I know. Look at that iPhone 5 frame. But I regularly think
-          about the concept. Doesn't it make a lot of sense?
+          about the concept.
         </p>
         <p>My role: Design.</p>
       </div>
@@ -421,6 +421,11 @@ lg:mx-0">
           class="w-full" />
       </div>
     </section> -->
+    <a
+      class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 hover:no-underline"
+      @click="scrollToTop"
+      >↑<br />Scroll to top</a
+    >
   </main>
 </template>
 <script setup>
@@ -428,4 +433,11 @@ useSeoMeta({
   title: "Work | Benjamin Ottensten, Product & Design lead",
   ogTitle: "Work | Benjamin Ottensten, Product & Design lead",
 });
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 </script>
