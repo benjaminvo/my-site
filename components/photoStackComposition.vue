@@ -49,7 +49,7 @@ const photos = useState(() => [
     height: null,
     rotate: "",
     zIndex: 1,
-    caption: "My 2-year-old son Eik",
+    caption: "My son Eik at home",
   },
   {
     src: "img/me.jpg",
@@ -59,7 +59,7 @@ const photos = useState(() => [
     height: null,
     rotate: "",
     zIndex: 2,
-    caption: "Me, at a concert, very happy",
+    caption: "Me, very happy at a concert",
   },
 ]);
 let animatePhotos = useState(() => true);
