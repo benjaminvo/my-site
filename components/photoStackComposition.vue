@@ -7,7 +7,7 @@
         :src="photo.src"
         :srcset="photo.srcset"
         ref="photoElements"
-        @mousedown="dragPhoto(index, $event)"
+        @mousedown.prevent="dragPhoto(index, $event)"
         @mouseenter="showCaption(index, $event)"
         @mouseleave="removeCaption"
         :style="{
