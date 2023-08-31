@@ -7,7 +7,6 @@
         :src="photo.src"
         :srcset="photo.srcset"
         ref="photoElements"
-        @click="updatePosition(index)"
         @mousedown="dragPhoto(index, $event)"
         @mouseenter="showCaption(index, $event)"
         @mouseleave="removeCaption"
