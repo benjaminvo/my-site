@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-8 sm:grid sm:grid-cols-8">
+  <div class="flex gap-6 sm:grid sm:grid-cols-8 sm:gap-8">
     <div v-if="label" class="w-[88px] shrink-0 text-slate-400 sm:col-span-2 sm:w-auto">
       {{ label }}
     </div>
