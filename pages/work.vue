@@ -368,7 +368,7 @@ lg:mx-0">
         <small class="text-xs uppercase text-slate-400">Research, 2016</small>
         <p>
           I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind
-          and Andreas Refstrup to see if we could build a platform that motivated students to read
+          and Andreas Reffstrup to see if we could build a platform that motivated students to read
           more academic literature.
         </p>
         <p>
