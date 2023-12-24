@@ -6,7 +6,7 @@
       <div class="mb-10 sm:col-span-5 sm:mb-0">
         <p class="mb-3">
           I’m an experienced product builder with a background in both product, design and frontend.
-          Most recently I was Head of Product at The Org leading multiple product teams.
+          I'm currently Product Lead at Speckle.
         </p>
         <p>
           I enjoy building high-quality user experiences that spark joy and drive growth. I have the
@@ -43,8 +43,11 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Open to work"
-          description="Currently figuring out what to do next. My plan is to start a new full time job in December and work freelance until then. Feel free to reach out if you need help moving your product forward! I'm open to product roles, design roles, or a mix. Maybe even a bit of frontend." />
+          title="Product Lead at Speckle"
+          subTitle="Copenhagen (Remote)"
+          description="Speckle is an open source platform for 3D data used by computational designers, structural engineers, architects, and other professionals within the architecture, engineering and construction industry."
+          description3="I'm leading the development of the web platform." />
+        <!-- description2="The open platform is pretty groundbreaking as 3D data has historically been completely locked. Speckle liberates the data to 10x efficiency through better collaboration and automation." -->
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
