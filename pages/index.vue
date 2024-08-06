@@ -42,7 +42,7 @@
       <h2 class="mb-8">Work experience</h2>
       <div class="grid gap-8">
         <Block
-          label="Now"
+          label="2023–Now"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote)"
           description="Speckle is an open source platform for 3D data used by computational designers, structural engineers, architects, and other professionals within the architecture, engineering and construction industry."
