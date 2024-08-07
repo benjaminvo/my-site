@@ -3,7 +3,7 @@
     class="grid gap-12 sm:col-span-8 sm:gap-14 md:col-start-2 lg:col-start-3 xl:col-span-8 xl:col-start-5">
     <section
       class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
-      <div class="mb-10 sm:col-span-5 sm:mb-0">
+      <div class="mb-9 sm:col-span-5 sm:mb-0">
         <p class="mb-3">
           I’m an experienced product builder with a background in both product, design and frontend.
           I'm currently Product Lead at Speckle.
@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="-ml-6 w-[100vw] overflow-hidden xs:-ml-10 sm:hidden">
-        <div class="relative left-3 mx-auto h-[300px] w-[380px]">
+        <div class="relative left-3 mx-auto h-[300px] w-[380px] pt-2">
           <Transition name="fade">
             <div v-if="loadPhotos">
               <img
