@@ -6,7 +6,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Transparent employer branding</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">The Org, 2023</small>
+        <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
         <p>
           Every company is competing to hire the best talent. At The Org I helped build an employer
           branding platform where companies attract new talent by being radically transparent about
@@ -104,7 +104,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Dashboard</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">The Org, 2023</small>
+        <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
         <p>
           Companies on The Org asked for better user onboarding and an easier way to build their
           profiles. We built a Dashboard to solve those problems. A lot of work went into the
@@ -175,7 +175,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Keyless car rental</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">GoMore, 2019</small>
+        <small class="text-xs uppercase text-slate-400">GoMore, 2019</small>
         <p>
           GoMore is a platform where people share cars. I led the development of GoMore Keyless
           which allows car owners to rent out their car to strangers without ever meeting.
@@ -229,7 +229,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Finding your driver</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">GoMore, 2018</small>
+        <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
         <p>
           GoMore is also a platform where people share rides with other people heading in the same
           direction.
@@ -271,7 +271,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Colorful car leasing</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">GoMore, 2018</small>
+        <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
         <p>
           On GoMore you can lease a car and share it with other people to decrease the monthly
           lease.
@@ -312,7 +312,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">Regnsky, 2016</small>
+        <small class="text-xs uppercase text-slate-400">Regnsky, 2016</small>
         <p>
           Regnsky was a popular music blog among the Danish indie youth. They asked if I could do a
           redesign.
@@ -365,7 +365,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Motivating students to read</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">Research, 2016</small>
+        <small class="text-xs uppercase text-slate-400">Research, 2016</small>
         <p>
           I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind
           and Andreas Reffstrup to see if we could build a platform that motivated students to read
@@ -403,7 +403,7 @@ lg:mx-0">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Bringing news archives back to life</h2>
-        <small class="text-xs uppercase text-slate-400 dark:text-slate-500">Concept, 2016</small>
+        <small class="text-xs uppercase text-slate-400">Concept, 2016</small>
         <p>
           Old news organizations sit on a huge archive of old articles. There's a big opportunity to
           digitize all of that content and make it relevant again today.
@@ -422,7 +422,7 @@ lg:mx-0">
       </div>
     </section> -->
     <a
-      class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 hover:no-underline dark:text-slate-500"
+      class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 hover:no-underline"
       @click="scrollToTop"
       >↑<br />Scroll to top</a
     >

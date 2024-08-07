@@ -5,8 +5,8 @@
       <h1>
         <NuxtLink to="/" class="hover:no-underline dark:text-white"> Benjamin Ottensten </NuxtLink>
       </h1>
-      <div class="text-slate-400 dark:text-slate-500">Product & Design lead</div>
-      <div class="text-slate-400 dark:text-slate-500">Copenhagen, Denmark</div>
+      <div class="text-slate-400">Product & Design lead</div>
+      <div class="text-slate-400">Copenhagen, Denmark</div>
     </div>
     <Navigation />
   </header>

@@ -1,8 +1,6 @@
 <template>
   <div class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
-    <div
-      v-if="label"
-      class="w-[88px] shrink-0 text-slate-400 dark:text-slate-500 sm:col-span-2 sm:w-auto">
+    <div v-if="label" class="w-[88px] shrink-0 text-slate-400 sm:col-span-2 sm:w-auto">
       {{ label }}
     </div>
     <div class="grid gap-3 sm:col-span-6">
@@ -16,9 +14,7 @@
           {{ title }}
         </template>
       </h3>
-      <small v-if="subTitle" class="text-xs uppercase text-slate-400 dark:text-slate-500">{{
-        subTitle
-      }}</small>
+      <small v-if="subTitle" class="text-xs uppercase text-slate-400">{{ subTitle }}</small>
       <p v-if="description">{{ description }}</p>
       <p v-if="description2">{{ description2 }}</p>
       <p v-if="description3">{{ description3 }}</p>
