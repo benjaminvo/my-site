@@ -13,7 +13,12 @@
 
   p {
     @apply text-slate-500;
+    @apply dark:text-slate-400;
     @apply font-serif;
+  }
+
+  h2 {
+    @apply dark:text-slate-50;
   }
 
   a:hover {
