@@ -107,7 +107,7 @@ function showCaption(index, event) {
   caption.setAttribute("id", "caption");
   caption.setAttribute(
     "class",
-    "absolute bg-black text-white text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl",
+    "absolute bg-black dark:bg-slate-50 text-white dark:text-slate-900 text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl",
   );
 
   // Add text to the div
