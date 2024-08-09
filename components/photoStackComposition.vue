@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, onMounted } from "vue";
+import { ref, nextTick, onMounted, onUnmounted } from "vue";
 
 const photos = useState(() => [
   {
@@ -65,37 +65,201 @@ let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
+const positionsAfterAnimation = ref([]);
+const hasAnimated = ref(false);
 
 onMounted(() => {
   if (localStorage.photos) {
     photos.value = JSON.parse(localStorage.photos);
     animatePhotos.value = false;
+  } else {
+    animatePhotosOnLoad();
   }
   photoPositionsLoaded.value = true;
 
-  // Animate photos on load
-  if (animatePhotos.value) {
-    setTimeout(() => {
-      photos.value[2].position.x = -5;
-      photos.value[2].position.y = 27;
-      photos.value[2].rotate = "-rotate-2";
-    }, "500");
-    setTimeout(() => {
-      photos.value[1].position.x = 43;
-      photos.value[1].position.y = 2;
-      photos.value[1].rotate = "rotate-6";
-    }, "650");
-    setTimeout(() => {
-      photos.value[0].position.x = 12;
-      photos.value[0].position.y = -25;
-      photos.value[0].rotate = "rotate-1";
-    }, "800");
+  // Update photo dimensions after initial load
+  nextTick(() => {
+    updatePhotoDimensions();
+  });
 
-    setTimeout(() => {
-      animatePhotos.value = false;
-    }, "1500");
-  }
+  // Add keyboard event listener
+  window.addEventListener("keydown", handleKeyPress);
 });
+
+// Remove event listener on component unmount
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleKeyPress);
+});
+
+function animatePhotosOnLoad() {
+  animatePhotos.value = true;
+
+  const animationSteps = [
+    { index: 2, x: -5, y: 27, rotate: "-rotate-2", delay: 500 },
+    { index: 1, x: 43, y: 2, rotate: "rotate-6", delay: 650 },
+    { index: 0, x: 12, y: -25, rotate: "rotate-1", delay: 800 },
+  ];
+
+  animationSteps.forEach((step) => {
+    setTimeout(() => {
+      photos.value[step.index].position.x = step.x;
+      photos.value[step.index].position.y = step.y;
+      photos.value[step.index].rotate = step.rotate;
+    }, step.delay);
+  });
+
+  setTimeout(() => {
+    animatePhotos.value = false;
+    // Store positions after animation
+    if (!hasAnimated.value) {
+      positionsAfterAnimation.value = photos.value.map((photo) => ({
+        x: photo.position.x,
+        y: photo.position.y,
+        rotate: photo.rotate,
+        zIndex: photo.zIndex,
+      }));
+      hasAnimated.value = true;
+    }
+    nextTick(() => {
+      updatePhotoDimensions();
+    });
+  }, 1500);
+}
+
+// Function to handle key press
+function handleKeyPress(event) {
+  // Check if 'R' key is pressed
+  if (event.key.toLowerCase() === "r") {
+    resetPhotoPositions();
+  }
+}
+
+// Function to reset photo positions
+function resetPhotoPositions() {
+  localStorage.removeItem("photos");
+  animatePhotos.value = true;
+
+  const photoIndices = photos.value
+    .map((photo, index) => ({
+      index,
+      originalZIndex: positionsAfterAnimation.value[index].zIndex,
+      currentZIndex: photo.zIndex,
+    }))
+    .sort((a, b) => b.currentZIndex - a.currentZIndex); // Sort by current z-index, highest first
+
+  let maxDelay = 0;
+
+  photoIndices.forEach((photoData, index) => {
+    const photo = photos.value[photoData.index];
+    const originalPosition = positionsAfterAnimation.value[photoData.index];
+
+    const needsIntermediate = photoIndices.some(
+      (otherPhoto) =>
+        otherPhoto.index !== photoData.index &&
+        otherPhoto.originalZIndex > photoData.originalZIndex &&
+        otherPhoto.currentZIndex < photoData.currentZIndex &&
+        doPhotosOverlap(
+          photo.position.x,
+          photo.position.y,
+          photo.width,
+          photo.height,
+          photos.value[otherPhoto.index].position.x,
+          photos.value[otherPhoto.index].position.y,
+          photos.value[otherPhoto.index].width,
+          photos.value[otherPhoto.index].height,
+        ),
+    );
+
+    if (needsIntermediate) {
+      const intermediatePosition = findNonOverlappingPosition(photoData.index);
+
+      // First step: Move to non-overlapping position
+      setTimeout(() => {
+        photo.position.x = intermediatePosition.x;
+        photo.position.y = intermediatePosition.y;
+        photo.zIndex = Math.max(...photos.value.map((p) => p.zIndex)) + 1; // Move to top temporarily
+      }, index * 100);
+
+      // Second step: Move to original position
+      setTimeout(
+        () => {
+          photo.position.x = originalPosition.x;
+          photo.position.y = originalPosition.y;
+          photo.rotate = originalPosition.rotate;
+          photo.zIndex = originalPosition.zIndex;
+        },
+        index * 100 + 600,
+      );
+
+      maxDelay = Math.max(maxDelay, index * 100 + 600);
+    } else {
+      // Direct move to original position if no intermediate step needed
+      setTimeout(() => {
+        photo.position.x = originalPosition.x;
+        photo.position.y = originalPosition.y;
+        photo.rotate = originalPosition.rotate;
+        photo.zIndex = originalPosition.zIndex;
+      }, index * 100);
+
+      maxDelay = Math.max(maxDelay, index * 100);
+    }
+  });
+
+  // After all animations complete
+  setTimeout(() => {
+    animatePhotos.value = false;
+    nextTick(() => {
+      updatePhotoDimensions();
+      localStorage.setItem("photos", JSON.stringify(photos.value));
+    });
+  }, maxDelay + 500);
+}
+
+function findNonOverlappingPosition(photoIndex) {
+  const photo = photos.value[photoIndex];
+  const originalPosition = positionsAfterAnimation.value[photoIndex];
+  let angle = Math.random() * 2 * Math.PI;
+  let distance = 50;
+  const maxAttempts = 20;
+
+  for (let i = 0; i < maxAttempts; i++) {
+    const newPosition = {
+      x: originalPosition.x + Math.cos(angle) * distance,
+      y: originalPosition.y + Math.sin(angle) * distance,
+    };
+
+    let overlaps = false;
+    for (let j = 0; j < photos.value.length; j++) {
+      if (j !== photoIndex) {
+        if (
+          doPhotosOverlap(
+            newPosition.x,
+            newPosition.y,
+            photo.width,
+            photo.height,
+            photos.value[j].position.x,
+            photos.value[j].position.y,
+            photos.value[j].width,
+            photos.value[j].height,
+          )
+        ) {
+          overlaps = true;
+          break;
+        }
+      }
+    }
+
+    if (!overlaps) return newPosition;
+
+    distance += 20;
+    angle += 0.1;
+  }
+
+  return {
+    x: originalPosition.x + Math.cos(angle) * distance,
+    y: originalPosition.y + Math.sin(angle) * distance,
+  };
+}
 
 function showCaption(index, event) {
   if (isDragging) {
@@ -214,12 +378,12 @@ function doPhotosOverlap(x1, y1, w1, h1, x2, y2, w2, h2) {
 
 const photoElements = ref([]);
 function updatePhotoDimensions() {
-  nextTick(() => {
-    photoElements.value.forEach((element, index) => {
+  photoElements.value.forEach((element, index) => {
+    if (element) {
       const rect = element.getBoundingClientRect();
       photos.value[index].width = rect.width;
       photos.value[index].height = rect.height;
-    });
+    }
   });
 }
 </script>
