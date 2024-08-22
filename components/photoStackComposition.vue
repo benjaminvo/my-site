@@ -222,14 +222,15 @@ function resetPhotoPositions() {
 function findNonOverlappingPosition(photoIndex) {
   const photo = photos.value[photoIndex];
   const originalPosition = positionsAfterAnimation.value[photoIndex];
-  let angle = Math.random() * 2 * Math.PI;
-  let distance = 50;
+  let angle = Math.random() * Math.PI - Math.PI / 2; // Start with an upward bias
+  let distance = 200;
   const maxAttempts = 20;
+  const verticalBias = 1.5; // Increase vertical movement
 
   for (let i = 0; i < maxAttempts; i++) {
     const newPosition = {
       x: originalPosition.x + Math.cos(angle) * distance,
-      y: originalPosition.y + Math.sin(angle) * distance,
+      y: originalPosition.y + Math.sin(angle) * distance * verticalBias,
     };
 
     let overlaps = false;
@@ -255,13 +256,13 @@ function findNonOverlappingPosition(photoIndex) {
 
     if (!overlaps) return newPosition;
 
-    distance += 20;
-    angle += 0.1;
+    distance += 30;
+    angle += angle < 0 ? 0.1 : 0.3; // Faster angle change for downward positions
   }
 
   return {
     x: originalPosition.x + Math.cos(angle) * distance,
-    y: originalPosition.y + Math.sin(angle) * distance,
+    y: originalPosition.y + Math.sin(angle) * distance * verticalBias,
   };
 }
 
