@@ -145,7 +145,11 @@ function resetPhotoPositions() {
       originalZIndex: positionsAfterAnimation.value[index].zIndex,
       currentZIndex: photo.zIndex,
     }))
-    .sort((a, b) => b.currentZIndex - a.currentZIndex); // Sort by current z-index, highest first
+    .sort(
+      (a, b) =>
+        positionsAfterAnimation.value[a.index].zIndex -
+        positionsAfterAnimation.value[b.index].zIndex,
+    );
 
   let maxDelay = 0;
 
