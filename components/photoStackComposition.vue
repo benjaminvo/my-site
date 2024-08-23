@@ -65,13 +65,20 @@ let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
-const positionsAfterAnimation = ref([]);
 const hasAnimated = ref(false);
+
+// Keep only originalPositions
+const originalPositions = [
+  { x: 12, y: -25, rotate: "rotate-1", zIndex: 0 },
+  { x: 43, y: 2, rotate: "rotate-6", zIndex: 1 },
+  { x: -5, y: 27, rotate: "-rotate-2", zIndex: 2 },
+];
 
 onMounted(() => {
   if (localStorage.photos) {
     photos.value = JSON.parse(localStorage.photos);
     animatePhotos.value = false;
+    hasAnimated.value = true;
   } else {
     animatePhotosOnLoad();
   }
@@ -94,32 +101,31 @@ onUnmounted(() => {
 function animatePhotosOnLoad() {
   animatePhotos.value = true;
 
-  const animationSteps = [
-    { index: 2, x: -5, y: 27, rotate: "-rotate-2", delay: 500 },
-    { index: 1, x: 43, y: 2, rotate: "rotate-6", delay: 650 },
-    { index: 0, x: 12, y: -25, rotate: "rotate-1", delay: 800 },
-  ];
+  const animationSteps = originalPositions
+    .map((pos, index) => ({
+      index,
+      x: pos.x,
+      y: pos.y,
+      rotate: pos.rotate,
+      zIndex: pos.zIndex,
+    }))
+    .sort((a, b) => b.zIndex - a.zIndex); // Sort by zIndex in descending order
 
-  animationSteps.forEach((step) => {
-    setTimeout(() => {
-      photos.value[step.index].position.x = step.x;
-      photos.value[step.index].position.y = step.y;
-      photos.value[step.index].rotate = step.rotate;
-    }, step.delay);
+  animationSteps.forEach((step, i) => {
+    setTimeout(
+      () => {
+        photos.value[step.index].position.x = step.x;
+        photos.value[step.index].position.y = step.y;
+        photos.value[step.index].rotate = step.rotate;
+        photos.value[step.index].zIndex = step.zIndex;
+      },
+      500 + i * 150,
+    ); // Use 'i' instead of 'index' for the delay
   });
 
   setTimeout(() => {
     animatePhotos.value = false;
-    // Store positions after animation
-    if (!hasAnimated.value) {
-      positionsAfterAnimation.value = photos.value.map((photo) => ({
-        x: photo.position.x,
-        y: photo.position.y,
-        rotate: photo.rotate,
-        zIndex: photo.zIndex,
-      }));
-      hasAnimated.value = true;
-    }
+    hasAnimated.value = true;
     nextTick(() => {
       updatePhotoDimensions();
     });
@@ -129,7 +135,7 @@ function animatePhotosOnLoad() {
 // Function to handle key press
 function handleKeyPress(event) {
   // Check if 'R' key is pressed
-  if (event.key.toLowerCase() === "r") {
+  if (event.key.toLowerCase() === "p") {
     resetPhotoPositions();
   }
 }
@@ -142,20 +148,16 @@ function resetPhotoPositions() {
   const photoIndices = photos.value
     .map((photo, index) => ({
       index,
-      originalZIndex: positionsAfterAnimation.value[index].zIndex,
+      originalZIndex: originalPositions[index].zIndex,
       currentZIndex: photo.zIndex,
     }))
-    .sort(
-      (a, b) =>
-        positionsAfterAnimation.value[a.index].zIndex -
-        positionsAfterAnimation.value[b.index].zIndex,
-    );
+    .sort((a, b) => originalPositions[a.index].zIndex - originalPositions[b.index].zIndex);
 
   let maxDelay = 0;
 
   photoIndices.forEach((photoData, index) => {
     const photo = photos.value[photoData.index];
-    const originalPosition = positionsAfterAnimation.value[photoData.index];
+    const originalPosition = originalPositions[photoData.index];
 
     const needsIntermediate = photoIndices.some(
       (otherPhoto) =>
@@ -221,7 +223,7 @@ function resetPhotoPositions() {
 
 function findNonOverlappingPosition(photoIndex) {
   const photo = photos.value[photoIndex];
-  const originalPosition = positionsAfterAnimation.value[photoIndex];
+  const originalPosition = originalPositions[photoIndex];
   let angle = Math.random() * Math.PI - Math.PI / 2; // Start with an upward bias
   let distance = 200;
   const maxAttempts = 20;
