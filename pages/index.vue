@@ -45,8 +45,8 @@
           label="2023–Now"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote)"
-          description="Speckle is an open source platform for 3D data used by computational designers, structural engineers, architects, and other professionals within the architecture, engineering and construction industry."
-          description3="I'm leading the development of the web platform." />
+          description="Speckle is an open source platform for working with 3D data used by architects and other professionals within the architecture, engineering and construction industry."
+          description3="I lead the development of the web platform and manage the design and frontend teams." />
         <!-- description2="The open platform is pretty groundbreaking as 3D data has historically been completely locked. Speckle liberates the data to 10x efficiency through better collaboration and automation." -->
         <Block
           label="2020–2023"
