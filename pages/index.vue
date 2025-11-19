@@ -45,16 +45,15 @@
           label="2023–Now"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote)"
-          description="Speckle is an open source platform for working with 3D data used by architects and other professionals within the architecture, engineering and construction industry."
+          description="Speckle is an open source platform for working with 3D data used by thousands of architects and other professionals within the architecture, engineering and construction industry."
           description3="I lead the development of the web platform and manage the design and frontend teams." />
         <!-- description2="The open platform is pretty groundbreaking as 3D data has historically been completely locked. Speckle liberates the data to 10x efficiency through better collaboration and automation." -->
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
           subTitle="Copenhagen & New York"
-          description="The Org is a professional network for companies backed by Sequoia, Founders Fund and more. I led the product development across multiple teams and managed the PMs."
-          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round."
-          description3="It ended in May 2023 when most of the team was laid off." />
+          description="The Org — backed by Sequoia, Founders Fund and more — is a professional network for companies. I led the product development across multiple teams and managed the PMs."
+          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round." />
         <Block
           label="2016–2020"
           title="Product Designer at GoMore"
