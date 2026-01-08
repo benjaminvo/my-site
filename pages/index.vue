@@ -89,10 +89,6 @@
           label="LinkedIn"
           title="@benjaminvo ↗"
           link="https://www.linkedin.com/in/benjaminvo" />
-        <Block
-          label="Bluesky"
-          title="@benjaminottensten.com ↗"
-          link="https://bsky.app/profile/benjaminottensten.com" />
       </div>
     </section>
   </main>
