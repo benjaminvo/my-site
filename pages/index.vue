@@ -5,7 +5,7 @@
       class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-9 sm:col-span-5 sm:mb-0">
         <p class="mb-3">
-          I’m an experienced product builder with a background in both product, design and frontend.
+          I'm an experienced product builder with a background in product, design and frontend.
           I'm currently Product Lead at Speckle.
         </p>
         <p>
