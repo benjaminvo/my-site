@@ -62,12 +62,12 @@
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
           description="GoMore is a Danish peer-to-peer car sharing platform operating in multiple European markets. I did product design for web and apps, frontend development and various PM work."
-          description2="I'm most proud of leading the launch of the now very popular, and also complex, GoMore Keyless product, which allows car owners to rent out their car to strangers without ever meeting." />
+          description2="I'm most proud of having led the development of the very popular GoMore Keyless product, which allows car owners to rent out their car to strangers without ever meeting." />
         <Block
           label="2014–2015"
           title="Teaching Assistant at the IT University of Copenhagen"
           subTitle="Copenhagen · Part-time"
-          description="I planned and conducted weekly exercises for 2nd year bachelor students on the two courses Context-Based App Design and Co-Design (twice). I also supervised their design projects." />
+          description="I supervised design projects and conducted weekly exercises for 2nd year bachelor students on the two courses Context-Based App Design and Co-Design." />
         <Block
           label="2012–2013"
           title="Web Designer at Starfly Media"
@@ -92,6 +92,7 @@
           label="LinkedIn"
           title="@benjaminvo ↗"
           link="https://www.linkedin.com/in/benjaminvo" />
+        <Block label="Github" title="@benjaminvo ↗" link="https://www.github.com/benjaminvo" />
       </div>
     </section>
   </main>
