@@ -6,7 +6,6 @@
       <div class="mb-9 sm:col-span-5 sm:mb-0">
         <p class="mb-3">
           I'm an experienced product builder with a background in product, design and frontend.
-          I'm currently Product Lead at Speckle.
         </p>
         <p>
           I enjoy building high-quality user experiences that spark joy and drive growth. I have the
@@ -42,12 +41,16 @@
       <h2 class="mb-8">Work experience</h2>
       <div class="grid gap-8">
         <Block
-          label="2023–Now"
+          label="Now"
+          title="Open to work"
+          subTitle="Copenhagen or Remote"
+          description="I'm currently figuring out what to do next. Freelance, join a startup, start my own company — I'm in exploration mode. Reach out if you want to collaborate." />
+        <Block
+          label="2023–2026"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote)"
-          description="Speckle is an open source platform for working with 3D data used by thousands of architects and other professionals within the architecture, engineering and construction industry."
-          description3="I lead the development of the web platform and manage the design and frontend teams." />
-        <!-- description2="The open platform is pretty groundbreaking as 3D data has historically been completely locked. Speckle liberates the data to 10x efficiency through better collaboration and automation." -->
+          description="Speckle is an open source platform for working with 3D data. It's used by thousands of architects and other professionals within the architecture, engineering and construction industry."
+          description2="I led the development of the web platform and managed the design and frontend teams." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
