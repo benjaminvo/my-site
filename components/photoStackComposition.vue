@@ -134,7 +134,6 @@ function animatePhotosOnLoad() {
 
 // Function to handle key press
 function handleKeyPress(event) {
-  // Check if 'R' key is pressed
   if (event.key.toLowerCase() === "p") {
     resetPhotoPositions();
   }
