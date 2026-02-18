@@ -18,6 +18,7 @@
     "prettier-plugin-tailwindcss": "^0.5.2"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.0.1"
+    "@vercel/analytics": "^1.0.1",
+    "fast-xml-parser": "^5.3.6"
   }
 }
