@@ -1,6 +1,11 @@
 <template>
   <Transition name="fade">
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
+      <div class="absolute left-[70px] top-[60px] select-none text-center text-xs text-slate-400">
+        Press
+        <span class="rounded-md bg-gray-200 px-1.5 py-0.5 font-medium text-slate-400 dark:bg-slate-800">P</span>
+        to summon
+      </div>
       <img
         v-for="(photo, index) in photos"
         :key="index"
