@@ -223,10 +223,21 @@ const {
       const res = await fetch(podcast.feedUrl);
       if (res.ok) return parseRss(await res.text());
     } catch {
-      // CORS blocked or network error — fall through to the API route
+      // CORS blocked or network error — fall through
     }
 
-    // Fallback: server-side proxy that handles feeds without CORS headers
+    // Second attempt: route through a CORS proxy. Simplecast/Transistor use
+    // Cloudflare which blocks cross-origin browser reads AND blocks Vercel's
+    // AWS Lambda IPs. corsproxy.io proxies from non-AWS infrastructure and
+    // adds Access-Control-Allow-Origin: * so the browser can read the response.
+    try {
+      const proxyRes = await fetch(`https://corsproxy.io/?${encodeURIComponent(podcast.feedUrl)}`);
+      if (proxyRes.ok) return parseRss(await proxyRes.text());
+    } catch {
+      // proxy unavailable — fall through to API route
+    }
+
+    // Final fallback: server-side proxy
     return $fetch<FeedData>(`/api/podcast-feed?url=${encodeURIComponent(podcast.feedUrl)}`);
   },
   { server: false },
