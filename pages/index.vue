@@ -58,7 +58,7 @@
           label="2016–2020"
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
-          description="GoMore is a Danish peer-to-peer car sharing platform operating in multiple European markets. I did product design for web and apps, frontend development and various PM work."
+          description="GoMore is a Danish peer-to-peer car sharing platform operating across Europe. I did product design for web and apps, frontend development and various PM work."
           description2="I'm most proud of having led the development of the now very popular GoMore Keyless product from start to finish. GoMore Keyless allows car owners to rent out their car to strangers without ever meeting." />
         <Block
           label="2014–2015"
