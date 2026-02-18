@@ -26,16 +26,20 @@ export default defineEventHandler(async (event): Promise<FeedData> => {
 
   let xml: string;
   try {
-    const response = await $fetch<string>(feedUrl, {
-      responseType: "text",
+    const res = await fetch(feedUrl, {
       headers: {
         Accept: "application/rss+xml, application/xml, text/xml, */*",
         "User-Agent": "Mozilla/5.0 (compatible; RSS-Reader/1.0)",
       },
+      signal: AbortSignal.timeout(15000),
     });
-    xml = typeof response === "string" ? response : JSON.stringify(response);
-  } catch {
-    throw createError({ statusCode: 502, statusMessage: "Failed to fetch podcast feed" });
+    if (!res.ok) {
+      throw createError({ statusCode: 502, statusMessage: `Feed returned HTTP ${res.status}` });
+    }
+    xml = await res.text();
+  } catch (err: any) {
+    if (err.statusCode) throw err;
+    throw createError({ statusCode: 502, statusMessage: `Failed to fetch podcast feed: ${err.message}` });
   }
 
   const parser = new XMLParser({
