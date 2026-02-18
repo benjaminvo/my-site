@@ -38,7 +38,7 @@ const photos = useState(() => [
     height: null,
     rotate: "",
     zIndex: 0,
-    caption: "Beautiful lemon trees in Mallorca",
+    caption: "Lemon trees in Mallorca",
   },
   {
     src: "img/eik.jpg",
@@ -58,7 +58,7 @@ const photos = useState(() => [
     height: null,
     rotate: "",
     zIndex: 2,
-    caption: "Me, very happy at a concert",
+    caption: "Me, happy at a concert",
   },
 ]);
 let animatePhotos = useState(() => true);
@@ -69,8 +69,8 @@ const hasAnimated = ref(false);
 
 // Keep only originalPositions
 const originalPositions = [
-  { x: 12, y: -25, rotate: "rotate-1", zIndex: 0 },
-  { x: 43, y: 2, rotate: "rotate-6", zIndex: 1 },
+  { x: 20, y: -35, rotate: "rotate-1", zIndex: 0 },
+  { x: 76, y: 2, rotate: "rotate-6", zIndex: 1 },
   { x: -5, y: 27, rotate: "-rotate-2", zIndex: 2 },
 ];
 
