@@ -8,14 +8,11 @@
         <h2>Transparent employer branding</h2>
         <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
         <p>
-          Every company is competing to hire the best talent. At The Org I helped build an employer
-          branding platform where companies attract new talent by being radically transparent about
-          their team and how they work. Because great people want to work with great people.
+          Every company is competing to hire the best talent. At The Org I helped build an employer branding platform
+          where companies attract new talent by being radically transparent about their team and how they work. Because
+          great people want to work with great people.
         </p>
-        <p>
-          Thousands of companies are on The Org today and the public profiles get >1 million organic
-          visits/month.
-        </p>
+        <p>Thousands of companies are on The Org today and the public profiles get >1 million organic visits/month.</p>
         <p>
           Primary designer:
           <a href="https://www.linkedin.com/in/alexanderjuhl/" target="_blank"
@@ -59,8 +56,7 @@
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="
             /img/work/company-page/front-page.jpg 1x,
@@ -71,8 +67,7 @@
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/company-page/job.jpg 1x, /img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
           thumbhash="/fcBBQD1mXNrkjfpFmxxafiDORsH"
@@ -90,8 +85,7 @@
           class="w-full" />
         <Border />
       </div> -->
-      <div
-        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/company-page/team.jpg 1x, /img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
           thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH"
@@ -106,14 +100,11 @@
         <h2>Dashboard</h2>
         <small class="text-xs uppercase text-slate-400">The Org, 2023</small>
         <p>
-          Companies on The Org asked for better user onboarding and an easier way to build their
-          profiles. We built a Dashboard to solve those problems. A lot of work went into the
-          integrations that can pull in all relevant data from your Slack, HRIS and ATS.
+          Companies on The Org asked for better user onboarding and an easier way to build their profiles. We built a
+          Dashboard to solve those problems. A lot of work went into the integrations that can pull in all relevant data
+          from your Slack, HRIS and ATS.
         </p>
-        <p>
-          The release improved the user activation rate and made companies fill out more of their
-          profile.
-        </p>
+        <p>The release improved the user activation rate and made companies fill out more of their profile.</p>
         <p>
           Primary designers:
           <a href="https://www.linkedin.com/in/ejlers/" target="_blank">
@@ -125,24 +116,21 @@
           >. My role: Working closely with Design and leading the product development.
         </p>
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/dashboard/overview.jpg 1x, /img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
           thumbhash="/AcCDQDGynCXWJi3eIzUyMiAdPO2"
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/dashboard/org-chart.jpg 1x, /img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
           thumbhash="PQgCBIBCQFZnpYhq1KGkz0gwCA"
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="
             /img/work/dashboard/jobs-integrations.jpg 1x,
@@ -161,8 +149,7 @@ lg:mx-0">
           class="w-full" />
         <Border />
       </div> -->
-      <div
-        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/dashboard/members.jpg 1x, /img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
           thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH"
@@ -177,18 +164,17 @@ lg:mx-0">
         <h2>Keyless car rental</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2019</small>
         <p>
-          GoMore is a platform where people share cars. I led the development of GoMore Keyless
-          which allows car owners to rent out their car to strangers without ever meeting.
+          GoMore is a platform where people share cars. I led the development of GoMore Keyless which allows car owners
+          to rent out their car to strangers without ever meeting.
         </p>
         <p>
-          The project included installing physical hardware in the cars to read the fuel level and
-          mileage, get its location and control the lock. That was fun, and not easy.
+          The project included installing physical hardware in the cars to read the fuel level and mileage, get its
+          location and control the lock. That was fun, and not easy.
         </p>
         <p>The Keyless hardware is now installed in >1,000 cars across Europe.</p>
         <p>My role: Product management, design, frontend.</p>
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="
             /img/work/keyless/landing-page.jpg 1x,
@@ -230,13 +216,10 @@ lg:mx-0">
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Finding your driver</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
+        <p>GoMore is also a platform where people share rides with other people heading in the same direction.</p>
         <p>
-          GoMore is also a platform where people share rides with other people heading in the same
-          direction.
-        </p>
-        <p>
-          One friction point is that it can sometimes be hard to find your driver or passengers when
-          it’s time to meet. I designed a location sharing feature to solve that problem.
+          One friction point is that it can sometimes be hard to find your driver or passengers when it’s time to meet.
+          I designed a location sharing feature to solve that problem.
         </p>
         <p>We decided not to build the feature, but I still like the concept and design.</p>
         <p>My role: Design.</p>
@@ -272,34 +255,28 @@ lg:mx-0">
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Colorful car leasing</h2>
         <small class="text-xs uppercase text-slate-400">GoMore, 2018</small>
+        <p>On GoMore you can lease a car and share it with other people to decrease the monthly lease.</p>
         <p>
-          On GoMore you can lease a car and share it with other people to decrease the monthly
-          lease.
-        </p>
-        <p>
-          I was the primary designer on everything leasing related. Our goal was to build a leasing
-          platform that aligned with GoMore's human, social and playful design principles.
+          I was the primary designer on everything leasing related. Our goal was to build a leasing platform that
+          aligned with GoMore's human, social and playful design principles.
         </p>
         <p>My role: Design, frontend.</p>
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/leasing/private.jpg 1x, /img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
           thumbhash="+vcFBoKts5d4hqdqh7d2+WSwr3W/SPg"
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/leasing/car.jpg 1x, /img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
           thumbhash="+vcFBoLCvZdTmYifVcZahIl3o2JPK/U"
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/leasing/quotes.jpg 1x, /img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
           thumbhash="+/cBAoLDyKtqpvdY/lfYf5U"
@@ -313,18 +290,12 @@ lg:mx-0">
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
         <small class="text-xs uppercase text-slate-400">Regnsky, 2016</small>
+        <p>Regnsky was a popular music blog among the Danish indie youth. They asked if I could do a redesign.</p>
         <p>
-          Regnsky was a popular music blog among the Danish indie youth. They asked if I could do a
-          redesign.
+          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I still think the design
+          does a good job of capturing those keywords.
         </p>
-        <p>
-          We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I
-          still think the design does a good job of capturing those keywords.
-        </p>
-        <p>
-          The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from
-          the old design.
-        </p>
+        <p>The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from the old design.</p>
         <p>My role: Design, frontend.</p>
       </div>
       <div
@@ -351,8 +322,7 @@ lg:mx-0">
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/regnsky/4.jpg 1x, /img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
           thumbhash="s0gGDQqHeHB3h2cnd3Q4OIiMgHgI"
@@ -367,30 +337,25 @@ lg:mx-0">
         <h2>Motivating students to read</h2>
         <small class="text-xs uppercase text-slate-400">Research, 2016</small>
         <p>
-          I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind
-          and Andreas Reffstrup to see if we could build a platform that motivated students to read
-          more academic literature.
+          I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind and Andreas
+          Reffstrup to see if we could build a platform that motivated students to read more academic literature.
         </p>
+        <p>We built Quasi as a prototype and tested it with 6 students during a week of real study.</p>
         <p>
-          We built Quasi as a prototype and tested it with 6 students during a week of real study.
-        </p>
-        <p>
-          Our research showed that a digital study platform can indeed motivate students to read
-          more if it focuses on making the literature more relevant and easier to understand. Social
-          features can also add some healthy peer pressure.
+          Our research showed that a digital study platform can indeed motivate students to read more if it focuses on
+          making the literature more relevant and easier to understand. Social features can also add some healthy peer
+          pressure.
         </p>
         <p>My role: Design, research.</p>
       </div>
-      <div
-        class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/quasi/article.jpg 1x, /img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
           thumbhash="/fcBBIDzmKdpdph/hbqxVhD7Jw"
           class="w-full" />
         <Border />
       </div>
-      <div
-        class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
+      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
         <UnLazyImage
           src-set="/img/work/quasi/search.jpg 1x, /img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
           thumbhash="3fcNBIAHqJd+g4l3iIShWCD+Jg"

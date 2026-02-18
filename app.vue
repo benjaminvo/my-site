@@ -16,10 +16,8 @@ useSeoMeta({
   ogSiteName: "Benjamin Ottensten",
   title: "Benjamin Ottensten, Product & Design lead",
   ogTitle: "Benjamin Ottensten, Product & Design lead",
-  description:
-    "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
-  ogDescription:
-    "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
+  description: "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
+  ogDescription: "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
   ogImage: "https://benjaminottensten.com/img/social.jpg",
   ogType: "website",
   twitterCard: "summary_large_image",

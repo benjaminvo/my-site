@@ -4,8 +4,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Livory';
-    src: url('/fonts/Livory-Regular.woff') format('woff');
+    font-family: "Livory";
+    src: url("/fonts/Livory-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: block;
