@@ -33,7 +33,7 @@ export const podcasts: Podcast[] = [
   {
     slug: "acquired",
     name: "Acquired",
-    feedUrl: "https://feeds.simplecast.com/AYzL2v9y",
+    feedUrl: "https://feeds.transistor.fm/acq2",
     websiteUrl: "https://www.acquired.fm",
     description:
       "Ben Gilbert and David Rosenthal tell the full stories and strategies behind the world's greatest companies — from founding to today. Exceptionally well researched.",
@@ -63,7 +63,7 @@ export const podcasts: Podcast[] = [
   {
     slug: "lennys-podcast",
     name: "Lenny's Podcast",
-    feedUrl: "https://feeds.transistor.fm/lenny-s-podcast",
+    feedUrl: "https://api.substack.com/feed/podcast/10845.rss",
     websiteUrl: "https://www.lennyspodcast.com",
     description:
       "Lenny Rachitsky interviews the best product managers and operators in tech. Practical, honest, and consistently excellent signal-to-noise ratio.",

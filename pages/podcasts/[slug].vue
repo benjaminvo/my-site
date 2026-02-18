@@ -143,7 +143,6 @@
 </template>
 
 <script setup lang="ts">
-import { XMLParser } from "fast-xml-parser";
 import { podcasts } from "~/data/podcasts";
 import type { CuratedEpisode } from "~/data/podcasts";
 import type { FeedData, FeedEpisode } from "~/server/api/podcast-feed.get";
@@ -156,90 +155,16 @@ useSeoMeta({
   ogTitle: podcast ? `${podcast.name} | Benjamin Ottensten` : "Podcast | Benjamin Ottensten",
 });
 
-// Parse raw RSS XML into our FeedData shape, running entirely in the browser.
-function parseRss(xml: string): FeedData {
-  const parser = new XMLParser({
-    ignoreAttributes: false,
-    attributeNamePrefix: "@_",
-    allowBooleanAttributes: true,
-    cdataPropName: "__cdata",
-  });
-  const channel = parser.parse(xml)?.rss?.channel;
-  if (!channel) throw new Error("No channel in RSS");
-
-  const artwork =
-    channel["itunes:image"]?.["@_href"] ||
-    channel["itunes:image"] ||
-    channel.image?.url ||
-    "";
-
-  const rawItems: any[] = Array.isArray(channel.item)
-    ? channel.item
-    : channel.item
-      ? [channel.item]
-      : [];
-
-  return {
-    name: channel.title?.["__cdata"] ?? channel.title ?? "",
-    artwork: String(artwork),
-    description: String(
-      channel["itunes:summary"] ||
-        channel.description?.["__cdata"] ||
-        channel.description ||
-        "",
-    ),
-    episodes: rawItems.map((item: any) => ({
-      guid:
-        typeof item.guid === "object"
-          ? item.guid?.["#text"] ?? item.guid?.["__cdata"] ?? ""
-          : String(item.guid ?? ""),
-      title: item.title?.["__cdata"] ?? item["itunes:title"] ?? item.title ?? "",
-      description:
-        item["itunes:summary"]?.["__cdata"] ??
-        item["itunes:summary"] ??
-        item.description?.["__cdata"] ??
-        item.description ??
-        "",
-      audioUrl: item.enclosure?.["@_url"] ?? "",
-      duration: item["itunes:duration"] ?? "",
-      publishDate: item.pubDate ?? "",
-    })),
-  };
-}
-
 const {
   data: feedData,
   pending: feedPending,
   error: feedError,
 } = await useAsyncData(
   `feed-${podcast?.slug}`,
-  async () => {
-    if (!podcast) return null;
-
-    // Attempt a direct browser fetch first — no custom headers so there is no
-    // CORS preflight. Simplecast/Transistor serve Access-Control-Allow-Origin: *
-    // on GET responses but may not handle OPTIONS preflights from arbitrary origins.
-    try {
-      const res = await fetch(podcast.feedUrl);
-      if (res.ok) return parseRss(await res.text());
-    } catch {
-      // CORS blocked or network error — fall through
-    }
-
-    // Second attempt: route through a CORS proxy. Simplecast/Transistor use
-    // Cloudflare which blocks cross-origin browser reads AND blocks Vercel's
-    // AWS Lambda IPs. corsproxy.io proxies from non-AWS infrastructure and
-    // adds Access-Control-Allow-Origin: * so the browser can read the response.
-    try {
-      const proxyRes = await fetch(`https://corsproxy.io/?${encodeURIComponent(podcast.feedUrl)}`);
-      if (proxyRes.ok) return parseRss(await proxyRes.text());
-    } catch {
-      // proxy unavailable — fall through to API route
-    }
-
-    // Final fallback: server-side proxy
-    return $fetch<FeedData>(`/api/podcast-feed?url=${encodeURIComponent(podcast.feedUrl)}`);
-  },
+  () =>
+    podcast
+      ? $fetch<FeedData>(`/api/podcast-feed?url=${encodeURIComponent(podcast.feedUrl)}`)
+      : Promise.resolve(null),
   { server: false },
 );
 
