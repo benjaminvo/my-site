@@ -95,7 +95,7 @@
         <!-- Episodes list -->
         <div v-else class="grid gap-4">
           <div
-            v-for="ep in feedData?.episodes"
+            v-for="ep in displayedEpisodes"
             :key="ep.guid"
             class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
             <!-- Date / duration column -->
@@ -129,6 +129,14 @@
             </div>
           </div>
         </div>
+
+        <!-- Load all button -->
+        <button
+          v-if="hasMoreEpisodes"
+          class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          @click="showAllEpisodes = true">
+          Load all episodes ({{ feedData?.episodes?.length }})
+        </button>
       </section>
     </template>
   </main>
@@ -208,12 +216,11 @@ const {
   async () => {
     if (!podcast) return null;
 
-    // Attempt a direct browser fetch first — most podcast CDNs (Simplecast,
-    // Transistor, etc.) allow CORS, so this avoids the serverless hop entirely.
+    // Attempt a direct browser fetch first — no custom headers so there is no
+    // CORS preflight. Simplecast/Transistor serve Access-Control-Allow-Origin: *
+    // on GET responses but may not handle OPTIONS preflights from arbitrary origins.
     try {
-      const res = await fetch(podcast.feedUrl, {
-        headers: { Accept: "application/rss+xml, application/xml, text/xml, */*" },
-      });
+      const res = await fetch(podcast.feedUrl);
       if (res.ok) return parseRss(await res.text());
     } catch {
       // CORS blocked or network error — fall through to the API route
@@ -260,6 +267,16 @@ const playFeedEpisode = (ep: FeedEpisode) => {
     audioUrl: ep.audioUrl,
   });
 };
+
+const INITIAL_EPISODE_COUNT = 10;
+const showAllEpisodes = ref(false);
+const displayedEpisodes = computed(() => {
+  const episodes = feedData.value?.episodes ?? [];
+  return showAllEpisodes.value ? episodes : episodes.slice(0, INITIAL_EPISODE_COUNT);
+});
+const hasMoreEpisodes = computed(
+  () => !showAllEpisodes.value && (feedData.value?.episodes?.length ?? 0) > INITIAL_EPISODE_COUNT,
+);
 
 const formatDate = (dateStr: string) => {
   if (!dateStr) return "";
