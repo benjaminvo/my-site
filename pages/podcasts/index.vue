@@ -34,10 +34,9 @@
               class="flex items-start gap-3">
               <!-- Play button -->
               <button
-                :title="episode.audioUrl ? `Play: ${episode.title}` : 'Audio URL not yet configured'"
-                :disabled="!episode.audioUrl"
-                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-500 dark:hover:border-slate-500 dark:hover:text-slate-300"
-                @click="playEpisode(podcast.name, episode)">
+                :title="`Play: ${episode.title}`"
+                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 dark:border-slate-700 dark:text-slate-500 dark:hover:border-slate-500 dark:hover:text-slate-300"
+                @click="playEpisode(podcast.slug, podcast.name, episode)">
                 <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -75,12 +74,18 @@ useSeoMeta({
 
 const { play } = usePodcastPlayer();
 
-const playEpisode = (podcastName: string, episode: CuratedEpisode) => {
-  play({
-    guid: episode.guid,
-    title: episode.title,
-    podcastName,
-    audioUrl: episode.audioUrl,
-  });
+const playEpisode = (podcastSlug: string, podcastName: string, episode: CuratedEpisode) => {
+  if (episode.audioUrl) {
+    play({
+      guid: episode.guid,
+      title: episode.title,
+      podcastName,
+      audioUrl: episode.audioUrl,
+    });
+  } else {
+    // No audio URL in the curated data — go to the detail page where the live
+    // feed is loaded and any episode can be played directly.
+    navigateTo(`/podcasts/${podcastSlug}`);
+  }
 };
 </script>
