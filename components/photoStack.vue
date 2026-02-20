@@ -6,7 +6,7 @@
         @mousedown="startDragging(index, $event)" @mousemove.prevent="drag(index)" @mouseup="stopDragging(index)"
         @mouseleave="leaveDragging(index)" class="absolute border-4 border-white transition select-none" :class="[photo.rotate,
         isDragging ? 'cursor-grabbing' : 'cursor-grab',
-        isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow scale-100',
+        isNotBehindOtherPhotos(index) ? 'shadow-2xl scale-110' : 'shadow-sm scale-100',
         ]">
     </div>
   </Transition>

@@ -15,15 +15,15 @@
           <Transition name="fade">
             <div v-if="loadPhotos">
               <img
-                class="absolute z-20 rotate-3 border-4 border-white shadow"
+                class="absolute z-20 rotate-3 border-4 border-white shadow-sm"
                 src="/img/me.jpg"
                 srcset="/img/me@2x.jpg 2x, /img/me@3x.jpg 3x" />
               <img
-                class="absolute left-[155px] top-[80px] z-10 -rotate-6 border-4 border-white shadow"
+                class="absolute left-[155px] top-[80px] z-10 -rotate-6 border-4 border-white shadow-sm"
                 src="/img/eik.jpg"
                 srcset="/img/eik@2x.jpg 2x, /img/eik@3x.jpg 3x" />
               <img
-                class="absolute left-[30px] top-[120px] z-0 -rotate-1 border-4 border-white shadow"
+                class="absolute left-[30px] top-[120px] z-0 -rotate-1 border-4 border-white shadow-sm"
                 src="/img/lemons.jpg"
                 srcset="/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x" />
             </div>

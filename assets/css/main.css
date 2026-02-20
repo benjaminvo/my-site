@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 520px;
+  --font-serif: "Livory", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --grid-template-columns-16: repeat(16, minmax(0, 1fr));
+  --transition-property-custom: top, left, transform, rotate, box-shadow;
+}
+
+@utility col-span-16 {
+  grid-column: span 16 / span 16;
+}
 
 @layer base {
   @font-face {
@@ -12,9 +21,7 @@
   }
 
   p {
-    @apply text-slate-500;
-    @apply dark:text-slate-300;
-    @apply font-serif;
+    @apply font-serif text-slate-500 dark:text-slate-300;
   }
 
   h2 {
