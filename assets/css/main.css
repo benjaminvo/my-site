@@ -4,7 +4,7 @@
   --breakpoint-xs: 520px;
   --font-serif: "Livory", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --grid-template-columns-16: repeat(16, minmax(0, 1fr));
-  --transition-property-custom: top, left, transform, box-shadow;
+  --transition-property-custom: top, left, transform, rotate, box-shadow;
 }
 
 @utility col-span-16 {
