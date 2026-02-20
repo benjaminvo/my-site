@@ -28,7 +28,7 @@
           photo.rotate,
           isDragging ? 'cursor-grabbing' : 'cursor-grab',
           animatePhotos ? 'transition-custom duration-500' : 'transition duration-150',
-          isNotBehindOtherPhotos(index) ? 'scale-110 shadow-2xl' : 'scale-100 shadow',
+          isNotBehindOtherPhotos(index) ? 'scale-110 shadow-2xl' : 'scale-100 shadow-sm',
         ]" />
     </div>
   </Transition>
