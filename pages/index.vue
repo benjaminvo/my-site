@@ -35,13 +35,13 @@
       </div>
     </section>
     <section>
-      <h2 class="mb-8">Work experience</h2>
+      <h2 class="mb-8">Experience</h2>
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Open to work"
+          title="Freelance"
           subTitle="Copenhagen or Remote"
-          description="Reach out if you want to collaborate. Freelance, join a startup, start my own thing—I'm in exploration mode." />
+          description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate."" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
