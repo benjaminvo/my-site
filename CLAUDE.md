@@ -97,6 +97,14 @@ No Pinia/Vuex. Uses Nuxt's `useState()` for SSR-safe shared state.
 
 ---
 
+## Shaders
+
+**Package**: `@paper-design/shaders` (vanilla JS, no framework dependency) — already installed.
+
+Shaders are designed in **Paper** (MCP server: `paper`) and implemented in Vue using `ShaderMount`. Use the `/implement-shader` skill. Workflow: `get_selection` → `get_jsx` (extracts exact params) → map to `ShaderMount` uniforms in `onMounted`. The container `<div>` fills the target space; `ShaderMount` manages the canvas inside it. Each shader has its own fragment shader export and shapes enum (e.g. `grainGradientFragmentShader`, `GrainGradientShapes`).
+
+---
+
 ## Conventions & Patterns
 
 - All components use `<script setup>` (Vue 3 Composition API)
