@@ -1,7 +1,7 @@
 <template>
   <Transition name="fade">
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
-      <div class="absolute left-[70px] top-[60px] select-none text-center text-xs text-slate-400">
+      <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 select-none">
         Press
         <span
           class="rounded-md border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:bg-slate-800"
@@ -23,7 +23,7 @@
           top: photo.position.y + 'px',
           zIndex: photo.zIndex,
         }"
-        class="absolute select-none border-4 border-white ease-in-out"
+        class="absolute border-4 border-white ease-in-out select-none"
         :class="[
           photo.rotate,
           isDragging ? 'cursor-grabbing' : 'cursor-grab',
@@ -158,7 +158,7 @@ function resetPhotoPositions() {
       originalZIndex: originalPositions[index].zIndex,
       currentZIndex: photo.zIndex,
     }))
-    .sort((a, b) => originalPositions[a.index].zIndex - originalPositions[b.index].zIndex);
+    .sort((a, b) => b.currentZIndex - a.currentZIndex);
 
   let maxDelay = 0;
 
@@ -166,32 +166,33 @@ function resetPhotoPositions() {
     const photo = photos.value[photoData.index];
     const originalPosition = originalPositions[photoData.index];
 
-    const needsIntermediate = photoIndices.some(
-      (otherPhoto) =>
-        otherPhoto.index !== photoData.index &&
-        otherPhoto.originalZIndex > photoData.originalZIndex &&
-        otherPhoto.currentZIndex < photoData.currentZIndex &&
-        doPhotosOverlap(
-          photo.position.x,
-          photo.position.y,
-          photo.width,
-          photo.height,
-          photos.value[otherPhoto.index].position.x,
-          photos.value[otherPhoto.index].position.y,
-          photos.value[otherPhoto.index].width,
-          photos.value[otherPhoto.index].height,
-        ),
-    );
+    const zIndexChanging = photoData.currentZIndex !== photoData.originalZIndex;
+
+    const needsIntermediate =
+      zIndexChanging &&
+      photoIndices.some(
+        (otherPhoto) =>
+          otherPhoto.index !== photoData.index &&
+          doPhotosOverlap(
+            photo.position.x,
+            photo.position.y,
+            photo.width,
+            photo.height,
+            photos.value[otherPhoto.index].position.x,
+            photos.value[otherPhoto.index].position.y,
+            photos.value[otherPhoto.index].width,
+            photos.value[otherPhoto.index].height,
+          ),
+      );
 
     if (needsIntermediate) {
       const intermediatePosition = findNonOverlappingPosition(photoData.index);
 
-      // First step: Move to non-overlapping position
+      // First step: Move to non-overlapping position (keep current z-index during travel)
       setTimeout(() => {
         photo.position.x = intermediatePosition.x;
         photo.position.y = intermediatePosition.y;
-        photo.zIndex = Math.max(...photos.value.map((p) => p.zIndex)) + 1; // Move to top temporarily
-      }, index * 100);
+      }, index * 250);
 
       // Second step: Move to original position
       setTimeout(
@@ -201,10 +202,10 @@ function resetPhotoPositions() {
           photo.rotate = originalPosition.rotate;
           photo.zIndex = originalPosition.zIndex;
         },
-        index * 100 + 600,
+        index * 250 + 600,
       );
 
-      maxDelay = Math.max(maxDelay, index * 100 + 600);
+      maxDelay = Math.max(maxDelay, index * 250 + 600);
     } else {
       // Direct move to original position if no intermediate step needed
       setTimeout(() => {

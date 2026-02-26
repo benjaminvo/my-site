@@ -1,7 +1,7 @@
 <template>
   <main class="grid gap-12 sm:col-span-8 sm:gap-14 md:col-start-2 lg:col-start-3 xl:col-span-8 xl:col-start-5">
     <section
-      class="w-[calc(100vw-48px)] xs:w-[calc(100vw-80px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
+      class="xs:w-[calc(100vw-80px)] w-[calc(100vw-48px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-9 sm:col-span-5 sm:mb-0">
         <p class="mb-3">I'm an experienced product builder with a background in product, design and code.</p>
         <p class="mb-10">
@@ -10,7 +10,7 @@
           about the details.
         </p>
       </div>
-      <div class="-ml-6 w-[100vw] overflow-hidden xs:-ml-10 sm:hidden">
+      <div class="xs:-ml-10 -ml-6 w-[100vw] overflow-hidden sm:hidden">
         <div class="relative left-3 mx-auto h-[300px] w-[380px] pt-2">
           <Transition name="fade">
             <div v-if="loadPhotos">
@@ -19,11 +19,11 @@
                 src="/img/me.jpg"
                 srcset="/img/me@2x.jpg 2x, /img/me@3x.jpg 3x" />
               <img
-                class="absolute left-[155px] top-[80px] z-10 -rotate-6 border-4 border-white shadow-sm"
+                class="absolute top-[80px] left-[155px] z-10 -rotate-6 border-4 border-white shadow-sm"
                 src="/img/eik.jpg"
                 srcset="/img/eik@2x.jpg 2x, /img/eik@3x.jpg 3x" />
               <img
-                class="absolute left-[30px] top-[120px] z-0 -rotate-1 border-4 border-white shadow-sm"
+                class="absolute top-[120px] left-[30px] z-0 -rotate-1 border-4 border-white shadow-sm"
                 src="/img/lemons.jpg"
                 srcset="/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x" />
             </div>
