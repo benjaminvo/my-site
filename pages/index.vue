@@ -39,8 +39,7 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Freelance"
-          subTitle="Copenhagen or Remote"
+          title="Independent practice"
           description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate."" />
         <Block
           label="2023–2026"
@@ -64,7 +63,7 @@
           label="2014–2015"
           title="Teaching Assistant at the IT University of Copenhagen"
           subTitle="Copenhagen"
-          description="I supervised design projects and conducted weekly exercises for 2nd year bachelor students on the two courses Context-Based App Design and Co-Design." />
+          description="I supervised projects and conducted weekly exercises on the two courses Context-Based App Design and Co-Design." />
         <Block
           label="2012–2013"
           title="Web Designer at Starfly Media"
