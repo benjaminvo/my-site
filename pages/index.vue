@@ -39,7 +39,7 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Independent practice"
+          title="Freelancing"
           description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate."" />
         <Block
           label="2023–2026"
