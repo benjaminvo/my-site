@@ -32,6 +32,8 @@ const noise = 0;
 const shape = GrainGradientShapes.sphere;
 const frame = 53665.77;
 
+let mount: ShaderMount | null = null;
+
 onMounted(() => {
   if (!container.value) return;
 
@@ -39,7 +41,7 @@ onMounted(() => {
   // Pad to maxColorCount (7)
   while (parsedColors.length < 7) parsedColors.push([0, 0, 0, 0]);
 
-  const mount = new ShaderMount(
+  mount = new ShaderMount(
     container.value,
     grainGradientFragmentShader,
     {
@@ -65,7 +67,7 @@ onMounted(() => {
     speed,
     frame,
   );
-
-  onUnmounted(() => mount.dispose());
 });
+
+onUnmounted(() => mount?.dispose());
 </script>
