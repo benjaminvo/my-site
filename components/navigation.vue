@@ -20,7 +20,7 @@
 <style scoped>
 @reference "~/assets/css/main.css";
 
-.router-link-active {
+.router-link-exact-active {
   @apply bg-white shadow-xs border border-slate-200 text-black;
 }
 </style>

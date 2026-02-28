@@ -108,6 +108,12 @@ onMounted(() => {
 // Remove event listener on component unmount
 onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyPress);
+  const caption = document.getElementById("caption");
+  if (caption) caption.remove();
+  if (captionMouseMove) {
+    document.removeEventListener("mousemove", captionMouseMove);
+    captionMouseMove = null;
+  }
 });
 
 function animatePhotosOnLoad() {
@@ -280,10 +286,14 @@ function findNonOverlappingPosition(photoIndex) {
   };
 }
 
+let captionMouseMove = null;
+
 function showCaption(index, event) {
   if (isDragging) {
     return false;
   }
+
+  removeCaption();
 
   // Create a new div element
   const caption = document.createElement("div");
@@ -300,18 +310,21 @@ function showCaption(index, event) {
   // Add div to the DOM
   document.body.appendChild(caption);
 
-  const onMouseMove = (e) => {
+  captionMouseMove = (e) => {
     caption.style.left = e.pageX + 16 + "px";
     caption.style.top = e.pageY - 32 + "px";
-    //caption.style.zIndex = photos.value[index].zIndex;
   };
-  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mousemove", captionMouseMove);
 }
 
 function removeCaption() {
   if (!isDragging) {
     const caption = document.getElementById("caption");
-    caption.remove();
+    if (caption) caption.remove();
+    if (captionMouseMove) {
+      document.removeEventListener("mousemove", captionMouseMove);
+      captionMouseMove = null;
+    }
   }
 }
 
