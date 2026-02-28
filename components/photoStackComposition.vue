@@ -83,11 +83,15 @@ const originalPositions = [
 ];
 
 onMounted(() => {
-  if (localStorage.photos) {
-    photos.value = JSON.parse(localStorage.photos);
-    animatePhotos.value = false;
-    hasAnimated.value = true;
-  } else {
+  try {
+    if (localStorage.photos) {
+      photos.value = JSON.parse(localStorage.photos);
+      animatePhotos.value = false;
+      hasAnimated.value = true;
+    } else {
+      animatePhotosOnLoad();
+    }
+  } catch {
     animatePhotosOnLoad();
   }
   photoPositionsLoaded.value = true;
@@ -149,7 +153,7 @@ function handleKeyPress(event) {
 
 // Function to reset photo positions
 function resetPhotoPositions() {
-  localStorage.removeItem("photos");
+  try { localStorage.removeItem("photos"); } catch { /* ignore */ }
   animatePhotos.value = true;
 
   const photoIndices = photos.value
@@ -224,7 +228,7 @@ function resetPhotoPositions() {
     animatePhotos.value = false;
     nextTick(() => {
       updatePhotoDimensions();
-      localStorage.setItem("photos", JSON.stringify(photos.value));
+      try { localStorage.setItem("photos", JSON.stringify(photos.value)); } catch { /* ignore */ }
     });
   }, maxDelay + 500);
 }
@@ -342,7 +346,7 @@ function dragPhoto(index, event) {
   // Drop the photo
   document.onmouseup = function () {
     // Save positions
-    localStorage.setItem("photos", JSON.stringify(photos.value));
+    try { localStorage.setItem("photos", JSON.stringify(photos.value)); } catch { /* ignore */ }
 
     // Reset variables and remove event listener
     isDragging = false;
