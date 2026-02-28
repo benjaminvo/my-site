@@ -158,7 +158,7 @@ function resetPhotoPositions() {
       originalZIndex: originalPositions[index].zIndex,
       currentZIndex: photo.zIndex,
     }))
-    .sort((a, b) => b.currentZIndex - a.currentZIndex);
+    .sort((a, b) => originalPositions[a.index].zIndex - originalPositions[b.index].zIndex);
 
   let maxDelay = 0;
 
@@ -166,33 +166,32 @@ function resetPhotoPositions() {
     const photo = photos.value[photoData.index];
     const originalPosition = originalPositions[photoData.index];
 
-    const zIndexChanging = photoData.currentZIndex !== photoData.originalZIndex;
-
-    const needsIntermediate =
-      zIndexChanging &&
-      photoIndices.some(
-        (otherPhoto) =>
-          otherPhoto.index !== photoData.index &&
-          doPhotosOverlap(
-            photo.position.x,
-            photo.position.y,
-            photo.width,
-            photo.height,
-            photos.value[otherPhoto.index].position.x,
-            photos.value[otherPhoto.index].position.y,
-            photos.value[otherPhoto.index].width,
-            photos.value[otherPhoto.index].height,
-          ),
-      );
+    const needsIntermediate = photoIndices.some(
+      (otherPhoto) =>
+        otherPhoto.index !== photoData.index &&
+        otherPhoto.originalZIndex > photoData.originalZIndex &&
+        otherPhoto.currentZIndex < photoData.currentZIndex &&
+        doPhotosOverlap(
+          photo.position.x,
+          photo.position.y,
+          photo.width,
+          photo.height,
+          photos.value[otherPhoto.index].position.x,
+          photos.value[otherPhoto.index].position.y,
+          photos.value[otherPhoto.index].width,
+          photos.value[otherPhoto.index].height,
+        ),
+    );
 
     if (needsIntermediate) {
       const intermediatePosition = findNonOverlappingPosition(photoData.index);
 
-      // First step: Move to non-overlapping position (keep current z-index during travel)
+      // First step: Move to non-overlapping position
       setTimeout(() => {
         photo.position.x = intermediatePosition.x;
         photo.position.y = intermediatePosition.y;
-      }, index * 250);
+        photo.zIndex = Math.max(...photos.value.map((p) => p.zIndex)) + 1; // Move to top temporarily
+      }, index * 100);
 
       // Second step: Move to original position
       setTimeout(
@@ -202,10 +201,10 @@ function resetPhotoPositions() {
           photo.rotate = originalPosition.rotate;
           photo.zIndex = originalPosition.zIndex;
         },
-        index * 250 + 600,
+        index * 100 + 600,
       );
 
-      maxDelay = Math.max(maxDelay, index * 250 + 600);
+      maxDelay = Math.max(maxDelay, index * 100 + 600);
     } else {
       // Direct move to original position if no intermediate step needed
       setTimeout(() => {
