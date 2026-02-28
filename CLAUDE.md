@@ -105,6 +105,12 @@ Shaders are designed in **Paper** (MCP server: `paper`) and implemented in Vue u
 
 ---
 
+## Dev Server
+
+Do **not** use the Claude Code internal preview (`preview_start`) to run the Nuxt dev server — it doesn't work with Nuxt. The user runs the dev server themselves externally.
+
+---
+
 ## Conventions & Patterns
 
 - All components use `<script setup>` (Vue 3 Composition API)
