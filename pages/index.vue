@@ -82,7 +82,6 @@
         <Block label="Phone" title="+45 21952390" link="tel:+4521952390" />
         <Block label="Twitter" title="@benjavo ↗" link="https://www.twitter.com/benjavo" />
         <Block label="LinkedIn" title="@benjaminvo ↗" link="https://www.linkedin.com/in/benjaminvo" />
-        <Block label="Github" title="@benjaminvo ↗" link="https://www.github.com/benjaminvo" />
       </div>
     </section>
   </main>
