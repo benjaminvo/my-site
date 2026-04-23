@@ -3,11 +3,11 @@
     <section
       class="xs:w-[calc(100vw-80px)] w-[calc(100vw-48px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-9 sm:col-span-5 sm:mb-0">
-        <p class="mb-3">I'm an experienced product builder with a background in product, design and code.</p>
+        <p class="mb-3">I'm an experienced product leader and builder with a background in product, design and code.</p>
         <p class="mb-10">
-          I like to lead teams and build high-quality user experiences that bring joy. For the user and for the
-          business. I have the best experience doing that when the team is small and made up of talented people who care
-          about the details.
+          I enjoy building high-quality user experiences that bring joy and drive growth. I have the best experience
+          doing that when the team is small and made up of talented, technical and kind people who care about the
+          details.
         </p>
       </div>
       <div class="xs:-ml-10 -ml-6 w-[100vw] overflow-hidden sm:hidden">
@@ -39,19 +39,19 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Freelancing"
-          description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate." />
+          title="Open to projects"
+          description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate! If the right startup comes along, I'm also open to a full-time role." />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote) · Series A · 30 employees"
-          description="Speckle is an open source platform for working with 3D data. It's used by thousands of professionals within the architecture, engineering and construction industry."
-          description2="While I was there I led the development of the web platform, managed the design and frontend teams, and was deeply involved in the successful monetization efforts." />
+          description="Speckle makes it easier to collaborate on 3D data across tools and teams. It has wide adoption within the architecture, engineering and construction industry."
+          description2="I led the development of the web platform, managed the design and frontend teams, and played a key role in successfully transitioning Speckle from an open source project to a product selling to large enterprises." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
           subTitle="Copenhagen & New York · Series B · 75 employees"
-          description="The Org — backed by Sequoia, Founders Fund and more — is a professional network for companies. I led the product development across multiple teams and managed the PMs."
+          description="The Org — backed by Sequoia and Founders Fund — is a professional network for companies. I led the product development across multiple teams and managed the PMs."
           description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round." />
         <Block
           label="2016–2020"
