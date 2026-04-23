@@ -8,7 +8,7 @@
       ]" />
     <NuxtLink
       :class="[
-        'tap-highlight-none relative min-w-[80px] flex-1 rounded-full border border-transparent px-3 py-1 text-center no-underline select-none hover:no-underline',
+        'tap-highlight-none relative min-w-[80px] flex-1 rounded-full border border-transparent px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0',
         activeIndex === 0
           ? 'text-black dark:text-white'
           : 'text-slate-500 transition-colors duration-50 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400',
@@ -18,7 +18,7 @@
     </NuxtLink>
     <NuxtLink
       :class="[
-        'tap-highlight-none relative min-w-[80px] flex-1 rounded-full border border-transparent px-3 py-1 text-center no-underline select-none hover:no-underline',
+        'tap-highlight-none relative min-w-[80px] flex-1 rounded-full border border-transparent px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0',
         activeIndex === 1
           ? 'text-black dark:text-white'
           : 'text-slate-500 transition-colors duration-50 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400',
