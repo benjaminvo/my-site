@@ -3,7 +3,9 @@
     <section
       class="xs:w-[calc(100vw-80px)] w-[calc(100vw-48px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-9 sm:col-span-5 sm:mb-0">
-        <p class="mb-3">I'm an experienced product leader and builder with a background in product, design and code.</p>
+        <p class="mb-3">
+          I'm a product builder with 10 years of experience in product leadership, design and frontend at startups.
+        </p>
         <p class="mb-10">
           I enjoy building high-quality user experiences that bring joy and drive growth. I have the best experience
           doing that when the team is small and made up of talented, technical and kind people who care about the
@@ -40,13 +42,13 @@
         <Block
           label="Now"
           title="Open to projects"
-          description="I'm currently freelancing in product design, frontend development, and product strategy. I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate! If the right startup comes along, I'm also open to a full-time role." />
+          description="I'm currently freelancing in product development (design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote) · Series A · 30 employees"
           description="Speckle makes it easier to collaborate on 3D data across tools and teams. It has wide adoption within the architecture, engineering and construction industry."
-          description2="I led the development of the web platform, managed the design and frontend teams, and played a key role in successfully transitioning Speckle from an open source project to a product selling to large enterprises." />
+          description2="I led the development of the web platform, managed the design and frontend teams, and played a key role in successfully transitioning Speckle from a free open source project to a product also selling to large enterprises." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
@@ -57,7 +59,7 @@
           label="2016–2020"
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
-          description="GoMore is a Danish peer-to-peer car sharing platform operating across Europe. I did product design for web and apps, frontend development and various PM work."
+          description="GoMore is the leading car sharing platform in Europe. I did product design for web and apps, frontend development and various PM work."
           description2="I'm most proud of having led the development of the now very popular GoMore Keyless product from start to finish. GoMore Keyless allows car owners to rent out their car to strangers without ever meeting." />
         <Block
           label="2014–2015"
@@ -89,8 +91,8 @@
 
 <script setup>
 useSeoMeta({
-  title: "Benjamin Ottensten, Product & Design lead",
-  ogTitle: "Benjamin Ottensten, Product & Design lead",
+  title: "Benjamin Ottensten, Product Lead",
+  ogTitle: "Benjamin Ottensten, Product Lead",
 });
 
 import { ref, onMounted } from "vue";

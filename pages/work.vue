@@ -395,8 +395,8 @@ lg:mx-0">
 </template>
 <script setup>
 useSeoMeta({
-  title: "Work | Benjamin Ottensten, Product & Design lead",
-  ogTitle: "Work | Benjamin Ottensten, Product & Design lead",
+  title: "Work | Benjamin Ottensten, Product Lead",
+  ogTitle: "Work | Benjamin Ottensten, Product Lead",
 });
 
 function scrollToTop() {
