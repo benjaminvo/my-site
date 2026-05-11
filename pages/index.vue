@@ -41,19 +41,19 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Open to projects"
-          description="I'm currently freelancing in product development (design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
+          title="Freelance — Open to projects"
+          description="I currently freelance in product development (PM, design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote) · Series A · 30 employees"
           description="Speckle makes it easier to collaborate on 3D data across tools and teams. It has wide adoption within the architecture, engineering and construction industry."
-          description2="I led the development of the web platform, managed the design and frontend teams, and played a key role in successfully transitioning Speckle from a free open source project to a product also selling to large enterprises." />
+          description2="I led the development of the web platform including the 3D viewer, managed the design and frontend teams, and played a key role in transitioning Speckle from a free open source project to a paid product selling to large enterprises." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
           subTitle="Copenhagen & New York · Series B · 75 employees"
-          description="The Org — backed by Sequoia and Founders Fund — is a professional network for companies. I led the product development across multiple teams and managed the PMs."
+          description="The Org — backed by Sequoia and Founders Fund — is a professional network for companies. I led the product development and managed the PMs."
           description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round." />
         <Block
           label="2016–2020"
