@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/benjamin/Sites/my-site/.codex/hooks/session-start.sh'"
+          }
+        ]
+      }
+    ]
+  }
+}
