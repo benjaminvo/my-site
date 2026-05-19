@@ -23,7 +23,7 @@
         </p>
       </div>
       <WorkFigure
-        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
         caption="Issue management in 3D"
         src-set="
           /img/work/viewer/issues.jpg 1x,
@@ -32,27 +32,27 @@
         "
         thumbhash="NfgJDYD5aYRsdpeYZql2eEhghglG" />
       <WorkFigure
-        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
         caption="Saved views"
         src-set="/img/work/viewer/saved-views.jpg 1x, /img/work/viewer/saved-views@2x.jpg 2x, /img/work/viewer/saved-views@3x.jpg 3x"
         thumbhash="9/cFBYAPnJpqWFh5aLeFdy9p96RU" />
       <WorkFigure
-        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
         caption="Annotating with text, shapes and scribbles"
         src-set="/img/work/viewer/markups.jpg 1x, /img/work/viewer/markups@2x.jpg 2x, /img/work/viewer/markups@3x.jpg 3x"
         thumbhash="7vcFBYBwPHk5toWTSOd7V7B0L77Q" />
       <WorkFigure
-        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
         caption="Advanced filtering"
         src-set="/img/work/viewer/filters.jpg 1x, /img/work/viewer/filters@2x.jpg 2x, /img/work/viewer/filters@3x.jpg 3x"
         thumbhash="/PcBBYALWX1Hl6aFdoqGl2nxmRev" />
       <WorkFigure
-        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
         caption="Redesigned UI"
         src-set="/img/work/viewer/tools.jpg 1x, /img/work/viewer/tools@2x.jpg 2x, /img/work/viewer/tools@3x.jpg 3x"
         thumbhash="+/cBBYA/Kbp8d4iIiGeJkK9f2vmV" />
       <WorkFigure
-        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        class="mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 lg:mb-0 xl:col-start-5"
         caption="Interactive 3D presentations"
         src-set="/img/work/viewer/presentations.jpg 1x, /img/work/viewer/presentations@2x.jpg 2x, /img/work/viewer/presentations@3x.jpg 3x"
         thumbhash="+vcFBIAcuPQ7eqWGd6QvaPWhZQ" />
@@ -81,78 +81,54 @@
           >. My role: Led the product development and worked closely with Design.
         </p>
       </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <UnLazyImage
-          src-set="
-            /img/work/viewer/mobile-front-page.jpg 1x,
-            /img/work/company-page/mobile-front-page@2x.jpg 2x,
-            /img/work/company-page/mobile-front-page@3x.jpg 3x
-          "
-          thumbhash="PAgCAgD3dcg0XVnqj+5WICM"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <UnLazyImage
-          src-set="
-            /img/work/company-page/mobile-position.jpg 1x,
-            /img/work/company-page/mobile-position@2x.jpg 2x,
-            /img/work/company-page/mobile-position@3x.jpg 3x
-          "
-          thumbhash="+vcFEgClcvhnf3u5qIePafc"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <UnLazyImage
-          src-set="
-            /img/work/company-page/mobile-job@2x.jpg 1x,
-            /img/work/company-page/mobile-job@2x.jpg 2x,
-            /img/work/company-page/mobile-job@3x.jpg 3x
-          "
-          thumbhash="+/cFCgDFh7mIcI1eqX2fyvU"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="
-            /img/work/company-page/front-page.jpg 1x,
-            /img/work/company-page/front-page@2x.jpg 2x,
-            /img/work/company-page/front-page@3x.jpg 3x
-          "
-          thumbhash="PAgCAgD3dcg0XVnqj+5WICM"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/company-page/job.jpg 1x, /img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
-          thumbhash="/fcBBQD1mXNrkjfpFmxxafiDORsH"
-          class="w-full" />
-        <Border />
-      </div>
-      <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4 lg:mx-0">
-        <UnLazyImage
-          src-set="
-            /img/work/company-page/position.jpg 1x,
-            /img/work/company-page/position@2x.jpg 2x,
-            /img/work/company-page/position@3x.jpg 3x
-          "
-          thumbhash="/fcBBQChmnF6tiTKJJdXCfl0fU/6"
-          class="w-full" />
-        <Border />
-      </div> -->
-      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/company-page/team.jpg 1x, /img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
-          thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        src-set="
+          /img/work/viewer/mobile-front-page.jpg 1x,
+          /img/work/company-page/mobile-front-page@2x.jpg 2x,
+          /img/work/company-page/mobile-front-page@3x.jpg 3x
+        "
+        thumbhash="PAgCAgD3dcg0XVnqj+5WICM" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        src-set="
+          /img/work/company-page/mobile-position.jpg 1x,
+          /img/work/company-page/mobile-position@2x.jpg 2x,
+          /img/work/company-page/mobile-position@3x.jpg 3x
+        "
+        thumbhash="+vcFEgClcvhnf3u5qIePafc" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        src-set="
+          /img/work/company-page/mobile-job@2x.jpg 1x,
+          /img/work/company-page/mobile-job@2x.jpg 2x,
+          /img/work/company-page/mobile-job@3x.jpg 3x
+        "
+        thumbhash="+/cFCgDFh7mIcI1eqX2fyvU" />
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="
+          /img/work/company-page/front-page.jpg 1x,
+          /img/work/company-page/front-page@2x.jpg 2x,
+          /img/work/company-page/front-page@3x.jpg 3x
+        "
+        thumbhash="PAgCAgD3dcg0XVnqj+5WICM" />
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/company-page/job.jpg 1x, /img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
+        thumbhash="/fcBBQD1mXNrkjfpFmxxafiDORsH" />
+      <!-- <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="
+          /img/work/company-page/position.jpg 1x,
+          /img/work/company-page/position@2x.jpg 2x,
+          /img/work/company-page/position@3x.jpg 3x
+        "
+        thumbhash="/fcBBQChmnF6tiTKJJdXCfl0fU/6" /> -->
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/company-page/team.jpg 1x, /img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
+        thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -177,46 +153,30 @@
           >. My role: Led the product development and worked closely with Design
         </p>
       </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/dashboard/overview.jpg 1x, /img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
-          thumbhash="/AcCDQDGynCXWJi3eIzUyMiAdPO2"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/dashboard/org-chart.jpg 1x, /img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
-          thumbhash="PQgCBIBCQFZnpYhq1KGkz0gwCA"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="
-            /img/work/dashboard/jobs-integrations.jpg 1x,
-            /img/work/dashboard/jobs-integrations@2x.jpg 2x,
-            /img/work/dashboard/jobs-integrations@3x.jpg 3x
-          "
-          thumbhash="/AcCDYK3qHRPhIiZh5dombpvVwap"
-          class="w-full" />
-        <Border />
-      </div>
-      <!-- <div class="relative mb-6 xs:mb-8 sm:col-span-8 md:col-span-10 lg:col-span-12 xl:col-start-5 md:mx-4
-lg:mx-0">
-        <UnLazyImage
-          src-set="/img/work/dashboard/jobs-edit.jpg 1x, /img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
-          thumbhash="PfgBBIAkunBhmYhmmoinr3swFw"
-          class="w-full" />
-        <Border />
-      </div> -->
-      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/dashboard/members.jpg 1x, /img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
-          thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/dashboard/overview.jpg 1x, /img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
+        thumbhash="/AcCDQDGynCXWJi3eIzUyMiAdPO2" />
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/dashboard/org-chart.jpg 1x, /img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
+        thumbhash="PQgCBIBCQFZnpYhq1KGkz0gwCA" />
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="
+          /img/work/dashboard/jobs-integrations.jpg 1x,
+          /img/work/dashboard/jobs-integrations@2x.jpg 2x,
+          /img/work/dashboard/jobs-integrations@3x.jpg 3x
+        "
+        thumbhash="/AcCDYK3qHRPhIiZh5dombpvVwap" />
+      <!-- <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/dashboard/jobs-edit.jpg 1x, /img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
+        thumbhash="PfgBBIAkunBhmYhmmoinr3swFw" /> -->
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/dashboard/members.jpg 1x, /img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
+        thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -235,41 +195,26 @@ lg:mx-0">
         <p>The Keyless hardware is now installed in >1,000 cars across Europe.</p>
         <p>My role: Product management, design, frontend.</p>
       </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="
-            /img/work/keyless/landing-page.jpg 1x,
-            /img/work/keyless/landing-page@2x.jpg 2x,
-            /img/work/keyless/landing-page@3x.jpg 3x
-          "
-          thumbhash="97cJDYiEaXlgiIabd8l5eKtQZQim"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/keyless/overview.jpg 1x, /img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
-          thumbhash="+PcFCwKFg/iKd2Wueoy/t/g"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <UnLazyImage
-          src-set="/img/work/keyless/photos.jpg 1x, /img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
-          thumbhash="+ucFCwTWl0t4f4lexouArAg"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="sm: sm:mx-0col-span-4 xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <UnLazyImage
-          src-set="/img/work/keyless/guide.jpg 1x, /img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
-          thumbhash="udcJCwa3iUp4f3c+54tw2gg"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="
+          /img/work/keyless/landing-page.jpg 1x,
+          /img/work/keyless/landing-page@2x.jpg 2x,
+          /img/work/keyless/landing-page@3x.jpg 3x
+        "
+        thumbhash="97cJDYiEaXlgiIabd8l5eKtQZQim" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5"
+        src-set="/img/work/keyless/overview.jpg 1x, /img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
+        thumbhash="+PcFCwKFg/iKd2Wueoy/t/g" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        src-set="/img/work/keyless/photos.jpg 1x, /img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
+        thumbhash="+ucFCwTWl0t4f4lexouArAg" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        src-set="/img/work/keyless/guide.jpg 1x, /img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
+        thumbhash="udcJCwa3iUp4f3c+54tw2gg" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -285,30 +230,18 @@ lg:mx-0">
         <p>We decided not to build the feature, but I still like the concept and design.</p>
         <p>My role: Design.</p>
       </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <UnLazyImage
-          src-set="/img/work/location/setting.jpg 1x, /img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
-          thumbhash="uucFEgbGgBh4cHIhh4CCBwc"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="sm: sm:mx-0col-span-4 xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <UnLazyImage
-          src-set="/img/work/location/details.jpg 1x, /img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
-          thumbhash="uOcFEgZkkFmIZHQieIGAFwg"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:max-w-[320px] relative mx-auto max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <UnLazyImage
-          src-set="/img/work/location/map.jpg 1x, /img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
-          thumbhash="NwgCDAKBB7/XQ7hJlFmKf6z2qA"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        src-set="/img/work/location/setting.jpg 1x, /img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
+        thumbhash="uucFEgbGgBh4cHIhh4CCBwc" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        src-set="/img/work/location/details.jpg 1x, /img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
+        thumbhash="uOcFEgZkkFmIZHQieIGAFwg" />
+      <WorkFigure
+        class="xs:max-w-[320px] mx-auto max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        src-set="/img/work/location/map.jpg 1x, /img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
+        thumbhash="NwgCDAKBB7/XQ7hJlFmKf6z2qA" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -323,27 +256,18 @@ lg:mx-0">
         </p>
         <p>My role: Design, frontend.</p>
       </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/leasing/private.jpg 1x, /img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
-          thumbhash="+vcFBoKts5d4hqdqh7d2+WSwr3W/SPg"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/leasing/car.jpg 1x, /img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
-          thumbhash="+vcFBoLCvZdTmYifVcZahIl3o2JPK/U"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/leasing/quotes.jpg 1x, /img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
-          thumbhash="+/cBAoLDyKtqpvdY/lfYf5U"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/leasing/private.jpg 1x, /img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
+        thumbhash="+vcFBoKts5d4hqdqh7d2+WSwr3W/SPg" />
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/leasing/car.jpg 1x, /img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
+        thumbhash="+vcFBoLCvZdTmYifVcZahIl3o2JPK/U" />
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/leasing/quotes.jpg 1x, /img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
+        thumbhash="+/cBAoLDyKtqpvdY/lfYf5U" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -359,37 +283,22 @@ lg:mx-0">
         <p>The illustration in the header, by Hvass&Hannibal, is the only thing I carried over from the old design.</p>
         <p>My role: Design, frontend.</p>
       </div>
-      <div
-        class="xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
-        <UnLazyImage
-          src-set="/img/work/regnsky/1.jpg 1x, /img/work/regnsky/1@2x.jpg 2x, /img/work/regnsky/1@3x.jpg 3x"
-          thumbhash="MbgFCgKVYJhnYnUheI+P1/g"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0">
-        <UnLazyImage
-          src-set="/img/work/regnsky/2.jpg 1x, /img/work/regnsky/2@2x.jpg 2x, /img/work/regnsky/2@3x.jpg 3x"
-          thumbhash="a+cNEgKXdvd3hHKIaI+Ftgk"
-          class="w-full" />
-        <Border />
-      </div>
-      <div
-        class="sm: sm:mx-0col-span-4 xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block">
-        <UnLazyImage
-          src-set="/img/work/regnsky/3.jpg 1x, /img/work/regnsky/3@2x.jpg 2x, /img/work/regnsky/3@3x.jpg 3x"
-          thumbhash="MxkGCgKWYHhncXQyl4OAGAg"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/regnsky/4.jpg 1x, /img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
-          thumbhash="s0gGDQqHeHB3h2cnd3Q4OIiMgHgI"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        src-set="/img/work/regnsky/1.jpg 1x, /img/work/regnsky/1@2x.jpg 2x, /img/work/regnsky/1@3x.jpg 3x"
+        thumbhash="MbgFCgKVYJhnYnUheI+P1/g" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        src-set="/img/work/regnsky/2.jpg 1x, /img/work/regnsky/2@2x.jpg 2x, /img/work/regnsky/2@3x.jpg 3x"
+        thumbhash="a+cNEgKXdvd3hHKIaI+Ftgk" />
+      <WorkFigure
+        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        src-set="/img/work/regnsky/3.jpg 1x, /img/work/regnsky/3@2x.jpg 2x, /img/work/regnsky/3@3x.jpg 3x"
+        thumbhash="MxkGCgKWYHhncXQyl4OAGAg" />
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/regnsky/4.jpg 1x, /img/work/regnsky/4@2x.jpg 2x, /img/work/regnsky/4@3x.jpg 3x"
+        thumbhash="s0gGDQqHeHB3h2cnd3Q4OIiMgHgI" />
     </section>
     <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
@@ -409,20 +318,14 @@ lg:mx-0">
         </p>
         <p>My role: Design, research.</p>
       </div>
-      <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/quasi/article.jpg 1x, /img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
-          thumbhash="/fcBBIDzmKdpdph/hbqxVhD7Jw"
-          class="w-full" />
-        <Border />
-      </div>
-      <div class="relative sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/quasi/search.jpg 1x, /img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
-          thumbhash="3fcNBIAHqJd+g4l3iIShWCD+Jg"
-          class="w-full" />
-        <Border />
-      </div>
+      <WorkFigure
+        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/quasi/article.jpg 1x, /img/work/quasi/article@2x.jpg 2x, /img/work/quasi/article@3x.jpg 3x"
+        thumbhash="/fcBBIDzmKdpdph/hbqxVhD7Jw" />
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/quasi/search.jpg 1x, /img/work/quasi/search@2x.jpg 2x, /img/work/quasi/search@3x.jpg 3x"
+        thumbhash="3fcNBIAHqJd+g4l3iIShWCD+Jg" />
     </section>
     <!-- <section
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
@@ -440,12 +343,10 @@ lg:mx-0">
         </p>
         <p>My role: Design.</p>
       </div>
-      <div class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
-        <UnLazyImage
-          src-set="/img/work/old-news/concept@2x.jpg 2x, /img/work/old-news/concept@3x.jpg 3x"
-          thumbhash=""
-          class="w-full" />
-      </div>
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        src-set="/img/work/old-news/concept@2x.jpg 2x, /img/work/old-news/concept@3x.jpg 3x"
+        thumbhash="" />
     </section> -->
     <a
       class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 hover:no-underline"
