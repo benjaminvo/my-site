@@ -82,7 +82,8 @@
         </p>
       </div>
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        caption="Company profile page"
         src-set="
           /img/work/viewer/mobile-front-page.jpg 1x,
           /img/work/company-page/mobile-front-page@2x.jpg 2x,
@@ -90,7 +91,8 @@
         "
         thumbhash="PAgCAgD3dcg0XVnqj+5WICM" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        caption="Employee profile page"
         src-set="
           /img/work/company-page/mobile-position.jpg 1x,
           /img/work/company-page/mobile-position@2x.jpg 2x,
@@ -98,7 +100,8 @@
         "
         thumbhash="+vcFEgClcvhnf3u5qIePafc" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        caption="Job posting"
         src-set="
           /img/work/company-page/mobile-job@2x.jpg 1x,
           /img/work/company-page/mobile-job@2x.jpg 2x,
@@ -106,7 +109,8 @@
         "
         thumbhash="+/cFCgDFh7mIcI1eqX2fyvU" />
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Company profile page"
         src-set="
           /img/work/company-page/front-page.jpg 1x,
           /img/work/company-page/front-page@2x.jpg 2x,
@@ -114,11 +118,12 @@
         "
         thumbhash="PAgCAgD3dcg0XVnqj+5WICM" />
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Job posting"
         src-set="/img/work/company-page/job.jpg 1x, /img/work/company-page/job@2x.jpg 2x, /img/work/company-page/job@3x.jpg 3x"
         thumbhash="/fcBBQD1mXNrkjfpFmxxafiDORsH" />
       <!-- <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
         src-set="
           /img/work/company-page/position.jpg 1x,
           /img/work/company-page/position@2x.jpg 2x,
@@ -127,6 +132,7 @@
         thumbhash="/fcBBQChmnF6tiTKJJdXCfl0fU/6" /> -->
       <WorkFigure
         class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Team profile page"
         src-set="/img/work/company-page/team.jpg 1x, /img/work/company-page/team@2x.jpg 2x, /img/work/company-page/team@3x.jpg 3x"
         thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH" />
     </section>
@@ -154,15 +160,18 @@
         </p>
       </div>
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Dashboard overview"
         src-set="/img/work/dashboard/overview.jpg 1x, /img/work/dashboard/overview@2x.jpg 2x, /img/work/dashboard/overview@3x.jpg 3x"
         thumbhash="/AcCDQDGynCXWJi3eIzUyMiAdPO2" />
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Org chart builder"
         src-set="/img/work/dashboard/org-chart.jpg 1x, /img/work/dashboard/org-chart@2x.jpg 2x, /img/work/dashboard/org-chart@3x.jpg 3x"
         thumbhash="PQgCBIBCQFZnpYhq1KGkz0gwCA" />
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="ATS integrations"
         src-set="
           /img/work/dashboard/jobs-integrations.jpg 1x,
           /img/work/dashboard/jobs-integrations@2x.jpg 2x,
@@ -170,11 +179,12 @@
         "
         thumbhash="/AcCDYK3qHRPhIiZh5dombpvVwap" />
       <!-- <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
         src-set="/img/work/dashboard/jobs-edit.jpg 1x, /img/work/dashboard/jobs-edit@2x.jpg 2x, /img/work/dashboard/jobs-edit@3x.jpg 3x"
         thumbhash="PfgBBIAkunBhmYhmmoinr3swFw" /> -->
       <WorkFigure
         class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Member management"
         src-set="/img/work/dashboard/members.jpg 1x, /img/work/dashboard/members@2x.jpg 2x, /img/work/dashboard/members@3x.jpg 3x"
         thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH" />
     </section>
@@ -196,7 +206,8 @@
         <p>My role: Product management, design, frontend.</p>
       </div>
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Landing page"
         src-set="
           /img/work/keyless/landing-page.jpg 1x,
           /img/work/keyless/landing-page@2x.jpg 2x,
@@ -204,15 +215,18 @@
         "
         thumbhash="97cJDYiEaXlgiIabd8l5eKtQZQim" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0 xl:col-start-5"
+        caption="Rental pickup overview"
         src-set="/img/work/keyless/overview.jpg 1x, /img/work/keyless/overview@2x.jpg 2x, /img/work/keyless/overview@3x.jpg 3x"
         thumbhash="+PcFCwKFg/iKd2Wueoy/t/g" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        caption="Rental photos"
         src-set="/img/work/keyless/photos.jpg 1x, /img/work/keyless/photos@2x.jpg 2x, /img/work/keyless/photos@3x.jpg 3x"
         thumbhash="+ucFCwTWl0t4f4lexouArAg" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        caption="Rental guide"
         src-set="/img/work/keyless/guide.jpg 1x, /img/work/keyless/guide@2x.jpg 2x, /img/work/keyless/guide@3x.jpg 3x"
         thumbhash="udcJCwa3iUp4f3c+54tw2gg" />
     </section>
@@ -231,15 +245,18 @@
         <p>My role: Design.</p>
       </div>
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
+        caption="Setting up location sharing"
         src-set="/img/work/location/setting.jpg 1x, /img/work/location/setting@2x.jpg 2x, /img/work/location/setting@3x.jpg 3x"
         thumbhash="uucFEgbGgBh4cHIhh4CCBwc" />
       <WorkFigure
-        class="xs:mb-8 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:mb-0 sm:hidden sm:max-w-none md:col-span-5 lg:col-span-4 lg:block"
+        caption="Booking details"
         src-set="/img/work/location/details.jpg 1x, /img/work/location/details@2x.jpg 2x, /img/work/location/details@3x.jpg 3x"
         thumbhash="uOcFEgZkkFmIZHQieIGAFwg" />
       <WorkFigure
         class="xs:max-w-[320px] mx-auto max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
+        caption="Map view"
         src-set="/img/work/location/map.jpg 1x, /img/work/location/map@2x.jpg 2x, /img/work/location/map@3x.jpg 3x"
         thumbhash="NwgCDAKBB7/XQ7hJlFmKf6z2qA" />
     </section>
@@ -257,15 +274,18 @@
         <p>My role: Design, frontend.</p>
       </div>
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Leasing web page"
         src-set="/img/work/leasing/private.jpg 1x, /img/work/leasing/private@2x.jpg 2x, /img/work/leasing/private@3x.jpg 3x"
         thumbhash="+vcFBoKts5d4hqdqh7d2+WSwr3W/SPg" />
       <WorkFigure
-        class="xs:mb-8 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        class="xs:mb-7 mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Car selection"
         src-set="/img/work/leasing/car.jpg 1x, /img/work/leasing/car@2x.jpg 2x, /img/work/leasing/car@3x.jpg 3x"
         thumbhash="+vcFBoLCvZdTmYifVcZahIl3o2JPK/U" />
       <WorkFigure
         class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Made up quotes"
         src-set="/img/work/leasing/quotes.jpg 1x, /img/work/leasing/quotes@2x.jpg 2x, /img/work/leasing/quotes@3x.jpg 3x"
         thumbhash="+/cBAoLDyKtqpvdY/lfYf5U" />
     </section>

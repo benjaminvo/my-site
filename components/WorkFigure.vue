@@ -4,7 +4,7 @@
       <UnLazyImage :src-set="srcSet" :thumbhash="thumbhash" class="w-full" />
       <Border />
     </div>
-    <p v-if="caption" class="mt-3 font-sans text-xs text-slate-400">
+    <p v-if="caption" class="mt-2.5 font-sans text-xs text-slate-400">
       {{ caption }}
     </p>
   </div>
