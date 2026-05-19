@@ -61,6 +61,7 @@
           subTitle="Copenhagen"
           description="GoMore is the leading car sharing platform in Europe. I did product design for web and apps, frontend development and various PM work."
           description2="I'm most proud of having led the development of the now very popular GoMore Keyless product from start to finish. GoMore Keyless allows car owners to rent out their car to strangers without ever meeting." />
+        <!--
         <Block
           label="2014–2015"
           title="Teaching Assistant at the IT University of Copenhagen"
@@ -71,6 +72,7 @@
           title="Web Designer at Starfly Media"
           subTitle="Copenhagen"
           description="Starfly Media is an online marketing agency. I designed and built landing pages and other sites for various campaigns." />
+          -->
       </div>
     </section>
     <section>
