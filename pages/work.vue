@@ -5,6 +5,67 @@
       class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
+        <h2>3D Web Viewer</h2>
+        <small class="text-xs text-slate-400 uppercase">Speckle, 2025</small>
+        <p>At Speckle I led the development of the web platform, including the 3D web viewer.</p>
+        <p>
+          A lot of attention went into making it the best viewer on the market for reviewing and collaborating on 3D
+          models.
+        </p>
+        <p>
+          Designers:
+          <a href="https://www.linkedin.com/in/micha%C5%82-w%C5%82odarczyk-22235610/" target="_blank"
+            >Michał Włodarczyk <span class="font-sans">↗</span></a
+          >
+          and
+          <a href="https://www.linkedin.com/in/jack-os/" target="_blank">Jack Hughes <span class="font-sans">↗</span></a
+          >. My role: Led the product development and worked closely with Design.
+        </p>
+      </div>
+      <WorkFigure
+        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5"
+        caption="Issue management in 3D"
+        src-set="
+          /img/work/viewer/issues.jpg 1x,
+          /img/work/viewer/issues@2x.jpg 2x,
+          /img/work/viewer/issues@3x.jpg 3x
+        "
+        thumbhash="NfgJDYD5aYRsdpeYZql2eEhghglG" />
+      <WorkFigure
+        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        caption="Saved views"
+        src-set="/img/work/viewer/saved-views.jpg 1x, /img/work/viewer/saved-views@2x.jpg 2x, /img/work/viewer/saved-views@3x.jpg 3x"
+        thumbhash="9/cFBYAPnJpqWFh5aLeFdy9p96RU" />
+      <WorkFigure
+        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
+        caption="Annotating with text, shapes and scribbles"
+        src-set="/img/work/viewer/markups.jpg 1x, /img/work/viewer/markups@2x.jpg 2x, /img/work/viewer/markups@3x.jpg 3x"
+        thumbhash="7vcFBYBwPHk5toWTSOd7V7B0L77Q" />
+      <WorkFigure
+        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        caption="Advanced filtering"
+        src-set="/img/work/viewer/filters.jpg 1x, /img/work/viewer/filters@2x.jpg 2x, /img/work/viewer/filters@3x.jpg 3x"
+        thumbhash="/PcBBYALWX1Hl6aFdoqGl2nxmRev" />
+      <WorkFigure
+        class="xs:mb-7 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
+        caption="Redesigned UI"
+        src-set="/img/work/viewer/tools.jpg 1x, /img/work/viewer/tools@2x.jpg 2x, /img/work/viewer/tools@3x.jpg 3x"
+        thumbhash="+/cBBYA/Kbp8d4iIiGeJkK9f2vmV" />
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-5"
+        caption="Interactive 3D presentations"
+        src-set="/img/work/viewer/presentations.jpg 1x, /img/work/viewer/presentations@2x.jpg 2x, /img/work/viewer/presentations@3x.jpg 3x"
+        thumbhash="+vcFBIAcuPQ7eqWGd6QvaPWhZQ" />
+      <WorkFigure
+        class="sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-6 lg:mx-0 xl:col-start-11"
+        caption="Data table"
+        src-set="/img/work/viewer/data-table.jpg 1x, /img/work/viewer/data-table@2x.jpg 2x, /img/work/viewer/data-table@3x.jpg 3x"
+        thumbhash="PAgCBIA6puCUecaQibWld2CICA" />
+    </section>
+    <section
+      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      <div
+        class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Transparent employer branding</h2>
         <small class="text-xs text-slate-400 uppercase">The Org, 2023</small>
         <p>
@@ -14,17 +75,17 @@
         </p>
         <p>Thousands of companies are on The Org today and the public profiles get >1 million organic visits/month.</p>
         <p>
-          Primary designer:
+          Designer:
           <a href="https://www.linkedin.com/in/alexanderjuhl/" target="_blank"
             >Alexander Juhl <span class="font-sans">↗</span></a
-          >. My role: Working closely with Design and leading the product development.
+          >. My role: Led the product development and worked closely with Design.
         </p>
       </div>
       <div
         class="xs:mb-8 xs:max-w-[320px] relative mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0">
         <UnLazyImage
           src-set="
-            /img/work/company-page/mobile-front-page.jpg 1x,
+            /img/work/viewer/mobile-front-page.jpg 1x,
             /img/work/company-page/mobile-front-page@2x.jpg 2x,
             /img/work/company-page/mobile-front-page@3x.jpg 3x
           "
@@ -106,14 +167,14 @@
         </p>
         <p>The release improved the user activation rate and made companies fill out more of their profile.</p>
         <p>
-          Primary designers:
+          Designers:
           <a href="https://www.linkedin.com/in/ejlers/" target="_blank">
             Carl Ejlers <span class="font-sans">↗</span></a
           >
           and
           <a href="https://www.linkedin.com/in/mikkelsonnenschein/" target="_blank">
             Mikkel Sonnenschein <span class="font-sans">↗</span></a
-          >. My role: Working closely with Design and leading the product development.
+          >. My role: Led the product development and worked closely with Design
         </p>
       </div>
       <div class="xs:mb-8 relative mb-6 sm:col-span-8 md:col-span-10 md:mx-4 lg:col-span-12 lg:mx-0 xl:col-start-5">
