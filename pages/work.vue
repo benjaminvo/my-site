@@ -7,11 +7,8 @@
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>3D Web Viewer</h2>
         <small class="text-xs text-slate-400 uppercase">Speckle, 2025</small>
-        <p>At Speckle I led the development of the web platform, including the 3D web viewer.</p>
-        <p>
-          A lot of attention went into making it the best viewer on the market for reviewing and collaborating on 3D
-          models.
-        </p>
+        <p>At Speckle I led the development of the web platform, including the interactive 3D web viewer.</p>
+        <p>A lot of work went into making it an amazing viewer for reviewing and collaborating on 3D models.</p>
         <p>
           Designers:
           <a href="https://www.linkedin.com/in/micha%C5%82-w%C5%82odarczyk-22235610/" target="_blank"
@@ -19,7 +16,7 @@
           >
           and
           <a href="https://www.linkedin.com/in/jack-os/" target="_blank">Jack Hughes <span class="font-sans">↗</span></a
-          >. My role: Led the product development and worked closely with Design.
+          >. My role: Led the product development, contributed design and code, product marketing.
         </p>
       </div>
       <WorkFigure
