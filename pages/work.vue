@@ -7,8 +7,14 @@
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>3D Web Viewer</h2>
         <small class="text-xs text-slate-400 uppercase">Speckle, 2025</small>
-        <p>At Speckle I led the development of the web platform, including the interactive 3D web viewer.</p>
-        <p>A lot of work went into making it an amazing viewer for reviewing and collaborating on 3D models.</p>
+        <p>
+          Speckle makes it easy to work on 3D data across tools and teams. I led the development of the web platform,
+          including the viewer, and managed the design and frontend teams.
+        </p>
+        <p>
+          A lot of work went into making the web viewer amazing for reviewing and collaborating on 3D models together in
+          the browser.
+        </p>
         <p>
           Designers:
           <a href="https://www.linkedin.com/in/micha%C5%82-w%C5%82odarczyk-22235610/" target="_blank"
@@ -67,8 +73,7 @@
         <small class="text-xs text-slate-400 uppercase">The Org, 2023</small>
         <p>
           Every company is competing to hire the best talent. At The Org I helped build an employer branding platform
-          where companies attract new talent by being radically transparent about their team and how they work. Because
-          great people want to work with great people.
+          where companies attract new talent by being radically transparent about their team and how they work.
         </p>
         <p>Thousands of companies are on The Org today and the public profiles get >1 million organic visits/month.</p>
         <p>
