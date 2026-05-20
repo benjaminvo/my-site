@@ -42,25 +42,22 @@
         <Block
           label="Now"
           title="Freelance"
-          description="I currently freelance in product development (PM, design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
+          description="I currently freelance in product development (design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
           subTitle="Copenhagen (Remote) · Series A · 30 employees"
-          description="Speckle makes it easier to collaborate on 3D data across tools and teams. It has wide adoption within the architecture, engineering and construction industry."
-          description2="I led the development of the web platform including the 3D viewer, managed the design and frontend teams, and played a key role in transitioning Speckle from a free open source project to a paid product selling to large enterprises." />
+          description="Speckle is a popular 3D data platform for the AEC industry. I led the web product, managed the design and frontend teams, and played a key role in transitioning Speckle from a free open-source project to a paid enterprise product." />
         <Block
           label="2020–2023"
           title="Head of Product at The Org"
           subTitle="Copenhagen & New York · Series B · 75 employees"
-          description="The Org — backed by Sequoia and Founders Fund — is a professional network for companies. I led the product development and managed the PMs."
-          description2="While I was there we grew the traffic to 1 million organic visitors/month from 80k, grew contributions from companies to 35k/month from 1k, went from 6 to 75 team members, rebranded, and raised a series B funding round." />
+          description="Backed by Sequoia and Founders Fund, The Org helps companies showcase their team and culture. I led product development and managed the PM team during a rapid expansion phase, where we raised a Series B and grew organic traffic to 1 million monthly visitors." />
         <Block
           label="2016–2020"
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
-          description="GoMore is the leading car sharing platform in Europe. I did product design for web and apps, frontend development and various PM work."
-          description2="I'm most proud of having led the development of the now very popular GoMore Keyless product from start to finish. GoMore Keyless allows car owners to rent out their car to strangers without ever meeting." />
+          description="GoMore is Europe’s leading car-sharing platform. I worked across product design, frontend, and product management to lead the end-to-end development of GoMore Keyless, a core product which allows car owners to securely rent out their vehicles without meeting face-to-face." />
         <!--
         <Block
           label="2014–2015"
