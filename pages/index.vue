@@ -57,7 +57,7 @@
           label="2016–2020"
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
-          description="GoMore is Europe’s leading car-sharing platform. I worked across product design, frontend, and product management to lead the end-to-end development of GoMore Keyless, a core product which allows car owners to securely rent out their vehicles without meeting face-to-face." />
+          description="GoMore is Europe’s leading car-sharing platform. I worked across design, frontend, and product management to lead the end-to-end development of GoMore Keyless, a core product which allows car owners to securely rent out their vehicles without meeting face-to-face." />
         <!--
         <Block
           label="2014–2015"
