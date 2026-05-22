@@ -2,7 +2,7 @@
   <div>
     <div
       ref="imageWrapRef"
-      class="relative cursor-zoom-in"
+      class="relative w-full cursor-zoom-in overflow-hidden"
       :class="{ invisible: isActive(zoomKey) }"
       role="button"
       tabindex="0"
@@ -11,29 +11,31 @@
       @click="handleImageClick"
       @keydown.enter.prevent="handleImageClick"
       @keydown.space.prevent="handleImageClick">
-      <UnLazyImage :src-set="srcSet" :thumbhash="thumbhash" class="w-full" />
+      <div
+        class="block w-full leading-none"
+        :style="spacerStyle"
+        aria-hidden="true" />
+      <div class="absolute inset-0 overflow-hidden">
+        <img
+          v-if="placeholderSrc"
+          :src="placeholderSrc"
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 z-0 size-full object-cover" />
+        <UnLazyImage
+          :src-set="srcSet"
+          thumbhash=""
+          :placeholder-src="TRANSPARENT_PLACEHOLDER_SRC"
+          :width="dimensions?.width"
+          :height="dimensions?.height"
+          class="lazy-image-frame__photo"
+          :class="photoStateClass"
+          @loaded="onImageLoaded" />
+      </div>
     </div>
-    <p class="mt-2.5 font-sans text-xs">
+    <p class="mt-2 font-sans text-xs">
       <span class="text-black dark:text-slate-50">{{ title }}</span><span class="ml-1 text-slate-400">{{ date }}</span>
     </p>
-
-    <Teleport to="body">
-      <template v-if="isActive(zoomKey)">
-        <div
-          class="fixed inset-0 z-[420] cursor-zoom-out bg-white transition-opacity duration-[200ms]"
-          :class="overlayVisible ? 'opacity-100' : 'opacity-0'"
-          aria-hidden="true"
-          @click="close" />
-        <div :style="styles.wrapper">
-          <img
-            :src="imageSrc"
-            alt=""
-            :style="styles.image"
-            class="cursor-zoom-out"
-            @click.stop="close" />
-        </div>
-      </template>
-    </Teleport>
   </div>
 </template>
 
@@ -43,13 +45,24 @@ const props = defineProps({
   title: { type: String, required: true },
   date: { type: String, required: true },
   thumbhash: { type: String, default: "" },
+  staggerIndex: { type: Number, default: 0 },
 });
 
 const srcSet = computed(() => `${props.src} 1x`);
 const zoomKey = computed(() => props.src);
 
+const { dimensions, spacerStyle, placeholderRatio } = useReservedImageFrame({
+  src: () => props.src,
+});
+
+const placeholderSrc = useThumbhashPlaceholderSrc(() => props.thumbhash, placeholderRatio);
+
+const { onImageLoaded, photoStateClass } = useImageLoadFadeIn({
+  staggerIndex: props.staggerIndex,
+});
+
 const imageWrapRef = ref<HTMLElement | null>(null);
-const { overlayVisible, imageSrc, styles, openFromElement, close, isActive } = useImageZoom();
+const { openFromElement, isActive } = useImageZoom();
 
 function handleImageClick(event: MouseEvent | KeyboardEvent) {
   if (!import.meta.client) return;
@@ -60,9 +73,37 @@ function handleImageClick(event: MouseEvent | KeyboardEvent) {
     return;
   }
 
-  const img = imageWrapRef.value?.querySelector("img");
-  if (!img) return;
+  const img = imageWrapRef.value?.querySelector(".lazy-image-frame__photo");
+  if (!img || !(img instanceof HTMLImageElement)) return;
 
   openFromElement(img, zoomKey.value);
 }
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+
+.lazy-image-frame__photo,
+.lazy-image-frame__photo :deep(img) {
+  @apply absolute inset-0 z-[1] block size-full object-cover;
+}
+
+.lazy-image-frame__photo--pending,
+.lazy-image-frame__photo--pending :deep(img) {
+  @apply opacity-0;
+}
+
+.lazy-image-frame__photo--loaded,
+.lazy-image-frame__photo--loaded :deep(img) {
+  @apply opacity-100;
+  transition: opacity 250ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-image-frame__photo--pending,
+  .lazy-image-frame__photo--pending :deep(img) {
+    @apply opacity-100;
+    transition: none;
+  }
+}
+</style>

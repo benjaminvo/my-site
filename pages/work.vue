@@ -87,7 +87,7 @@
         class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:ml-4 lg:col-span-4 lg:ml-0"
         caption="Company profile page"
         src-set="
-          /img/work/viewer/mobile-front-page.jpg 1x,
+          /img/work/company-page/mobile-front-page.jpg 1x,
           /img/work/company-page/mobile-front-page@2x.jpg 2x,
           /img/work/company-page/mobile-front-page@3x.jpg 3x
         "
@@ -105,7 +105,7 @@
         class="xs:mb-7 xs:max-w-[320px] mx-auto mb-6 max-w-[370px] sm:col-span-4 sm:mx-0 sm:max-w-none md:col-span-5 md:mr-4 lg:col-span-4 lg:mr-0"
         caption="Job posting"
         src-set="
-          /img/work/company-page/mobile-job@2x.jpg 1x,
+          /img/work/company-page/mobile-job.jpg 1x,
           /img/work/company-page/mobile-job@2x.jpg 2x,
           /img/work/company-page/mobile-job@3x.jpg 3x
         "

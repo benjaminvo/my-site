@@ -23,7 +23,8 @@ components/                # Reusable Vue components
 composables/               # Shared state logic (e.g. useImageZoom, usePodcastPlayer)
 pages/                     # File-based routes (see below)
 server/api/                # Server-side API endpoints
-data/                      # Static TypeScript data files
+data/                      # Static data (`imageDimensions.ts` auto-generated on build)
+composables/               # `useReservedImageFrame`, `useImageZoom`, `useLifeLayout`, etc.
 public/fonts/              # Livory serif font files
 plugins/vercel.ts          # Vercel Analytics (client-only)
 ```
@@ -36,7 +37,7 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | ----------------- | ------- | ----------------------- |
 | `pages/index.vue` | `/`     | About / work experience |
 | `pages/work.vue`  | `/work` | Portfolio case studies  |
-| `pages/life.vue`  | `/life` | Personal photo grid     |
+| `pages/life.vue`  | `/life` | Personal photo grid (grid/list toggle) |
 
 ---
 
@@ -50,8 +51,9 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | `Border.vue`                | Decorative divider                                              |
 | `PhotoStackComposition.vue` | Animated photo layouts on home page                             |
 | `WorkImg.vue`               | Styled image wrapper for work portfolio                         |
-| `WorkFigure.vue`            | Lazy-loaded work image with caption                             |
-| `LifeFigure.vue`            | Lazy-loaded life photo with title/date caption                  |
+| `WorkFigure.vue`            | Lazy-loaded work image; layout via `useReservedImageFrame`       |
+| `LifeFigure.vue`            | Life photo with zoom; reserved-height layout, title/date caption |
+| `LifeLayoutToggle.vue`      | Fixed bottom-center grid/list layout switcher for Life page      |
 
 ---
 
