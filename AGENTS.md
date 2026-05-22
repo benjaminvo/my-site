@@ -20,7 +20,7 @@ app.vue                    # Root layout: Header, NuxtPage
 nuxt.config.ts
 assets/css/main.css        # Tailwind v4 entry: @import, @theme, @utility, base styles
 components/                # Reusable Vue components
-composables/               # Shared state logic
+composables/               # Shared state logic (e.g. useImageZoom, usePodcastPlayer)
 pages/                     # File-based routes (see below)
 server/api/                # Server-side API endpoints
 data/                      # Static TypeScript data files
