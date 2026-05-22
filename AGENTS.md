@@ -36,6 +36,7 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | ----------------- | ------- | ----------------------- |
 | `pages/index.vue` | `/`     | About / work experience |
 | `pages/work.vue`  | `/work` | Portfolio case studies  |
+| `pages/life.vue`  | `/life` | Personal photo grid     |
 
 ---
 
@@ -44,11 +45,13 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | Component                   | Purpose                                                         |
 | --------------------------- | --------------------------------------------------------------- |
 | `Header.vue`                | Site title + navigation                                         |
-| `Navigation.vue`            | Pill nav (About / Work); active state via `.router-link-active` |
+| `Navigation.vue`            | Pill nav (About / Work / Life); sliding active indicator        |
 | `Block.vue`                 | Generic content block (label, title, link, descriptions)        |
 | `Border.vue`                | Decorative divider                                              |
 | `PhotoStackComposition.vue` | Animated photo layouts on home page                             |
 | `WorkImg.vue`               | Styled image wrapper for work portfolio                         |
+| `WorkFigure.vue`            | Lazy-loaded work image with caption                             |
+| `LifeFigure.vue`            | Lazy-loaded life photo with title/date caption                  |
 
 ---
 
