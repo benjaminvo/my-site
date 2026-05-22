@@ -308,7 +308,7 @@ export function useImageZoom() {
   }
 
   function openFromElement(img: HTMLImageElement, key: string) {
-    if (!import.meta.client) return;
+    if (!import.meta.client || !isImageZoomEnabled()) return;
 
     if (isOpen.value && activeKey.value === key) {
       close();

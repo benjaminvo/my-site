@@ -46,7 +46,7 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | Component                   | Purpose                                                         |
 | --------------------------- | --------------------------------------------------------------- |
 | `Header.vue`                | Site title + navigation                                         |
-| `Navigation.vue`            | Pill nav (About / Work / Life); sliding active indicator        |
+| `Navigation.vue`            | Pill nav (About / Work; Life hidden via `showLifeNav` until launch) |
 | `Block.vue`                 | Generic content block (label, title, link, descriptions)        |
 | `Border.vue`                | Decorative divider                                              |
 | `PhotoStackComposition.vue` | Animated photo layouts on home page                             |

@@ -2,12 +2,15 @@
   <div>
     <div
       ref="imageWrapRef"
-      class="relative w-full cursor-zoom-in overflow-hidden"
-      :class="{ invisible: isActive(zoomKey) }"
-      role="button"
-      tabindex="0"
-      :aria-expanded="isActive(zoomKey)"
-      :aria-hidden="isActive(zoomKey)"
+      class="relative w-full overflow-hidden"
+      :class="[
+        { invisible: isActive(zoomKey) },
+        zoomEnabled ? 'sm:cursor-zoom-in' : '',
+      ]"
+      :role="zoomEnabled ? 'button' : undefined"
+      :tabindex="zoomEnabled ? 0 : undefined"
+      :aria-expanded="zoomEnabled ? isActive(zoomKey) : undefined"
+      :aria-hidden="zoomEnabled && isActive(zoomKey) ? true : undefined"
       @click="handleImageClick"
       @keydown.enter.prevent="handleImageClick"
       @keydown.space.prevent="handleImageClick">
@@ -62,10 +65,11 @@ const { onImageLoaded, photoStateClass } = useImageLoadFadeIn({
 });
 
 const imageWrapRef = ref<HTMLElement | null>(null);
+const zoomEnabled = useImageZoomEnabled();
 const { openFromElement, isActive } = useImageZoom();
 
 function handleImageClick(event: MouseEvent | KeyboardEvent) {
-  if (!import.meta.client) return;
+  if (!import.meta.client || !zoomEnabled.value) return;
 
   const mouseEvent = event as MouseEvent;
   if (mouseEvent.metaKey || mouseEvent.ctrlKey) {
