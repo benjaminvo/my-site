@@ -1,8 +1,8 @@
 <template>
   <main
-    class="pb-20 sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+    class="pb-20 sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-8 md:col-start-2 lg:col-span-12 xl:col-span-16 lg:grid-cols-12 xl:col-span-12 xl:grid-cols-16">
     <section
-      class="col-span-full grid gap-6 sm:grid-cols-8 sm:gap-x-8 md:grid-cols-10 lg:grid-cols-12 xl:grid-cols-16">
+      class="col-span-full grid gap-6 sm:grid-cols-8 sm:gap-x-8 lg:grid-cols-12 xl:grid-cols-16">
       <div
         v-for="(photo, index) in lifePhotos"
         :key="photo.src"
