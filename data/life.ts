@@ -6,8 +6,8 @@ export type LifePhoto = {
   gridClass: string;
 };
 
-const smallGridClass = "sm:col-span-4 lg:col-span-3 xl:col-span-4";
-const heroGridClass = "sm:col-span-8 lg:col-span-6 lg:row-span-2 xl:col-span-8 xl:row-span-2";
+const smallGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-3";
+const heroGridClass = "sm:col-span-8 md:col-span-10 lg:col-span-6 lg:row-span-2";
 
 export const lifePhotos: LifePhoto[] = [
   {
