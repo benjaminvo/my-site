@@ -20,10 +20,11 @@ app.vue                    # Root layout: Header, NuxtPage
 nuxt.config.ts
 assets/css/main.css        # Tailwind v4 entry: @import, @theme, @utility, base styles
 components/                # Reusable Vue components
-composables/               # Shared state logic
+composables/               # Shared state logic (e.g. useImageZoom, usePodcastPlayer)
 pages/                     # File-based routes (see below)
 server/api/                # Server-side API endpoints
-data/                      # Static TypeScript data files
+data/                      # Static data (`imageDimensions.ts` auto-generated on build)
+composables/               # `useReservedImageFrame`, `useImageZoom`, etc.
 public/fonts/              # Livory serif font files
 plugins/vercel.ts          # Vercel Analytics (client-only)
 ```
@@ -36,6 +37,7 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | ----------------- | ------- | ----------------------- |
 | `pages/index.vue` | `/`     | About / work experience |
 | `pages/work.vue`  | `/work` | Portfolio case studies  |
+| `pages/life.vue`  | `/life` | Personal photo grid with zoom          |
 
 ---
 
@@ -44,11 +46,13 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | Component                   | Purpose                                                         |
 | --------------------------- | --------------------------------------------------------------- |
 | `Header.vue`                | Site title + navigation                                         |
-| `Navigation.vue`            | Pill nav (About / Work); active state via `.router-link-active` |
+| `Navigation.vue`            | Pill nav (About / Work; Life hidden via `showLifeNav` until launch) |
 | `Block.vue`                 | Generic content block (label, title, link, descriptions)        |
 | `Border.vue`                | Decorative divider                                              |
 | `PhotoStackComposition.vue` | Animated photo layouts on home page                             |
 | `WorkImg.vue`               | Styled image wrapper for work portfolio                         |
+| `WorkFigure.vue`            | Lazy-loaded work image; layout via `useReservedImageFrame`       |
+| `LifeFigure.vue`            | Life photo with zoom; reserved-height layout, title/date caption |
 
 ---
 

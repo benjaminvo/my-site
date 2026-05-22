@@ -2,15 +2,18 @@
   "name": "nuxt-app",
   "private": true,
   "scripts": {
+    "prebuild": "npm run generate:image-dimensions",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "generate:image-dimensions": "node scripts/generate-image-dimensions.mjs"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@unlazy/nuxt": "^1.1.0",
+    "image-size": "^2.0.2",
     "nuxt": "^4.3.1",
     "prettier": "^3.0.1"
   },

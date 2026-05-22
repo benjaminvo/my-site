@@ -4,7 +4,7 @@
       <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 select-none">
         Press
         <span
-          class="rounded-md border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:bg-slate-800"
+          class="rounded-md border border-slate-200 dark:border-slate-600 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:bg-slate-800"
           >P</span
         >
         to summon
