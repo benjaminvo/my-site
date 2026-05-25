@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div :class="isHero ? 'xl:grid xl:h-full xl:min-h-0 xl:grid-rows-[1fr_auto]' : ''">
     <div
       ref="imageWrapRef"
-      class="relative w-full overflow-hidden"
+      class="relative min-h-0 overflow-hidden"
       :class="[
+        isHero ? 'w-full sm:aspect-[4/3] xl:aspect-auto xl:h-full' : 'w-full sm:aspect-[4/3]',
         { invisible: isActive(zoomKey) },
         zoomEnabled ? 'sm:cursor-zoom-in' : '',
       ]"
@@ -15,7 +16,7 @@
       @keydown.enter.prevent="handleImageClick"
       @keydown.space.prevent="handleImageClick">
       <div
-        class="block w-full leading-none"
+        class="block w-full leading-none sm:hidden"
         :style="spacerStyle"
         aria-hidden="true" />
       <div class="absolute inset-0 overflow-hidden">
@@ -36,7 +37,7 @@
           @loaded="onImageLoaded" />
       </div>
     </div>
-    <p class="mt-2 font-sans text-xs">
+    <p class="mt-2 shrink-0 font-sans text-xs">
       <span class="text-black dark:text-slate-50">{{ title }}</span><span class="ml-1 text-slate-400">{{ date }}</span>
     </p>
   </div>
@@ -49,6 +50,7 @@ const props = defineProps({
   date: { type: String, required: true },
   thumbhash: { type: String, default: "" },
   staggerIndex: { type: Number, default: 0 },
+  isHero: { type: Boolean, default: false },
 });
 
 const srcSet = computed(() => `${props.src} 1x`);

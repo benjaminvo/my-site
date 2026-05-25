@@ -50,44 +50,55 @@ function getViewportBounds() {
   };
 }
 
-function calculateScaleFactor(
-  displayWidth: number,
-  naturalWidth: number,
-  naturalHeight: number,
-) {
+function calculateZoomRect(gridRect: DocRect, naturalWidth: number, naturalHeight: number): DocRect {
   const { width: viewportWidth, height: viewportHeight } = getViewportBounds();
-  const maxScaleFactor = naturalWidth / displayWidth;
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
   const imageAspectRatio = naturalWidth / naturalHeight;
   const viewportAspectRatio = viewportWidth / viewportHeight;
 
+  let width: number;
+  let height: number;
+
   if (naturalWidth < viewportWidth && naturalHeight < viewportHeight) {
-    return maxScaleFactor;
+    width = naturalWidth;
+    height = naturalHeight;
+  } else if (imageAspectRatio < viewportAspectRatio) {
+    height = viewportHeight;
+    width = height * imageAspectRatio;
+  } else {
+    width = viewportWidth;
+    height = width / imageAspectRatio;
   }
-  if (imageAspectRatio < viewportAspectRatio) {
-    return (viewportHeight / naturalHeight) * maxScaleFactor;
-  }
-  return (viewportWidth / naturalWidth) * maxScaleFactor;
+
+  return {
+    top: Math.round(scrollTop + (window.innerHeight - height) / 2),
+    left: Math.round((window.innerWidth - width) / 2),
+    width: Math.round(width),
+    height: Math.round(height),
+  };
 }
 
 function buildRestStyles(docRect: DocRect, animate: boolean): ZoomStyles {
-  const transition = animate ? `all ${TRANSITION_MS}ms` : "none";
+  const transition = animate ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms` : "none";
   return {
     wrapper: {
       position: "absolute",
       top: `${docRect.top}px`,
       left: `${docRect.left}px`,
+      width: `${docRect.width}px`,
+      height: `${docRect.height}px`,
       zIndex: "666",
       transition,
-      transform: "translate(0, 0) translateZ(0)",
+      overflow: "hidden",
+      transform: "translateZ(0)",
     },
     image: {
       display: "block",
-      width: `${docRect.width}px`,
-      height: `${docRect.height}px`,
+      width: "100%",
+      height: "100%",
       maxWidth: "none",
-      transition,
-      transform: "scale(1)",
-      transformOrigin: "center center",
+      objectFit: "cover",
+      objectPosition: "center center",
     },
   };
 }
@@ -98,33 +109,28 @@ function buildZoomedStyles(
   naturalHeight: number,
   animate: boolean,
 ): ZoomStyles {
-  const scale = calculateScaleFactor(gridRect.width, naturalWidth, naturalHeight);
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-  const viewportY = scrollTop + window.innerHeight / 2;
-  const viewportX = window.innerWidth / 2;
-  const imageCenterY = gridRect.top + gridRect.height / 2;
-  const imageCenterX = gridRect.left + gridRect.width / 2;
-  const translateY = Math.round(viewportY - imageCenterY);
-  const translateX = Math.round(viewportX - imageCenterX);
-  const transition = animate ? `all ${TRANSITION_MS}ms` : "none";
+  const zoomRect = calculateZoomRect(gridRect, naturalWidth, naturalHeight);
+  const transition = animate ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms` : "none";
 
   return {
     wrapper: {
       position: "absolute",
-      top: `${gridRect.top}px`,
-      left: `${gridRect.left}px`,
+      top: `${zoomRect.top}px`,
+      left: `${zoomRect.left}px`,
+      width: `${zoomRect.width}px`,
+      height: `${zoomRect.height}px`,
       zIndex: "666",
       transition,
-      transform: `translate(${translateX}px, ${translateY}px) translateZ(0)`,
+      overflow: "hidden",
+      transform: "translateZ(0)",
     },
     image: {
       display: "block",
-      width: `${gridRect.width}px`,
-      height: `${gridRect.height}px`,
+      width: "100%",
+      height: "100%",
       maxWidth: "none",
-      transition,
-      transform: `scale(${scale})`,
-      transformOrigin: "center center",
+      objectFit: "cover",
+      objectPosition: "center center",
     },
   };
 }

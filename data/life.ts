@@ -3,11 +3,59 @@ export type LifePhoto = {
   title: string;
   date: string;
   thumbhash: string;
-  gridClass: string;
 };
 
-const smallGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-3";
-const heroGridClass = "sm:col-span-8 md:col-span-10 lg:col-span-6 lg:row-span-2";
+/** Which photo in `lifePhotos` is the large right-hand hero (0-based). */
+export const LIFE_HERO_INDEX = 2;
+
+const smallGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-4 xl:col-span-4";
+const heroGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-4 xl:col-span-8 xl:row-span-2";
+
+export type LifeGridItem = LifePhoto & {
+  isHero: boolean;
+  gridClass: string;
+  sourceIndex: number;
+};
+
+/** Visual grid order: two small → hero → two small → rest (hero slot stays beside rows 1–2). */
+export function buildLifeGridItems(
+  photos: LifePhoto[],
+  heroIndex: number = LIFE_HERO_INDEX,
+): LifeGridItem[] {
+  const hero = photos[heroIndex];
+  if (!hero) return photos.map((photo, sourceIndex) => ({
+    ...photo,
+    isHero: false,
+    gridClass: smallGridClass,
+    sourceIndex,
+  }));
+
+  const others = photos
+    .map((photo, index) => ({ photo, index }))
+    .filter(({ index }) => index !== heroIndex);
+
+  const items: LifeGridItem[] = [];
+
+  const push = (photo: LifePhoto, sourceIndex: number, isHero: boolean) => {
+    items.push({
+      ...photo,
+      isHero,
+      sourceIndex,
+      gridClass: isHero ? heroGridClass : smallGridClass,
+    });
+  };
+
+  if (others[0]) push(others[0].photo, others[0].index, false);
+  if (others[1]) push(others[1].photo, others[1].index, false);
+  push(hero, heroIndex, true);
+  if (others[2]) push(others[2].photo, others[2].index, false);
+  if (others[3]) push(others[3].photo, others[3].index, false);
+  for (let i = 4; i < others.length; i++) {
+    push(others[i].photo, others[i].index, false);
+  }
+
+  return items;
+}
 
 export const lifePhotos: LifePhoto[] = [
   {
@@ -15,62 +63,53 @@ export const lifePhotos: LifePhoto[] = [
     title: "Growing tomatoes",
     date: "April 26",
     thumbhash: "F+gFDYDBglRvmahceXZZaz+GJRhg",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/2.png",
     title: "Planting a tree",
     date: "April 26",
     thumbhash: "3AgGHYK000hgSqqWgedIe4uAd/iH",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/5.png",
     title: "Ves and Eik, Sweden",
     date: "March 26",
     thumbhash: "YQgKFoStdoeMhYhfePiXaHZFJ4BxBWg=",
-    gridClass: heroGridClass,
   },
   {
     src: "/img/life/4.png",
     title: "Tromsø, Norway",
     date: "March 26",
     thumbhash: "4vcFDYB2iJcMpYhEd/l3W2qgtwaL",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/3.png",
     title: "Tromsø, Norway",
     date: "March 26",
     thumbhash: "YecJDYK5aGivZXhLmseIZpWAhgR3",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/6.png",
     title: "Breakfast",
     date: "March 26",
     thumbhash: "IPgFLYRwd0gXhqoyd2lKY6+39Eo6",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/7.png",
     title: "Breakfast",
     date: "March 26",
     thumbhash: "nBgKFYKKhZiAZ4eGh1eIl3NfIvlF",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/8.png",
     title: "Home",
     date: "March 26",
     thumbhash: "G/gFHYSlqZoIi5eNRrZYqWrQ9EQ8",
-    gridClass: smallGridClass,
   },
   {
     src: "/img/life/9.png",
     title: "Office",
     date: "Feb 26",
     thumbhash: "XRgKFYI6dlVviGdph0iIhnWAWQeI",
-    gridClass: smallGridClass,
   },
 ];

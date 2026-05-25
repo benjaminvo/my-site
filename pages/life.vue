@@ -2,18 +2,20 @@
   <main
     class="pb-20 sm:col-span-8 md:col-span-8 md:col-start-2 lg:col-span-12 xl:col-span-16">
     <section
-      class="grid gap-6 sm:grid-cols-8 sm:gap-x-8 md:grid-cols-10 md:gap-x-8 lg:grid-cols-12">
+      class="grid items-stretch gap-6 sm:grid-cols-8 sm:gap-x-8 md:grid-cols-10 md:gap-x-8 lg:grid-cols-12 xl:grid-cols-16">
       <div
-        v-for="(photo, index) in lifePhotos"
-        :key="photo.src"
-        :data-life-photo="photo.src"
-        :class="photo.gridClass">
+        v-for="item in gridItems"
+        :key="item.src"
+        :data-life-photo="item.src"
+        :class="[item.gridClass, item.isHero && 'xl:min-h-0 xl:self-stretch']">
         <LifeFigure
-          :src="photo.src"
-          :title="photo.title"
-          :date="photo.date"
-          :thumbhash="photo.thumbhash"
-          :stagger-index="index" />
+          :class="item.isHero ? 'xl:h-full' : undefined"
+          :src="item.src"
+          :title="item.title"
+          :date="item.date"
+          :thumbhash="item.thumbhash"
+          :is-hero="item.isHero"
+          :stagger-index="item.sourceIndex" />
       </div>
     </section>
   </main>
@@ -38,14 +40,22 @@
 </template>
 
 <script setup lang="ts">
-import { lifePhotos } from "~/data/life";
+import { buildLifeGridItems, lifePhotos } from "~/data/life";
 
 useSeoMeta({
   title: "Life | Benjamin Ottensten, Product Lead",
   ogTitle: "Life | Benjamin Ottensten, Product Lead",
 });
 
+const gridItems = computed(() => buildLifeGridItems(lifePhotos));
+
 const { isOpen, overlayVisible, imageSrc, styles, close, setPhotoKeys } = useImageZoom();
 
-setPhotoKeys(lifePhotos.map((photo) => photo.src));
+watch(
+  gridItems,
+  (items) => {
+    setPhotoKeys(items.map((item) => item.src));
+  },
+  { immediate: true },
+);
 </script>
