@@ -13,11 +13,13 @@ type DocRect = {
 type ZoomStyles = {
   wrapper: Record<string, string>;
   image: Record<string, string>;
+  caption: Record<string, string>;
 };
 
 const emptyStyles = (): ZoomStyles => ({
   wrapper: {},
   image: {},
+  caption: {},
 });
 
 let initialScrollY: number | null = null;
@@ -26,6 +28,11 @@ let wheelAccumulator = 0;
 let listenersAttached = false;
 let isClosing = false;
 let activeSourceElement: HTMLImageElement | null = null;
+
+type PhotoCaption = {
+  title: string;
+  date: string;
+};
 
 function prefersReducedMotion() {
   if (!import.meta.client) return false;
@@ -100,6 +107,14 @@ function buildRestStyles(docRect: DocRect, animate: boolean): ZoomStyles {
       objectFit: "cover",
       objectPosition: "center center",
     },
+    caption: {
+      position: "absolute",
+      top: `${docRect.top + docRect.height + 8}px`,
+      left: `${docRect.left}px`,
+      width: `${docRect.width}px`,
+      zIndex: "666",
+      transition,
+    },
   };
 }
 
@@ -132,6 +147,14 @@ function buildZoomedStyles(
       objectFit: "cover",
       objectPosition: "center center",
     },
+    caption: {
+      position: "absolute",
+      top: `${zoomRect.top + zoomRect.height + 8}px`,
+      left: `${zoomRect.left}px`,
+      width: `${zoomRect.width}px`,
+      zIndex: "666",
+      transition,
+    },
   };
 }
 
@@ -140,12 +163,18 @@ export function useImageZoom() {
   const activeKey = useState<string | null>("image-zoom:key", () => null);
   const overlayVisible = useState("image-zoom:overlay-visible", () => false);
   const imageSrc = useState("image-zoom:src", () => "");
+  const caption = useState<PhotoCaption | null>("image-zoom:caption", () => null);
   const styles = useState<ZoomStyles>("image-zoom:styles", emptyStyles);
   const initialRect = useState<DocRect | null>("image-zoom:initial-rect", () => null);
   const photoKeys = useState<string[]>("image-zoom:keys", () => []);
+  const photoCaptions = useState<Record<string, PhotoCaption>>("image-zoom:captions", () => ({}));
 
   function setPhotoKeys(keys: string[]) {
     photoKeys.value = keys;
+  }
+
+  function setPhotoCaptions(captions: Record<string, PhotoCaption>) {
+    photoCaptions.value = captions;
   }
 
   function findPhotoImg(key: string) {
@@ -261,6 +290,7 @@ export function useImageZoom() {
     isOpen.value = false;
     activeKey.value = null;
     imageSrc.value = "";
+    caption.value = null;
     initialRect.value = null;
     styles.value = emptyStyles();
     isClosing = false;
@@ -298,6 +328,7 @@ export function useImageZoom() {
     activeSourceElement = img;
     activeKey.value = key;
     imageSrc.value = img.currentSrc || img.src;
+    caption.value = photoCaptions.value[key] ?? null;
     initialRect.value = gridRect;
     styles.value = buildZoomedStyles(gridRect, naturalWidth, naturalHeight, animate);
   }
@@ -313,7 +344,7 @@ export function useImageZoom() {
     });
   }
 
-  function openFromElement(img: HTMLImageElement, key: string) {
+  function openFromElement(img: HTMLImageElement, key: string, photoCaption?: PhotoCaption) {
     if (!import.meta.client || !isImageZoomEnabled()) return;
 
     if (isOpen.value && activeKey.value === key) {
@@ -333,6 +364,7 @@ export function useImageZoom() {
     activeSourceElement = img;
     activeKey.value = key;
     imageSrc.value = src;
+    caption.value = photoCaption ?? photoCaptions.value[key] ?? null;
     initialRect.value = gridRect;
     isOpen.value = true;
     isClosing = false;
@@ -358,8 +390,10 @@ export function useImageZoom() {
     activeKey,
     overlayVisible,
     imageSrc,
+    caption,
     styles,
     setPhotoKeys,
+    setPhotoCaptions,
     openFromElement,
     close,
     isActive,

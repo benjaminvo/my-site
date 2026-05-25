@@ -35,6 +35,12 @@
           class="cursor-zoom-out"
           @click.stop="close" />
       </div>
+      <p
+        v-if="caption"
+        :style="styles.caption"
+        class="pointer-events-none font-sans text-xs">
+        <span class="text-black dark:text-slate-50">{{ caption.title }}</span><span class="ml-1 text-slate-400">{{ caption.date }}</span>
+      </p>
     </template>
   </Teleport>
 </template>
@@ -49,12 +55,23 @@ useSeoMeta({
 
 const gridItems = computed(() => buildLifeGridItems(lifePhotos));
 
-const { isOpen, overlayVisible, imageSrc, styles, close, setPhotoKeys } = useImageZoom();
+const { isOpen, overlayVisible, imageSrc, caption, styles, close, setPhotoKeys, setPhotoCaptions } = useImageZoom();
 
 watch(
   gridItems,
   (items) => {
     setPhotoKeys(items.map((item) => item.src));
+    setPhotoCaptions(
+      Object.fromEntries(
+        items.map((item) => [
+          item.src,
+          {
+            title: item.title,
+            date: item.date,
+          },
+        ]),
+      ),
+    );
   },
   { immediate: true },
 );

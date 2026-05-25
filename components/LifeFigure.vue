@@ -37,7 +37,10 @@
           @loaded="onImageLoaded" />
       </div>
     </div>
-    <p class="mt-2 shrink-0 font-sans text-xs">
+    <p
+      class="mt-2 shrink-0 font-sans text-xs"
+      :class="{ invisible: isActive(zoomKey) }"
+      :aria-hidden="isActive(zoomKey) || undefined">
       <span class="text-black dark:text-slate-50">{{ title }}</span><span class="ml-1 text-slate-400">{{ date }}</span>
     </p>
   </div>
@@ -82,7 +85,10 @@ function handleImageClick(event: MouseEvent | KeyboardEvent) {
   const img = imageWrapRef.value?.querySelector(".lazy-image-frame__photo");
   if (!img || !(img instanceof HTMLImageElement)) return;
 
-  openFromElement(img, zoomKey.value);
+  openFromElement(img, zoomKey.value, {
+    title: props.title,
+    date: props.date,
+  });
 }
 </script>
 
