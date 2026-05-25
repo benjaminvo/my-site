@@ -1,9 +1,13 @@
+import { imageDimensions } from "./imageDimensions";
+
 export type LifePhoto = {
   src: string;
   title: string;
   date: string;
   thumbhash: string;
 };
+
+type LifePhotoEntry = Omit<LifePhoto, "thumbhash">;
 
 /** Which photo in `lifePhotos` is the large right-hand hero (0-based). */
 export const LIFE_HERO_INDEX = 2;
@@ -60,59 +64,61 @@ export function buildLifeGridItems(
   return items;
 }
 
-export const lifePhotos: LifePhoto[] = [
+/** Edit this list when adding photos. Then run /sync-life-photos or `npm run sync:life`. */
+const lifePhotoEntries: LifePhotoEntry[] = [
   {
     src: "/img/life/1.png",
     title: "Growing tomatoes",
     date: "April 26",
-    thumbhash: "F+gFDYDBglRvmahceXZZaz+GJRhg",
   },
   {
     src: "/img/life/2.png",
     title: "Planting a tree",
     date: "April 26",
-    thumbhash: "3AgGHYK000hgSqqWgedIe4uAd/iH",
   },
   {
     src: "/img/life/5.png",
     title: "Ves and Eik, Sweden",
     date: "March 26",
-    thumbhash: "YQgKFoStdoeMhYhfePiXaHZFJ4BxBWg=",
   },
   {
     src: "/img/life/4.png",
     title: "Tromsø, Norway",
     date: "March 26",
-    thumbhash: "4vcFDYB2iJcMpYhEd/l3W2qgtwaL",
   },
   {
     src: "/img/life/3.png",
     title: "Tromsø, Norway",
     date: "March 26",
-    thumbhash: "YecJDYK5aGivZXhLmseIZpWAhgR3",
   },
   {
     src: "/img/life/6.png",
     title: "Breakfast",
     date: "March 26",
-    thumbhash: "IPgFLYRwd0gXhqoyd2lKY6+39Eo6",
   },
   {
     src: "/img/life/7.png",
     title: "Breakfast",
     date: "March 26",
-    thumbhash: "nBgKFYKKhZiAZ4eGh1eIl3NfIvlF",
   },
   {
     src: "/img/life/8.png",
     title: "Home",
     date: "March 26",
-    thumbhash: "G/gFHYSlqZoIi5eNRrZYqWrQ9EQ8",
   },
   {
     src: "/img/life/9.png",
     title: "Office",
     date: "Feb 26",
-    thumbhash: "XRgKFYI6dlVviGdph0iIhnWAWQeI",
   },
 ];
+
+export const lifePhotos: LifePhoto[] = lifePhotoEntries.map((photo) => ({
+  ...photo,
+  thumbhash: getLifeThumbhash(photo.src),
+}));
+
+function getLifeThumbhash(src: string) {
+  const entry = imageDimensions[src as keyof typeof imageDimensions];
+  return entry && "thumbhash" in entry ? entry.thumbhash : "";
+}

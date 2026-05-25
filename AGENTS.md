@@ -39,6 +39,8 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | `pages/work.vue`  | `/work` | Portfolio case studies  |
 | `pages/life.vue`  | `/life` | Personal photo grid with zoom          |
 
+**Adding Life photos:** edit `lifePhotoEntries` in `data/life.ts`, add files under `public/img/life/`, then `/sync-life-photos` or `npm run sync:life`.
+
 ---
 
 ## Key Components
