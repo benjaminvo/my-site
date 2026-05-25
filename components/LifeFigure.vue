@@ -82,13 +82,22 @@ function handleImageClick(event: MouseEvent | KeyboardEvent) {
     return;
   }
 
-  const img = imageWrapRef.value?.querySelector(".lazy-image-frame__photo");
-  if (!img || !(img instanceof HTMLImageElement)) return;
+  const img = imageWrapRef.value?.querySelector(".lazy-image-frame__photo img");
+  if (img instanceof HTMLImageElement) {
+    openFromElement(img, zoomKey.value, {
+      title: props.title,
+      date: props.date,
+    });
+    return;
+  }
 
-  openFromElement(img, zoomKey.value, {
-    title: props.title,
-    date: props.date,
-  });
+  const photo = imageWrapRef.value?.querySelector(".lazy-image-frame__photo");
+  if (photo instanceof HTMLImageElement) {
+    openFromElement(photo, zoomKey.value, {
+      title: props.title,
+      date: props.date,
+    });
+  }
 }
 </script>
 

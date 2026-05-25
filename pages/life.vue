@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { buildLifeGridItems, lifePhotos } from "~/data/life";
+import { buildLifeGridItems, LIFE_ZOOM_FRAME, lifePhotos } from "~/data/life";
 
 useSeoMeta({
   title: "Life | Benjamin Ottensten, Product Lead",
@@ -55,7 +55,10 @@ useSeoMeta({
 
 const gridItems = computed(() => buildLifeGridItems(lifePhotos));
 
-const { isOpen, overlayVisible, imageSrc, caption, styles, close, setPhotoKeys, setPhotoCaptions } = useImageZoom();
+const { isOpen, overlayVisible, imageSrc, caption, styles, close, setPhotoKeys, setPhotoCaptions, setUniformZoomSize } =
+  useImageZoom();
+
+setUniformZoomSize(LIFE_ZOOM_FRAME);
 
 watch(
   gridItems,

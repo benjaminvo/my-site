@@ -8,6 +8,9 @@ export type LifePhoto = {
 /** Which photo in `lifePhotos` is the large right-hand hero (0-based). */
 export const LIFE_HERO_INDEX = 2;
 
+/** Standard 4:3 frame used for uniform Life zoom dimensions (matches grid tiles). */
+export const LIFE_ZOOM_FRAME = { width: 792, height: 594 } as const;
+
 const smallGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-4 xl:col-span-4";
 const heroGridClass = "sm:col-span-4 md:col-span-5 lg:col-span-4 xl:col-span-8 xl:row-span-2";
 

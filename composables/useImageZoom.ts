@@ -28,10 +28,61 @@ let wheelAccumulator = 0;
 let listenersAttached = false;
 let isClosing = false;
 let activeSourceElement: HTMLImageElement | null = null;
+let openSessionId = 0;
+let closeTimer: ReturnType<typeof setTimeout> | null = null;
+
+type ZoomListenerStore = {
+  scroll: ((this: Window, ev: Event) => void) | null;
+  wheel: ((this: Window, ev: WheelEvent) => void) | null;
+  keydown: ((this: Window, ev: KeyboardEvent) => void) | null;
+  touchstart: ((this: Window, ev: TouchEvent) => void) | null;
+  touchmove: ((this: Window, ev: TouchEvent) => void) | null;
+};
+
+function getZoomListenerStore(): ZoomListenerStore {
+  const globalKey = "__imageZoomListenerStore";
+  const globalScope = globalThis as typeof globalThis & { __imageZoomListenerStore?: ZoomListenerStore };
+  if (!globalScope[globalKey]) {
+    globalScope[globalKey] = {
+      scroll: null,
+      wheel: null,
+      keydown: null,
+      touchstart: null,
+      touchmove: null,
+    };
+  }
+  return globalScope[globalKey];
+}
+
+function cancelCloseTimer() {
+  if (closeTimer === null) return;
+  window.clearTimeout(closeTimer);
+  closeTimer = null;
+}
+
+function invalidateOpenSession() {
+  openSessionId += 1;
+}
+
+function beginOpenSession() {
+  cancelCloseTimer();
+  isClosing = false;
+  openSessionId += 1;
+  return openSessionId;
+}
+
+function isCurrentOpenSession(sessionId: number) {
+  return sessionId === openSessionId;
+}
 
 type PhotoCaption = {
   title: string;
   date: string;
+};
+
+type UniformZoomSize = {
+  width: number;
+  height: number;
 };
 
 function prefersReducedMotion() {
@@ -57,7 +108,7 @@ function getViewportBounds() {
   };
 }
 
-function calculateZoomRect(gridRect: DocRect, naturalWidth: number, naturalHeight: number): DocRect {
+function calculateZoomRect(naturalWidth: number, naturalHeight: number): DocRect {
   const { width: viewportWidth, height: viewportHeight } = getViewportBounds();
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
   const imageAspectRatio = naturalWidth / naturalHeight;
@@ -124,7 +175,7 @@ function buildZoomedStyles(
   naturalHeight: number,
   animate: boolean,
 ): ZoomStyles {
-  const zoomRect = calculateZoomRect(gridRect, naturalWidth, naturalHeight);
+  const zoomRect = calculateZoomRect(naturalWidth, naturalHeight);
   const transition = animate ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms` : "none";
 
   return {
@@ -167,7 +218,9 @@ export function useImageZoom() {
   const styles = useState<ZoomStyles>("image-zoom:styles", emptyStyles);
   const initialRect = useState<DocRect | null>("image-zoom:initial-rect", () => null);
   const photoKeys = useState<string[]>("image-zoom:keys", () => []);
+  const activeIndex = useState("image-zoom:index", () => -1);
   const photoCaptions = useState<Record<string, PhotoCaption>>("image-zoom:captions", () => ({}));
+  const uniformZoomSize = useState<UniformZoomSize | null>("image-zoom:uniform-size", () => null);
 
   function setPhotoKeys(keys: string[]) {
     photoKeys.value = keys;
@@ -177,24 +230,47 @@ export function useImageZoom() {
     photoCaptions.value = captions;
   }
 
-  function findPhotoImg(key: string) {
-    const container = document.querySelector(`[data-life-photo="${CSS.escape(key)}"]`);
-    if (!container) return null;
+  function setUniformZoomSize(size: UniformZoomSize | null) {
+    uniformZoomSize.value = size;
+  }
 
-    const photo = container.querySelector(".lazy-image-frame__photo");
+  function resolveZoomNaturalSize(naturalWidth: number, naturalHeight: number) {
+    return uniformZoomSize.value ?? { width: naturalWidth, height: naturalHeight };
+  }
+
+  function resolvePhotoImg(container: Element | null): HTMLImageElement | null {
+    const photo = container?.querySelector(".lazy-image-frame__photo");
     if (photo instanceof HTMLImageElement) return photo;
 
     const img = photo?.querySelector("img");
     return img instanceof HTMLImageElement ? img : null;
   }
 
+  function findPhotoImg(key: string) {
+    const container = document.querySelector(`[data-life-photo="${CSS.escape(key)}"]`);
+    return resolvePhotoImg(container);
+  }
+
+  function setActivePhoto(key: string) {
+    activeKey.value = key;
+    activeIndex.value = photoKeys.value.indexOf(key);
+  }
+
   function removeCloseListeners() {
-    if (!import.meta.client || !listenersAttached) return;
-    window.removeEventListener("scroll", handleScroll);
-    document.removeEventListener("wheel", handleWheel);
-    document.removeEventListener("keydown", handleKeydown);
-    document.removeEventListener("touchstart", handleTouchStart);
-    document.removeEventListener("touchmove", handleTouchMove);
+    if (!import.meta.client) return;
+
+    const store = getZoomListenerStore();
+    if (store.scroll) window.removeEventListener("scroll", store.scroll);
+    if (store.wheel) document.removeEventListener("wheel", store.wheel);
+    if (store.keydown) document.removeEventListener("keydown", store.keydown);
+    if (store.touchstart) document.removeEventListener("touchstart", store.touchstart);
+    if (store.touchmove) document.removeEventListener("touchmove", store.touchmove);
+
+    store.scroll = null;
+    store.wheel = null;
+    store.keydown = null;
+    store.touchstart = null;
+    store.touchmove = null;
     listenersAttached = false;
     initialScrollY = null;
     initialTouchY = null;
@@ -202,14 +278,24 @@ export function useImageZoom() {
   }
 
   function addCloseListeners() {
-    if (!import.meta.client || listenersAttached) return;
+    if (!import.meta.client) return;
+
+    removeCloseListeners();
+
+    const store = getZoomListenerStore();
+    store.scroll = handleScroll;
+    store.wheel = handleWheel;
+    store.keydown = handleKeydown;
+    store.touchstart = handleTouchStart;
+    store.touchmove = handleTouchMove;
+
     initialScrollY = window.pageYOffset;
     wheelAccumulator = 0;
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    document.addEventListener("wheel", handleWheel, { passive: true });
-    document.addEventListener("keydown", handleKeydown);
-    document.addEventListener("touchstart", handleTouchStart, { passive: true });
-    document.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("scroll", store.scroll, { passive: true });
+    document.addEventListener("wheel", store.wheel, { passive: true });
+    document.addEventListener("keydown", store.keydown);
+    document.addEventListener("touchstart", store.touchstart, { passive: true });
+    document.addEventListener("touchmove", store.touchmove, { passive: true });
     listenersAttached = true;
   }
 
@@ -253,10 +339,13 @@ export function useImageZoom() {
   }
 
   function navigate(delta: 1 | -1) {
-    if (!activeKey.value || photoKeys.value.length === 0) return;
-    const index = photoKeys.value.indexOf(activeKey.value);
-    if (index === -1) return;
-    const nextIndex = (index + delta + photoKeys.value.length) % photoKeys.value.length;
+    if (!isOpen.value || isClosing || photoKeys.value.length === 0 || !activeKey.value) return;
+
+    const currentIndex = photoKeys.value.indexOf(activeKey.value);
+    if (currentIndex === -1) return;
+
+    activeIndex.value = currentIndex;
+    const nextIndex = (currentIndex + delta + photoKeys.value.length) % photoKeys.value.length;
     const nextKey = photoKeys.value[nextIndex];
     const img = findPhotoImg(nextKey);
     if (!img) return;
@@ -265,6 +354,7 @@ export function useImageZoom() {
 
   function close() {
     if (!isOpen.value || isClosing) return;
+    invalidateOpenSession();
     isClosing = true;
 
     overlayVisible.value = false;
@@ -278,17 +368,21 @@ export function useImageZoom() {
       styles.value = buildRestStyles(gridRect, !reducedMotion);
     }
 
+    cancelCloseTimer();
+
     if (reducedMotion) {
       finishClose();
       return;
     }
 
-    window.setTimeout(finishClose, TRANSITION_MS);
+    closeTimer = window.setTimeout(finishClose, TRANSITION_MS);
   }
 
   function finishClose() {
+    cancelCloseTimer();
     isOpen.value = false;
     activeKey.value = null;
+    activeIndex.value = -1;
     imageSrc.value = "";
     caption.value = null;
     initialRect.value = null;
@@ -325,21 +419,32 @@ export function useImageZoom() {
     naturalHeight: number,
     animate: boolean,
   ) {
+    const zoomNatural = resolveZoomNaturalSize(naturalWidth, naturalHeight);
     activeSourceElement = img;
-    activeKey.value = key;
+    setActivePhoto(key);
     imageSrc.value = img.currentSrc || img.src;
     caption.value = photoCaptions.value[key] ?? null;
     initialRect.value = gridRect;
-    styles.value = buildZoomedStyles(gridRect, naturalWidth, naturalHeight, animate);
+    styles.value = buildZoomedStyles(gridRect, zoomNatural.width, zoomNatural.height, animate);
   }
 
   function switchToElement(img: HTMLImageElement, key: string) {
-    if (!import.meta.client || !isOpen.value) return;
+    if (!import.meta.client || !isOpen.value || isClosing) return;
 
     const src = img.currentSrc || img.src;
     const gridRect = getDocumentRect(img.getBoundingClientRect());
 
+    if (uniformZoomSize.value) {
+      activeSourceElement = img;
+      setActivePhoto(key);
+      imageSrc.value = src;
+      caption.value = photoCaptions.value[key] ?? null;
+      initialRect.value = gridRect;
+      return;
+    }
+
     loadNaturalSize(img, src, (naturalWidth, naturalHeight) => {
+      if (!isOpen.value || isClosing) return;
       applyZoomedImage(img, key, gridRect, naturalWidth, naturalHeight, false);
     });
   }
@@ -347,34 +452,39 @@ export function useImageZoom() {
   function openFromElement(img: HTMLImageElement, key: string, photoCaption?: PhotoCaption) {
     if (!import.meta.client || !isImageZoomEnabled()) return;
 
-    if (isOpen.value && activeKey.value === key) {
+    if (isOpen.value && !isClosing && activeKey.value === key) {
       close();
       return;
     }
 
-    if (isOpen.value) {
+    if (isOpen.value && !isClosing) {
       switchToElement(img, key);
       return;
     }
 
+    const sessionId = beginOpenSession();
     const gridRect = getDocumentRect(img.getBoundingClientRect());
     const src = img.currentSrc || img.src;
     const animate = !prefersReducedMotion();
 
     activeSourceElement = img;
-    activeKey.value = key;
+    setActivePhoto(key);
     imageSrc.value = src;
     caption.value = photoCaption ?? photoCaptions.value[key] ?? null;
     initialRect.value = gridRect;
     isOpen.value = true;
-    isClosing = false;
+    overlayVisible.value = false;
     styles.value = buildRestStyles(gridRect, false);
     addCloseListeners();
 
     loadNaturalSize(img, src, (naturalWidth, naturalHeight) => {
+      if (!isCurrentOpenSession(sessionId)) return;
+
       requestAnimationFrame(() => {
+        if (!isCurrentOpenSession(sessionId)) return;
         overlayVisible.value = true;
         requestAnimationFrame(() => {
+          if (!isCurrentOpenSession(sessionId)) return;
           applyZoomedImage(img, key, gridRect, naturalWidth, naturalHeight, animate);
         });
       });
@@ -394,6 +504,7 @@ export function useImageZoom() {
     styles,
     setPhotoKeys,
     setPhotoCaptions,
+    setUniformZoomSize,
     openFromElement,
     close,
     isActive,
