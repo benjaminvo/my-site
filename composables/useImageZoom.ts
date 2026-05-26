@@ -30,9 +30,11 @@ let isClosing = false;
 let activeSourceElement: HTMLImageElement | null = null;
 let openSessionId = 0;
 let closeTimer: ReturnType<typeof setTimeout> | null = null;
+let resizeRaf: number | null = null;
 
 type ZoomListenerStore = {
   scroll: ((this: Window, ev: Event) => void) | null;
+  resize: ((this: Window, ev: Event) => void) | null;
   wheel: ((this: Window, ev: WheelEvent) => void) | null;
   keydown: ((this: Window, ev: KeyboardEvent) => void) | null;
   touchstart: ((this: Window, ev: TouchEvent) => void) | null;
@@ -45,6 +47,7 @@ function getZoomListenerStore(): ZoomListenerStore {
   if (!globalScope[globalKey]) {
     globalScope[globalKey] = {
       scroll: null,
+      resize: null,
       wheel: null,
       keydown: null,
       touchstart: null,
@@ -256,22 +259,53 @@ export function useImageZoom() {
     activeIndex.value = photoKeys.value.indexOf(key);
   }
 
+  function repositionZoomed(animate: boolean) {
+    if (!isOpen.value || isClosing) return;
+
+    const gridRect = initialRect.value;
+    if (!gridRect) return;
+
+    const applyStyles = (naturalWidth: number, naturalHeight: number) => {
+      const zoomNatural = resolveZoomNaturalSize(naturalWidth, naturalHeight);
+      styles.value = buildZoomedStyles(gridRect, zoomNatural.width, zoomNatural.height, animate);
+    };
+
+    if (uniformZoomSize.value) {
+      applyStyles(uniformZoomSize.value.width, uniformZoomSize.value.height);
+      return;
+    }
+
+    if (!activeSourceElement) return;
+
+    const src = activeSourceElement.currentSrc || activeSourceElement.src;
+    loadNaturalSize(activeSourceElement, src, (naturalWidth, naturalHeight) => {
+      if (!isOpen.value || isClosing) return;
+      applyStyles(naturalWidth, naturalHeight);
+    });
+  }
+
   function removeCloseListeners() {
     if (!import.meta.client) return;
 
     const store = getZoomListenerStore();
     if (store.scroll) window.removeEventListener("scroll", store.scroll);
+    if (store.resize) window.removeEventListener("resize", store.resize);
     if (store.wheel) document.removeEventListener("wheel", store.wheel);
     if (store.keydown) document.removeEventListener("keydown", store.keydown);
     if (store.touchstart) document.removeEventListener("touchstart", store.touchstart);
     if (store.touchmove) document.removeEventListener("touchmove", store.touchmove);
 
     store.scroll = null;
+    store.resize = null;
     store.wheel = null;
     store.keydown = null;
     store.touchstart = null;
     store.touchmove = null;
     listenersAttached = false;
+    if (resizeRaf !== null) {
+      cancelAnimationFrame(resizeRaf);
+      resizeRaf = null;
+    }
     initialScrollY = null;
     initialTouchY = null;
     wheelAccumulator = 0;
@@ -284,6 +318,7 @@ export function useImageZoom() {
 
     const store = getZoomListenerStore();
     store.scroll = handleScroll;
+    store.resize = handleResize;
     store.wheel = handleWheel;
     store.keydown = handleKeydown;
     store.touchstart = handleTouchStart;
@@ -292,6 +327,7 @@ export function useImageZoom() {
     initialScrollY = window.pageYOffset;
     wheelAccumulator = 0;
     window.addEventListener("scroll", store.scroll, { passive: true });
+    window.addEventListener("resize", store.resize, { passive: true });
     document.addEventListener("wheel", store.wheel, { passive: true });
     document.addEventListener("keydown", store.keydown);
     document.addEventListener("touchstart", store.touchstart, { passive: true });
@@ -303,6 +339,15 @@ export function useImageZoom() {
     if (initialScrollY === null) return;
     const deltaY = Math.abs(initialScrollY - window.pageYOffset);
     if (deltaY >= SCROLL_CLOSE_THRESHOLD) close();
+  }
+
+  function handleResize() {
+    if (!isOpen.value || isClosing) return;
+    if (resizeRaf !== null) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      resizeRaf = null;
+      repositionZoomed(false);
+    });
   }
 
   function handleWheel(event: WheelEvent) {
@@ -440,6 +485,12 @@ export function useImageZoom() {
       imageSrc.value = src;
       caption.value = photoCaptions.value[key] ?? null;
       initialRect.value = gridRect;
+      styles.value = buildZoomedStyles(
+        gridRect,
+        uniformZoomSize.value.width,
+        uniformZoomSize.value.height,
+        false,
+      );
       return;
     }
 
