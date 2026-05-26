@@ -12,7 +12,7 @@
       <div
         class="absolute inset-0 backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]" />
       <div
-        class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)] dark:[background:linear-gradient(to_bottom,var(--color-gray-950)_0%,var(--color-gray-950)_50%,rgba(3,7,18,0)_100%)]" />
+        class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)] dark:[background:linear-gradient(to_bottom,var(--color-neutral-950)_0%,var(--color-neutral-950)_50%,rgba(3,7,18,0)_100%)]" />
     </div>
     <nav
       ref="navRef"
@@ -28,10 +28,10 @@
         v-for="item in navItems"
         :key="item.to"
         :class="[
-          'tap-highlight-none relative flex-1 rounded-full border border-black/8 px-3 py-1 text-center no-underline shadow-xs select-none outline-none ring-0 transition-colors duration-150 ease-out hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
+          'tap-highlight-none relative flex-1 rounded-full border border-black/8 dark:border-white/6 px-3 py-1 text-center no-underline shadow-xs select-none outline-none ring-0 transition-colors duration-150 ease-out hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
           activeIndex === item.index
             ? [activeColorClass, 'text-white']
-            : 'bg-white text-black hover:bg-slate-50',
+            : 'bg-white dark:bg-neutral-800 text-black dark:text-white hover:bg-slate-50 dark:hover:bg-neutral-700',
         ]"
         :to="item.to">
         {{ item.label }}

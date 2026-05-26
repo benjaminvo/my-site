@@ -21,11 +21,11 @@
   }
 
   p {
-    @apply font-serif text-slate-500 dark:text-gray-300;
+    @apply font-serif text-slate-500 dark:text-neutral-300;
   }
 
   h2 {
-    @apply dark:text-gray-50;
+    @apply dark:text-neutral-100;
   }
 
   a:hover {

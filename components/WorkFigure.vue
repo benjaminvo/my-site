@@ -5,7 +5,7 @@
         class="block w-full leading-none"
         :style="spacerStyle"
         aria-hidden="true" />
-      <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-gray-900">
+      <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-neutral-900">
         <img
           v-if="placeholderSrc"
           :src="placeholderSrc"
@@ -26,7 +26,7 @@
         <Border class="pointer-events-none z-[2]" />
       </div>
     </div>
-    <p v-if="caption" class="mt-2.5 font-sans text-xs text-slate-400">
+    <p v-if="caption" class="mt-2.5 font-sans text-xs text-slate-400 dark:text-neutral-500">
       {{ caption }}
     </p>
   </div>

@@ -1,10 +1,10 @@
 <template>
   <Transition name="fade">
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
-      <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 select-none">
+      <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 dark:text-neutral-500 select-none">
         Press
         <span
-          class="rounded-md border border-slate-200 dark:border-gray-600 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:bg-gray-800"
+          class="rounded-md border border-slate-200 dark:border-neutral-600 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:text-neutral-500 dark:bg-neutral-800"
           >P</span
         >
         to summon
@@ -286,7 +286,7 @@ function showCaption(index, event) {
   caption.setAttribute("id", "caption");
   caption.setAttribute(
     "class",
-    "absolute bg-black dark:bg-gray-50 text-white dark:text-gray-900 text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl",
+    "absolute bg-black dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl",
   );
 
   // Add text to the div

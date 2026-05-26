@@ -43,7 +43,7 @@
       class="mt-2 shrink-0 font-sans text-xs"
       :class="{ invisible: isActive(zoomKey) }"
       :aria-hidden="isActive(zoomKey) || undefined">
-      <span class="text-black dark:text-gray-50">{{ title }}</span><span class="ml-1 text-slate-400">{{ date }}</span>
+      <span class="text-black dark:text-neutral-100">{{ title }}</span><span class="ml-1 text-slate-400 dark:text-neutral-500">{{ date }}</span>
     </p>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <main class="grid gap-12 sm:col-span-8 md:col-start-2 lg:col-start-3 xl:col-span-8 xl:col-start-5">
     <!-- Not found -->
     <div v-if="!podcast">
-      <NuxtLink to="/podcasts" class="text-sm text-slate-400 hover:text-slate-600">&larr; Podcasts</NuxtLink>
+      <NuxtLink to="/podcasts" class="text-sm text-slate-400 dark:text-neutral-500 hover:text-slate-600">&larr; Podcasts</NuxtLink>
       <p class="mt-8">Podcast not found.</p>
     </div>
 
@@ -10,7 +10,7 @@
       <!-- Back link -->
       <NuxtLink
         to="/podcasts"
-        class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300">
+        class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-neutral-500 dark:hover:text-neutral-300">
         &larr; Podcasts
       </NuxtLink>
 
@@ -25,17 +25,17 @@
             class="aspect-square w-16 rounded-lg object-cover sm:w-full" />
           <div
             v-else
-            class="aspect-square w-16 rounded-lg bg-slate-100 dark:bg-gray-800 sm:w-full" />
+            class="aspect-square w-16 rounded-lg bg-slate-100 dark:bg-neutral-800 sm:w-full" />
         </div>
 
         <div class="grid gap-3 sm:col-span-6">
-          <h2 class="dark:text-gray-50">{{ podcast.name }}</h2>
+          <h2 class="dark:text-neutral-100">{{ podcast.name }}</h2>
           <p>{{ podcast.description }}</p>
           <a
             :href="podcast.websiteUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300">
+            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-neutral-500 dark:hover:text-neutral-300">
             Website &nearr;
           </a>
         </div>
@@ -43,7 +43,7 @@
 
       <!-- My picks (highlighted) -->
       <section v-if="podcast.recommendedEpisodes.length" class="grid gap-6">
-        <h3 class="dark:text-gray-50">My picks</h3>
+        <h3 class="dark:text-neutral-100">My picks</h3>
 
         <div class="grid gap-4">
           <div
@@ -56,14 +56,14 @@
                 <button
                   :title="resolvedAudio(ep.guid) ? `Play: ${ep.title}` : 'Episode not yet loaded'"
                   :disabled="!resolvedAudio(ep.guid) && !ep.audioUrl"
-                  class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-500 dark:hover:border-gray-500 dark:hover:text-gray-300"
+                  class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-neutral-700 dark:text-neutral-500 dark:hover:border-neutral-500 dark:hover:text-neutral-300"
                   @click="playRecommended(ep)">
                   <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </button>
                 <div>
-                  <p class="text-sm font-medium leading-snug dark:text-gray-100">{{ ep.title }}</p>
+                  <p class="text-sm font-medium leading-snug dark:text-neutral-100">{{ ep.title }}</p>
                   <p class="mt-1 text-sm text-slate-500">{{ ep.note }}</p>
                 </div>
               </div>
@@ -74,21 +74,21 @@
 
       <!-- Full feed -->
       <section class="grid gap-6">
-        <h3 class="dark:text-gray-50">All episodes</h3>
+        <h3 class="dark:text-neutral-100">All episodes</h3>
 
         <!-- Loading -->
         <div v-if="feedPending" class="grid gap-3">
           <div v-for="n in 6" :key="n" class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
             <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto" />
             <div class="sm:col-span-6">
-              <div class="h-4 w-2/3 animate-pulse rounded bg-slate-100 dark:bg-gray-800" />
-              <div class="mt-2 h-3 w-1/3 animate-pulse rounded bg-slate-100 dark:bg-gray-800" />
+              <div class="h-4 w-2/3 animate-pulse rounded bg-slate-100 dark:bg-neutral-800" />
+              <div class="mt-2 h-3 w-1/3 animate-pulse rounded bg-slate-100 dark:bg-neutral-800" />
             </div>
           </div>
         </div>
 
         <!-- Error -->
-        <p v-else-if="feedError" class="text-sm text-slate-400">
+        <p v-else-if="feedError" class="text-sm text-slate-400 dark:text-neutral-500">
           Couldn't load the episode list. Try again later.
         </p>
 
@@ -99,7 +99,7 @@
             :key="ep.guid"
             class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
             <!-- Date / duration column -->
-            <div class="w-[88px] shrink-0 text-slate-400 sm:col-span-2 sm:w-auto">
+            <div class="w-[88px] shrink-0 text-slate-400 dark:text-neutral-500 sm:col-span-2 sm:w-auto">
               <span class="block text-xs">{{ formatDate(ep.publishDate) }}</span>
               <span v-if="ep.duration" class="block text-xs">{{ ep.duration }}</span>
             </div>
@@ -109,7 +109,7 @@
               <button
                 :title="`Play: ${ep.title}`"
                 :disabled="!ep.audioUrl"
-                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-500 dark:hover:border-gray-500 dark:hover:text-gray-300"
+                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-neutral-700 dark:text-neutral-500 dark:hover:border-neutral-500 dark:hover:text-neutral-300"
                 @click="playFeedEpisode(ep)">
                 <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -117,11 +117,11 @@
               </button>
 
               <div class="min-w-0">
-                <p class="text-sm leading-snug dark:text-gray-100" :class="{ 'font-medium': isRecommended(ep.guid) }">
+                <p class="text-sm leading-snug dark:text-neutral-100" :class="{ 'font-medium': isRecommended(ep.guid) }">
                   {{ ep.title }}
                   <span
                     v-if="isRecommended(ep.guid)"
-                    class="ml-2 inline-block align-middle text-[10px] uppercase tracking-wide text-slate-400">
+                    class="ml-2 inline-block align-middle text-[10px] uppercase tracking-wide text-slate-400 dark:text-neutral-500">
                     pick
                   </span>
                 </p>
@@ -133,7 +133,7 @@
         <!-- Load all button -->
         <button
           v-if="hasMoreEpisodes"
-          class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300"
+          class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-neutral-500 dark:hover:text-neutral-300"
           @click="showAllEpisodes = true">
           Load all episodes ({{ feedData?.episodes?.length }})
         </button>

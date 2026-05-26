@@ -11,14 +11,14 @@
         <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto">
           <NuxtLink
             :to="`/podcasts/${podcast.slug}`"
-            class="block text-slate-400 hover:text-slate-600 hover:no-underline dark:text-gray-500 dark:hover:text-gray-300">
+            class="block text-slate-400 hover:text-slate-600 hover:no-underline dark:text-neutral-500 dark:hover:text-neutral-300">
             &#9654;
           </NuxtLink>
         </div>
 
         <div class="grid gap-6 sm:col-span-6">
           <div>
-            <h3 class="dark:text-gray-50">
+            <h3 class="dark:text-neutral-100">
               <NuxtLink :to="`/podcasts/${podcast.slug}`">{{ podcast.name }}</NuxtLink>
             </h3>
             <p class="mt-3">{{ podcast.description }}</p>
@@ -26,7 +26,7 @@
 
           <!-- Recommended episodes -->
           <div v-if="podcast.recommendedEpisodes.length" class="grid gap-4">
-            <small class="text-xs uppercase text-slate-400">My picks</small>
+            <small class="text-xs uppercase text-slate-400 dark:text-neutral-500">My picks</small>
 
             <div
               v-for="episode in podcast.recommendedEpisodes"
@@ -35,7 +35,7 @@
               <!-- Play button -->
               <button
                 :title="`Play: ${episode.title}`"
-                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 dark:border-gray-700 dark:text-gray-500 dark:hover:border-gray-500 dark:hover:text-gray-300"
+                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 dark:border-neutral-700 dark:text-neutral-500 dark:hover:border-neutral-500 dark:hover:text-neutral-300"
                 @click="playEpisode(podcast.slug, podcast.name, episode)">
                 <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -44,15 +44,15 @@
 
               <!-- Episode info -->
               <div class="min-w-0">
-                <p class="text-sm leading-snug dark:text-gray-100">{{ episode.title }}</p>
-                <p class="mt-1 text-sm text-slate-400">{{ episode.note }}</p>
+                <p class="text-sm leading-snug dark:text-neutral-100">{{ episode.title }}</p>
+                <p class="mt-1 text-sm text-slate-400 dark:text-neutral-500">{{ episode.note }}</p>
               </div>
             </div>
           </div>
 
           <NuxtLink
             :to="`/podcasts/${podcast.slug}`"
-            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300">
+            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-neutral-500 dark:hover:text-neutral-300">
             All episodes &rarr;
           </NuxtLink>
         </div>
