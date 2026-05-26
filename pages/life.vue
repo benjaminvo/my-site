@@ -55,6 +55,10 @@ useSeoMeta({
 
 const gridItems = computed(() => buildLifeGridItems(lifePhotos));
 
+onMounted(() => {
+  resetLifeImageStagger();
+});
+
 const { isOpen, overlayVisible, imageSrc, caption, styles, close, setPhotoKeys, setPhotoCaptions, setUniformZoomSize } =
   useImageZoom();
 
