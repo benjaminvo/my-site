@@ -19,7 +19,7 @@
         'flex gap-2 xs:w-auto',
         isStuck
           ? 'fixed top-4 ml-0 w-auto z-50 xs:relative'
-          : 'relative w-full shadow-none',
+          : 'relative -ml-1 w-[calc(100%+8px)] shadow-none',
         'xs:shadow-none',
       ]"
       :style="isStuck ? stickyNavStyle : undefined">
@@ -51,8 +51,8 @@ const navHeight = ref(0);
 const stickyNavStyle = ref({});
 
 const stickyTop = 16;
-const stickyLeft = 24;
-const stickyRight = 24;
+const stickyLeft = 20;
+const stickyRight = 20;
 const mobileQuery = "(max-width: 519px)";
 
 const updateStuckState = () => {
