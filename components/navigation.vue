@@ -1,7 +1,7 @@
 <template>
   <nav
     ref="navRef"
-    class="relative flex self-start rounded-full bg-slate-100 p-[1px] dark:bg-slate-800">
+    class="relative flex w-full self-start rounded-full bg-slate-100 p-[1px] dark:bg-slate-800 xs:w-auto">
     <div
       aria-hidden="true"
       class="pointer-events-none absolute inset-y-[1px] left-0 rounded-full border border-slate-200 bg-white shadow-xs"
@@ -12,7 +12,7 @@
       :key="item.to"
       :ref="(el) => setLinkRef(el, item.index)"
       :class="[
-        'tap-highlight-none relative rounded-full border px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0',
+        'tap-highlight-none relative flex-1 rounded-full border px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
         activeIndex === item.index
           ? indicatorReady
             ? 'border-transparent text-black'
