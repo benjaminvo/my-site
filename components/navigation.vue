@@ -93,9 +93,9 @@ const activeIndex = computed(() => {
 });
 
 const activeColorClass = computed(() => {
-  if (activeIndex.value === 1) return "bg-[#74A5C4]";
-  if (activeIndex.value === 2) return "bg-[#78A67E]";
-  return "bg-[#B48260]";
+  if (activeIndex.value === 1) return "bg-[#5F8F6D]";
+  if (activeIndex.value === 2) return "bg-[#5F8F6D]";
+  return "bg-[#5F8F6D]";
 });
 
 onMounted(() => {
