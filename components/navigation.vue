@@ -6,7 +6,7 @@
     <nav
       ref="navRef"
       :class="[
-        'flex rounded-full border border-slate-200 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md dark:bg-slate-800/85 xs:w-auto',
+        'flex rounded-full border border-black/5 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md dark:bg-slate-800/85 xs:w-auto',
         isStuck
           ? 'fixed top-6 z-30 shadow-xs xs:relative'
           : 'relative w-full shadow-none',
@@ -67,26 +67,33 @@ const animateToStickyBounds = () => {
   if (!navRef.value || !navSlot.value) return;
 
   const slotRect = navSlot.value.getBoundingClientRect();
+  const stickyWidth = window.innerWidth - stickyInset * 2;
   navHeight.value = navRef.value.offsetHeight;
   isStuck.value = true;
   isAnimatingSticky = true;
   stickyNavStyle.value = {
-    left: `${slotRect.left}px`,
-    width: `${slotRect.width}px`,
+    left: `${stickyInset}px`,
+    width: `${stickyWidth}px`,
+    transform: `scaleX(${slotRect.width / stickyWidth})`,
+    transformOrigin: "center top",
     transition: "none",
   };
+  nextTick(() => updateIndicator({ animate: true }));
 
   clearStickyAnimation();
   stickyAnimationFrame = requestAnimationFrame(() => {
     stickyAnimationFrame = requestAnimationFrame(() => {
       stickyNavStyle.value = {
         left: `${stickyInset}px`,
-        width: `${window.innerWidth - stickyInset * 2}px`,
-        transition: "left 200ms ease-out, width 200ms ease-out, box-shadow 200ms ease-out",
+        width: `${stickyWidth}px`,
+        transform: "scaleX(1)",
+        transformOrigin: "center top",
+        transition: "transform 200ms ease-out, box-shadow 200ms ease-out",
       };
       stickyAnimationTimeout = window.setTimeout(() => {
         isAnimatingSticky = false;
         stickyAnimationTimeout = null;
+        updateIndicator({ animate: false });
       }, 220);
     });
   });
@@ -107,11 +114,14 @@ const updateStuckState = () => {
     clearStickyAnimation();
     isStuck.value = false;
     stickyNavStyle.value = {};
+    nextTick(() => updateIndicator({ animate: false }));
   } else if (shouldStick && !isAnimatingSticky) {
     stickyNavStyle.value = {
       left: `${stickyInset}px`,
       width: `${window.innerWidth - stickyInset * 2}px`,
-      transition: "left 200ms ease-out, width 200ms ease-out, box-shadow 200ms ease-out",
+      transform: "scaleX(1)",
+      transformOrigin: "center top",
+      transition: "transform 200ms ease-out, box-shadow 200ms ease-out",
     };
   }
 };
@@ -155,12 +165,9 @@ function updateIndicator({ animate = false } = {}) {
 
   if (!nav || !link) return;
 
-  const navRect = nav.getBoundingClientRect();
-  const linkRect = link.getBoundingClientRect();
-
   indicatorStyle.value = {
-    width: `${Math.max(0, linkRect.width - 2)}px`,
-    transform: `translateX(${linkRect.left - navRect.left}px)`,
+    width: `${Math.max(0, link.offsetWidth - 2)}px`,
+    transform: `translateX(${link.offsetLeft + 1}px)`,
     transition:
       animate && canAnimateIndicator.value
         ? "transform 250ms ease-out, width 250ms ease-out"
