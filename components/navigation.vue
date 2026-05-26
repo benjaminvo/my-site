@@ -1,28 +1,39 @@
 <template>
-  <nav
-    ref="navRef"
-    class="relative flex w-full self-start rounded-full bg-slate-100 p-[1px] dark:bg-slate-800 xs:w-auto">
-    <div
-      aria-hidden="true"
-      class="pointer-events-none absolute inset-y-[1px] left-0 rounded-full border border-slate-200 bg-white shadow-xs"
-      :class="{ 'opacity-0': !indicatorReady }"
-      :style="indicatorStyle" />
-    <NuxtLink
-      v-for="item in navItems"
-      :key="item.to"
-      :ref="(el) => setLinkRef(el, item.index)"
+  <div
+    ref="navSlot"
+    class="self-start"
+    :style="isStuck ? { height: `${navHeight}px` } : undefined">
+    <nav
+      ref="navRef"
       :class="[
-        'tap-highlight-none relative flex-1 rounded-full border px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
-        activeIndex === item.index
-          ? indicatorReady
-            ? 'border-transparent text-black'
-            : 'border-slate-200 bg-white text-black shadow-xs'
-          : 'border-transparent text-slate-500 transition-colors duration-50 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400',
-      ]"
-      :to="item.to">
-      {{ item.label }}
-    </NuxtLink>
-  </nav>
+        'flex rounded-full border border-slate-200 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md transition-[box-shadow,transform] duration-200 ease-out dark:bg-slate-800/85 xs:w-auto',
+        isStuck
+          ? 'fixed top-6 right-6 left-6 z-30 w-auto shadow-xs xs:relative xs:right-auto xs:left-auto'
+          : 'relative w-full shadow-none',
+        'xs:shadow-none',
+      ]">
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-y-[2px] left-0 rounded-full border border-slate-200 bg-white shadow-xs"
+        :class="{ 'opacity-0': !indicatorReady }"
+        :style="indicatorStyle" />
+      <NuxtLink
+        v-for="item in navItems"
+        :key="item.to"
+        :ref="(el) => setLinkRef(el, item.index)"
+        :class="[
+          'tap-highlight-none relative flex-1 rounded-full border px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
+          activeIndex === item.index
+            ? indicatorReady
+              ? 'border-transparent text-black'
+              : 'border-slate-200 bg-white text-black shadow-xs'
+            : 'border-transparent text-slate-500 transition-colors duration-50 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400',
+        ]"
+        :to="item.to">
+        {{ item.label }}
+      </NuxtLink>
+    </nav>
+  </div>
 </template>
 
 <script setup>
@@ -30,9 +41,24 @@
 const showLifeNav = true;
 
 const route = useRoute();
-
 const navRef = ref(null);
+const navSlot = ref(null);
 const linkEls = ref([]);
+const isStuck = ref(false);
+const navHeight = ref(0);
+
+const stickyTop = 24;
+const mobileQuery = "(max-width: 519px)";
+
+const updateStuckState = () => {
+  if (!import.meta.client || !navRef.value || !navSlot.value) return;
+
+  const isMobile = window.matchMedia(mobileQuery).matches;
+  const slotTop = navSlot.value.getBoundingClientRect().top;
+
+  navHeight.value = navRef.value.offsetHeight;
+  isStuck.value = isMobile && slotTop <= stickyTop;
+};
 
 const navItems = computed(() => {
   const items = [
@@ -77,7 +103,7 @@ function updateIndicator({ animate = false } = {}) {
   const linkRect = link.getBoundingClientRect();
 
   indicatorStyle.value = {
-    width: `${linkRect.width}px`,
+    width: `${Math.max(0, linkRect.width - 2)}px`,
     transform: `translateX(${linkRect.left - navRect.left}px)`,
     transition:
       animate && canAnimateIndicator.value
@@ -90,15 +116,26 @@ function updateIndicator({ animate = false } = {}) {
 watch(activeIndex, () => nextTick(() => updateIndicator({ animate: true })));
 
 onMounted(() => {
+  updateStuckState();
   updateIndicator({ animate: false });
 
   requestAnimationFrame(() => {
     canAnimateIndicator.value = true;
   });
 
-  const observer = new ResizeObserver(() => updateIndicator({ animate: false }));
+  const observer = new ResizeObserver(() => {
+    updateStuckState();
+    updateIndicator({ animate: false });
+  });
   if (navRef.value) observer.observe(navRef.value);
 
-  onUnmounted(() => observer.disconnect());
+  window.addEventListener("scroll", updateStuckState, { passive: true });
+  window.addEventListener("resize", updateStuckState);
+
+  onUnmounted(() => {
+    observer.disconnect();
+    window.removeEventListener("scroll", updateStuckState);
+    window.removeEventListener("resize", updateStuckState);
+  });
 });
 </script>
