@@ -16,10 +16,10 @@
     <nav
       ref="navRef"
       :class="[
-        'flex gap-2',
+        'flex gap-2 xs:w-auto',
         isStuck
-          ? 'fixed top-4 z-50 xs:relative'
-          : 'relative w-full shadow-none xs:w-auto',
+          ? 'fixed top-4 ml-0 w-auto z-50 xs:relative'
+          : 'relative w-full shadow-none',
         'xs:shadow-none',
       ]"
       :style="isStuck ? stickyNavStyle : undefined">
@@ -51,52 +51,9 @@ const navHeight = ref(0);
 const stickyNavStyle = ref({});
 
 const stickyTop = 16;
-const stickyInset = 16;
+const stickyLeft = 24;
+const stickyRight = 24;
 const mobileQuery = "(max-width: 519px)";
-let stickyAnimationFrame = null;
-let stickyAnimationTimeout = null;
-let isAnimatingSticky = false;
-
-const clearStickyAnimation = () => {
-  if (stickyAnimationFrame) cancelAnimationFrame(stickyAnimationFrame);
-  if (stickyAnimationTimeout) clearTimeout(stickyAnimationTimeout);
-  stickyAnimationFrame = null;
-  stickyAnimationTimeout = null;
-};
-
-const animateToStickyBounds = () => {
-  if (!navRef.value || !navSlot.value) return;
-
-  const slotRect = navSlot.value.getBoundingClientRect();
-  const stickyWidth = window.innerWidth - stickyInset * 2;
-  navHeight.value = navRef.value.offsetHeight;
-  isStuck.value = true;
-  isAnimatingSticky = true;
-  stickyNavStyle.value = {
-    left: `${stickyInset}px`,
-    width: `${stickyWidth}px`,
-    transform: `scaleX(${slotRect.width / stickyWidth})`,
-    transformOrigin: "center top",
-    transition: "none",
-  };
-
-  clearStickyAnimation();
-  stickyAnimationFrame = requestAnimationFrame(() => {
-    stickyAnimationFrame = requestAnimationFrame(() => {
-      stickyNavStyle.value = {
-        left: `${stickyInset}px`,
-        width: `${stickyWidth}px`,
-        transform: "scaleX(1)",
-        transformOrigin: "center top",
-        transition: "transform 200ms ease-out, box-shadow 200ms ease-out",
-      };
-      stickyAnimationTimeout = window.setTimeout(() => {
-        isAnimatingSticky = false;
-        stickyAnimationTimeout = null;
-      }, 220);
-    });
-  });
-};
 
 const updateStuckState = () => {
   if (!import.meta.client || !navRef.value || !navSlot.value) return;
@@ -107,21 +64,13 @@ const updateStuckState = () => {
   navHeight.value = navRef.value.offsetHeight;
   const shouldStick = isMobile && slotTop <= stickyTop;
 
-  if (shouldStick && !isStuck.value) {
-    animateToStickyBounds();
-  } else if (!shouldStick && isStuck.value && !isAnimatingSticky) {
-    clearStickyAnimation();
-    isStuck.value = false;
-    stickyNavStyle.value = {};
-  } else if (shouldStick && !isAnimatingSticky) {
-    stickyNavStyle.value = {
-      left: `${stickyInset}px`,
-      width: `${window.innerWidth - stickyInset * 2}px`,
-      transform: "scaleX(1)",
-      transformOrigin: "center top",
-      transition: "transform 200ms ease-out, box-shadow 200ms ease-out",
-    };
-  }
+  isStuck.value = shouldStick;
+  stickyNavStyle.value = shouldStick
+    ? {
+        left: `${stickyLeft}px`,
+        right: `${stickyRight}px`,
+      }
+    : {};
 };
 
 const navItems = computed(() => {
@@ -161,7 +110,6 @@ onMounted(() => {
   window.addEventListener("resize", updateStuckState);
 
   onUnmounted(() => {
-    clearStickyAnimation();
     observer.disconnect();
     window.removeEventListener("scroll", updateStuckState);
     window.removeEventListener("resize", updateStuckState);
