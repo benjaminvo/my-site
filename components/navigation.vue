@@ -3,32 +3,30 @@
     ref="navSlot"
     class="self-start"
     :style="isStuck ? { height: `${navHeight}px` } : undefined">
+    <div
+      aria-hidden="true"
+      :class="[
+        'pointer-events-none fixed inset-x-0 top-0 z-40 h-24 bg-gradient-to-b from-white via-white/95 to-white/0 transition-opacity duration-200 ease-out xs:hidden',
+        isStuck ? 'opacity-100' : 'opacity-0',
+      ]" />
     <nav
       ref="navRef"
       :class="[
-        'flex rounded-full border border-black/5 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md dark:bg-slate-800/85 xs:w-auto',
+        'flex gap-2',
         isStuck
-          ? 'fixed top-6 z-30 shadow-xs xs:relative'
-          : 'relative w-full shadow-none',
+          ? 'fixed top-4 z-50 xs:relative'
+          : 'relative w-full shadow-none xs:w-auto',
         'xs:shadow-none',
       ]"
       :style="isStuck ? stickyNavStyle : undefined">
-      <div
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-y-[2px] left-0 rounded-full border border-slate-200 bg-white shadow-xs"
-        :class="{ 'opacity-0': !indicatorReady }"
-        :style="indicatorStyle" />
       <NuxtLink
         v-for="item in navItems"
         :key="item.to"
-        :ref="(el) => setLinkRef(el, item.index)"
         :class="[
-          'tap-highlight-none relative flex-1 rounded-full border px-3 py-1 text-center no-underline select-none outline-none ring-0 hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
+          'tap-highlight-none relative flex-1 rounded-full border border-black/8 px-3 py-1 text-center no-underline shadow-xs select-none outline-none ring-0 transition-colors duration-150 ease-out hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 xs:flex-none',
           activeIndex === item.index
-            ? indicatorReady
-              ? 'border-transparent text-black'
-              : 'border-slate-200 bg-white text-black shadow-xs'
-            : 'border-transparent text-slate-500 transition-colors duration-50 hover:text-slate-600 dark:text-slate-300 dark:hover:text-slate-400',
+            ? [activeColorClass, 'text-white']
+            : 'bg-white text-black hover:bg-slate-50',
         ]"
         :to="item.to">
         {{ item.label }}
@@ -44,12 +42,11 @@ const showLifeNav = true;
 const route = useRoute();
 const navRef = ref(null);
 const navSlot = ref(null);
-const linkEls = ref([]);
 const isStuck = ref(false);
 const navHeight = ref(0);
 const stickyNavStyle = ref({});
 
-const stickyTop = 24;
+const stickyTop = 16;
 const stickyInset = 16;
 const mobileQuery = "(max-width: 519px)";
 let stickyAnimationFrame = null;
@@ -78,7 +75,6 @@ const animateToStickyBounds = () => {
     transformOrigin: "center top",
     transition: "none",
   };
-  nextTick(() => updateIndicator({ animate: true }));
 
   clearStickyAnimation();
   stickyAnimationFrame = requestAnimationFrame(() => {
@@ -93,7 +89,6 @@ const animateToStickyBounds = () => {
       stickyAnimationTimeout = window.setTimeout(() => {
         isAnimatingSticky = false;
         stickyAnimationTimeout = null;
-        updateIndicator({ animate: false });
       }, 220);
     });
   });
@@ -114,7 +109,6 @@ const updateStuckState = () => {
     clearStickyAnimation();
     isStuck.value = false;
     stickyNavStyle.value = {};
-    nextTick(() => updateIndicator({ animate: false }));
   } else if (shouldStick && !isAnimatingSticky) {
     stickyNavStyle.value = {
       left: `${stickyInset}px`,
@@ -145,50 +139,17 @@ const activeIndex = computed(() => {
   return 0;
 });
 
-const indicatorStyle = ref({
-  width: "0px",
-  transform: "translateX(0px)",
-  transition: "none",
+const activeColorClass = computed(() => {
+  if (activeIndex.value === 1) return "bg-[#74A5C4]";
+  if (activeIndex.value === 2) return "bg-[#78A67E]";
+  return "bg-[#B48260]";
 });
-const indicatorReady = ref(false);
-const canAnimateIndicator = ref(false);
-
-function setLinkRef(el, index) {
-  if (el) {
-    linkEls.value[index] = el.$el ?? el;
-  }
-}
-
-function updateIndicator({ animate = false } = {}) {
-  const nav = navRef.value;
-  const link = linkEls.value[activeIndex.value];
-
-  if (!nav || !link) return;
-
-  indicatorStyle.value = {
-    width: `${Math.max(0, link.offsetWidth - 2)}px`,
-    transform: `translateX(${link.offsetLeft + 1}px)`,
-    transition:
-      animate && canAnimateIndicator.value
-        ? "transform 250ms ease-out, width 250ms ease-out"
-        : "none",
-  };
-  indicatorReady.value = true;
-}
-
-watch(activeIndex, () => nextTick(() => updateIndicator({ animate: true })));
 
 onMounted(() => {
   updateStuckState();
-  updateIndicator({ animate: false });
-
-  requestAnimationFrame(() => {
-    canAnimateIndicator.value = true;
-  });
 
   const observer = new ResizeObserver(() => {
     updateStuckState();
-    updateIndicator({ animate: false });
   });
   if (navRef.value) observer.observe(navRef.value);
 
