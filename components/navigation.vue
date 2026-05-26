@@ -6,9 +6,13 @@
     <div
       aria-hidden="true"
       :class="[
-        'pointer-events-none fixed inset-x-0 top-0 z-40 h-24 bg-gradient-to-b from-white via-white/95 to-white/0 transition-opacity duration-200 ease-out xs:hidden',
+        'pointer-events-none fixed inset-x-0 top-0 z-40 h-16 overflow-hidden transition-opacity duration-200 ease-out xs:hidden',
         isStuck ? 'opacity-100' : 'opacity-0',
-      ]" />
+      ]">
+      <div
+        class="absolute inset-0 backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]" />
+      <div class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)]" />
+    </div>
     <nav
       ref="navRef"
       :class="[
