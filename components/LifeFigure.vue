@@ -56,11 +56,11 @@ const props = defineProps({
   isHero: { type: Boolean, default: false },
 });
 
-const srcSet = computed(() => `${props.src} 1x`);
+const srcSet = computed(() => buildDensitySrcSet(props.src));
 const zoomKey = computed(() => props.src);
 
 const { dimensions, spacerStyle, placeholderRatio } = useReservedImageFrame({
-  src: () => props.src,
+  srcSet: () => srcSet.value,
 });
 
 const placeholderSrc = useThumbhashPlaceholderSrc(() => props.thumbhash, placeholderRatio);

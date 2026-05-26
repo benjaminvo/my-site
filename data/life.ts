@@ -67,47 +67,47 @@ export function buildLifeGridItems(
 /** Edit this list when adding photos. Then run /sync-life-photos or `npm run sync:life`. */
 const lifePhotoEntries: LifePhotoEntry[] = [
   {
-    src: "/img/life/1.png",
+    src: "/img/life/2604-tomatoes.jpg",
     title: "Growing tomatoes",
     date: "April 26",
   },
   {
-    src: "/img/life/2.png",
+    src: "/img/life/2604-tree.jpg",
     title: "Planting a tree",
     date: "April 26",
   },
   {
-    src: "/img/life/5.png",
+    src: "/img/life/2603-kids.jpg",
     title: "Ves and Eik, Sweden",
     date: "March 26",
   },
   {
-    src: "/img/life/4.png",
+    src: "/img/life/2603-road.jpg",
     title: "Tromsø, Norway",
     date: "March 26",
   },
   {
-    src: "/img/life/3.png",
+    src: "/img/life/2603-me.jpg",
     title: "Tromsø, Norway",
     date: "March 26",
   },
   {
-    src: "/img/life/6.png",
+    src: "/img/life/2603-ves.jpg",
     title: "Breakfast",
     date: "March 26",
   },
   {
-    src: "/img/life/7.png",
+    src: "/img/life/2603-table.jpg",
     title: "Breakfast",
     date: "March 26",
   },
   {
-    src: "/img/life/8.png",
+    src: "/img/life/2603-home.jpg",
     title: "Home",
     date: "March 26",
   },
   {
-    src: "/img/life/9.png",
+    src: "/img/life/2602-office.jpg",
     title: "Office",
     date: "Feb 26",
   },

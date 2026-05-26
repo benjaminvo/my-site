@@ -29,3 +29,9 @@ export function getImageDimensionsFromSrc(src: string) {
 export function getImageDimensionsFromSrcSet(srcSet: string) {
   return getImageDimensionsFromSrc(get1xSrcFromSrcSet(srcSet));
 }
+
+/** Build a 1x/2x density srcset from a 1x asset path (e.g. `/img/life/1.jpg`). */
+export function buildDensitySrcSet(src1x: string) {
+  const src2x = src1x.replace(/(\.[^.]+)$/, "@2x$1");
+  return `${src1x} 1x, ${src2x} 2x`;
+}
