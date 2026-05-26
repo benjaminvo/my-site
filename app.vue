@@ -15,7 +15,7 @@ const { currentEpisode } = usePodcastPlayer();
 
 useHead({
   bodyAttrs: {
-    class: "bg-white dark:bg-slate-950 overflow-x-hidden",
+    class: "bg-white dark:bg-gray-950 overflow-x-hidden",
   },
 });
 useSeoMeta({

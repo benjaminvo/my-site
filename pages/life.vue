@@ -23,7 +23,7 @@
   <Teleport to="body">
     <template v-if="isOpen">
       <div
-        class="fixed inset-0 z-[420] cursor-zoom-out bg-white transition-opacity duration-[280ms] dark:bg-slate-950"
+        class="fixed inset-0 z-[420] cursor-zoom-out bg-white transition-opacity duration-[280ms] dark:bg-gray-950"
         :class="overlayVisible ? 'opacity-100' : 'opacity-0'"
         aria-hidden="true"
         @click="close" />
@@ -39,7 +39,7 @@
         v-if="caption"
         :style="styles.caption"
         class="pointer-events-none font-sans text-xs">
-        <span class="text-black dark:text-slate-50">{{ caption.title }}</span><span class="ml-1 text-slate-400">{{ caption.date }}</span>
+        <span class="text-black dark:text-gray-50">{{ caption.title }}</span><span class="ml-1 text-slate-400">{{ caption.date }}</span>
       </p>
     </template>
   </Teleport>

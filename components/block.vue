@@ -4,7 +4,7 @@
       {{ label }}
     </div>
     <div class="grid gap-3 sm:col-span-6">
-      <h3 class="break-word dark:text-slate-50" v-if="title">
+      <h3 class="break-word dark:text-gray-50" v-if="title">
         <template v-if="link">
           <NuxtLink :to="link" target="_blank">
             {{ title }}

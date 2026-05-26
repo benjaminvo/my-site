@@ -5,7 +5,7 @@
         class="block w-full leading-none"
         :style="spacerStyle"
         aria-hidden="true" />
-      <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-slate-900">
+      <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-gray-900">
         <img
           v-if="placeholderSrc"
           :src="placeholderSrc"

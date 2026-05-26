@@ -10,7 +10,7 @@
       <!-- Back link -->
       <NuxtLink
         to="/podcasts"
-        class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">
+        class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300">
         &larr; Podcasts
       </NuxtLink>
 
@@ -25,17 +25,17 @@
             class="aspect-square w-16 rounded-lg object-cover sm:w-full" />
           <div
             v-else
-            class="aspect-square w-16 rounded-lg bg-slate-100 dark:bg-slate-800 sm:w-full" />
+            class="aspect-square w-16 rounded-lg bg-slate-100 dark:bg-gray-800 sm:w-full" />
         </div>
 
         <div class="grid gap-3 sm:col-span-6">
-          <h2 class="dark:text-slate-50">{{ podcast.name }}</h2>
+          <h2 class="dark:text-gray-50">{{ podcast.name }}</h2>
           <p>{{ podcast.description }}</p>
           <a
             :href="podcast.websiteUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">
+            class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300">
             Website &nearr;
           </a>
         </div>
@@ -43,7 +43,7 @@
 
       <!-- My picks (highlighted) -->
       <section v-if="podcast.recommendedEpisodes.length" class="grid gap-6">
-        <h3 class="dark:text-slate-50">My picks</h3>
+        <h3 class="dark:text-gray-50">My picks</h3>
 
         <div class="grid gap-4">
           <div
@@ -56,14 +56,14 @@
                 <button
                   :title="resolvedAudio(ep.guid) ? `Play: ${ep.title}` : 'Episode not yet loaded'"
                   :disabled="!resolvedAudio(ep.guid) && !ep.audioUrl"
-                  class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-500 dark:hover:border-slate-500 dark:hover:text-slate-300"
+                  class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-500 dark:hover:border-gray-500 dark:hover:text-gray-300"
                   @click="playRecommended(ep)">
                   <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </button>
                 <div>
-                  <p class="text-sm font-medium leading-snug dark:text-slate-100">{{ ep.title }}</p>
+                  <p class="text-sm font-medium leading-snug dark:text-gray-100">{{ ep.title }}</p>
                   <p class="mt-1 text-sm text-slate-500">{{ ep.note }}</p>
                 </div>
               </div>
@@ -74,15 +74,15 @@
 
       <!-- Full feed -->
       <section class="grid gap-6">
-        <h3 class="dark:text-slate-50">All episodes</h3>
+        <h3 class="dark:text-gray-50">All episodes</h3>
 
         <!-- Loading -->
         <div v-if="feedPending" class="grid gap-3">
           <div v-for="n in 6" :key="n" class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
             <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto" />
             <div class="sm:col-span-6">
-              <div class="h-4 w-2/3 animate-pulse rounded bg-slate-100 dark:bg-slate-800" />
-              <div class="mt-2 h-3 w-1/3 animate-pulse rounded bg-slate-100 dark:bg-slate-800" />
+              <div class="h-4 w-2/3 animate-pulse rounded bg-slate-100 dark:bg-gray-800" />
+              <div class="mt-2 h-3 w-1/3 animate-pulse rounded bg-slate-100 dark:bg-gray-800" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
               <button
                 :title="`Play: ${ep.title}`"
                 :disabled="!ep.audioUrl"
-                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-500 dark:hover:border-slate-500 dark:hover:text-slate-300"
+                class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:border-slate-400 hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-500 dark:hover:border-gray-500 dark:hover:text-gray-300"
                 @click="playFeedEpisode(ep)">
                 <svg class="ml-px h-2.5 w-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -117,7 +117,7 @@
               </button>
 
               <div class="min-w-0">
-                <p class="text-sm leading-snug dark:text-slate-100" :class="{ 'font-medium': isRecommended(ep.guid) }">
+                <p class="text-sm leading-snug dark:text-gray-100" :class="{ 'font-medium': isRecommended(ep.guid) }">
                   {{ ep.title }}
                   <span
                     v-if="isRecommended(ep.guid)"
@@ -133,7 +133,7 @@
         <!-- Load all button -->
         <button
           v-if="hasMoreEpisodes"
-          class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300"
+          class="self-start text-sm text-slate-400 hover:text-slate-600 dark:text-gray-500 dark:hover:text-gray-300"
           @click="showAllEpisodes = true">
           Load all episodes ({{ feedData?.episodes?.length }})
         </button>

@@ -2,7 +2,7 @@
   <Transition name="player">
     <div
       v-if="currentEpisode"
-      class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+      class="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white dark:border-gray-800 dark:bg-gray-950">
       <!-- Hidden audio element -->
       <audio
         ref="audioEl"
@@ -15,9 +15,9 @@
         @pause="playing = false" />
 
       <!-- Scrubber -->
-      <div class="relative h-1 w-full bg-slate-100 dark:bg-slate-800" @click="seekByClick">
+      <div class="relative h-1 w-full bg-slate-100 dark:bg-gray-800" @click="seekByClick">
         <div
-          class="pointer-events-none h-full bg-slate-900 transition-none dark:bg-slate-100"
+          class="pointer-events-none h-full bg-slate-900 transition-none dark:bg-gray-100"
           :style="{ width: progressPercent + '%' }" />
         <!-- Invisible wider hit target -->
         <div class="absolute inset-0 -top-2 bottom-[-8px] cursor-pointer" @click="seekByClick" />
@@ -30,7 +30,7 @@
         <button
           :disabled="!currentEpisode.audioUrl"
           :title="playing ? 'Pause' : 'Play'"
-          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-slate-950"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-gray-950"
           @click="togglePlay">
           <!-- Play icon -->
           <svg v-if="!playing" class="ml-0.5 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@
         <!-- Episode info -->
         <div class="min-w-0 flex-1">
           <p class="truncate text-xs text-slate-400">{{ currentEpisode.podcastName }}</p>
-          <p class="truncate text-sm dark:text-slate-100">{{ currentEpisode.title }}</p>
+          <p class="truncate text-sm dark:text-gray-100">{{ currentEpisode.title }}</p>
         </div>
 
         <!-- Time -->
@@ -55,7 +55,7 @@
 
         <!-- Close -->
         <button
-          class="shrink-0 text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200"
+          class="shrink-0 text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-gray-200"
           title="Close player"
           @click="close">
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
