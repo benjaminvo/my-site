@@ -11,7 +11,8 @@
       ]">
       <div
         class="absolute inset-0 backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]" />
-      <div class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)]" />
+      <div
+        class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)] dark:[background:linear-gradient(to_bottom,var(--color-slate-950)_0%,var(--color-slate-950)_50%,rgba(2,6,23,0)_100%)]" />
     </div>
     <nav
       ref="navRef"
