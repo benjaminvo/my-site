@@ -40,7 +40,7 @@
 
 <script setup>
 /** Set true when the Life gallery is ready to go live. */
-const showLifeNav = false;
+const showLifeNav = true;
 
 const route = useRoute();
 
