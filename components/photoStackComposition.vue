@@ -39,8 +39,8 @@ import { ref, nextTick, onMounted, onUnmounted } from "vue";
 
 const photos = useState(() => [
   {
-    src: "img/lemons.jpg",
-    srcset: "img/lemons@2x.jpg 2x, img/lemons@3x.jpg 3x",
+    src: "/img/lemons.jpg",
+    srcset: "/img/lemons@2x.jpg 2x, /img/lemons@3x.jpg 3x",
     position: { x: 0, y: 0 },
     width: null,
     height: null,
@@ -49,8 +49,8 @@ const photos = useState(() => [
     caption: "Lemon trees in Mallorca",
   },
   {
-    src: "img/eik.jpg",
-    srcset: "img/eik@2x.jpg 2x, img/eik@3x.jpg 3x",
+    src: "/img/eik.jpg",
+    srcset: "/img/eik@2x.jpg 2x, /img/eik@3x.jpg 3x",
     position: { x: 0, y: 0 },
     width: null,
     height: null,
@@ -59,8 +59,8 @@ const photos = useState(() => [
     caption: "My son Eik at home",
   },
   {
-    src: "img/me.jpg",
-    srcset: "img/me@2x.jpg 2x, img/me@3x.jpg 3x",
+    src: "/img/me.jpg",
+    srcset: "/img/me@2x.jpg 2x, /img/me@3x.jpg 3x",
     position: { x: 0, y: 0 },
     width: null,
     height: null,

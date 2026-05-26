@@ -1,13 +1,25 @@
+import type { Ref } from "vue";
+
 export const LIFE_IMAGE_STAGGER_STEP_MS = 45;
 
 type Options = {
   /** When set, delays the fade start by `staggerIndex * staggerStepMs` (Life grid). */
   staggerIndex?: number;
   staggerStepMs?: number;
+  /** Optional wrapper containing the lazy-loaded `<img>`. */
+  imageWrapRef?: Ref<HTMLElement | null>;
 };
 
 function prefersReducedMotion() {
   return import.meta.client && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function resolvePhotoImg(container: HTMLElement | null | undefined) {
+  const photo = container?.querySelector(".lazy-image-frame__photo");
+  if (photo instanceof HTMLImageElement) return photo;
+
+  const img = photo?.querySelector("img");
+  return img instanceof HTMLImageElement ? img : null;
 }
 
 /**
@@ -20,21 +32,36 @@ export function useImageLoadFadeIn(options: Options = {}) {
 
   let timer: ReturnType<typeof setTimeout> | undefined;
 
+  function onImageLoaded() {
+    isLoaded.value = true;
+  }
+
+  function markLoadedIfComplete() {
+    const img = resolvePhotoImg(options.imageWrapRef?.value ?? null);
+    if (img?.complete && img.naturalWidth > 0) {
+      onImageLoaded();
+    }
+  }
+
   onMounted(() => {
     if (prefersReducedMotion()) {
       canReveal.value = true;
+      markLoadedIfComplete();
       return;
     }
 
     const delay = (options.staggerIndex ?? 0) * (options.staggerStepMs ?? LIFE_IMAGE_STAGGER_STEP_MS);
     if (delay === 0) {
       canReveal.value = true;
-      return;
+    } else {
+      timer = setTimeout(() => {
+        canReveal.value = true;
+      }, delay);
     }
 
-    timer = setTimeout(() => {
-      canReveal.value = true;
-    }, delay);
+    nextTick(() => {
+      markLoadedIfComplete();
+    });
   });
 
   onBeforeUnmount(() => {
@@ -45,10 +72,6 @@ export function useImageLoadFadeIn(options: Options = {}) {
     if (prefersReducedMotion()) return isLoaded.value;
     return isLoaded.value && canReveal.value;
   });
-
-  function onImageLoaded() {
-    isLoaded.value = true;
-  }
 
   const photoStateClass = computed(() =>
     showPhoto.value ? "lazy-image-frame__photo--loaded" : "lazy-image-frame__photo--pending",

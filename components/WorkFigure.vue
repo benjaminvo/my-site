@@ -5,7 +5,7 @@
         class="block w-full leading-none"
         :style="spacerStyle"
         aria-hidden="true" />
-      <div class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-slate-900">
+      <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-slate-900">
         <img
           v-if="placeholderSrc"
           :src="placeholderSrc"
@@ -20,7 +20,9 @@
           :height="dimensions?.height"
           class="lazy-image-frame__photo"
           :class="photoStateClass"
-          @loaded="onImageLoaded" />
+          @loaded="onImageLoaded"
+          @load="onImageLoaded"
+          @error="onImageLoaded" />
         <Border class="pointer-events-none z-[2]" />
       </div>
     </div>
@@ -48,7 +50,9 @@ const placeholderSrc = useThumbhashPlaceholderSrc(
   placeholderRatio,
 );
 
-const { onImageLoaded, photoStateClass } = useImageLoadFadeIn();
+const imageWrapRef = ref<HTMLElement | null>(null);
+
+const { onImageLoaded, photoStateClass } = useImageLoadFadeIn({ imageWrapRef });
 </script>
 
 <style scoped>

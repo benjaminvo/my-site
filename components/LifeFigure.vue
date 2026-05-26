@@ -34,7 +34,9 @@
           :height="dimensions?.height"
           class="lazy-image-frame__photo"
           :class="photoStateClass"
-          @loaded="onImageLoaded" />
+          @loaded="onImageLoaded"
+          @load="onImageLoaded"
+          @error="onImageLoaded" />
       </div>
     </div>
     <p
@@ -65,11 +67,13 @@ const { dimensions, spacerStyle, placeholderRatio } = useReservedImageFrame({
 
 const placeholderSrc = useThumbhashPlaceholderSrc(() => props.thumbhash, placeholderRatio);
 
+const imageWrapRef = ref<HTMLElement | null>(null);
+
 const { onImageLoaded, photoStateClass } = useImageLoadFadeIn({
   staggerIndex: props.staggerIndex,
+  imageWrapRef,
 });
 
-const imageWrapRef = ref<HTMLElement | null>(null);
 const zoomEnabled = useImageZoomEnabled();
 const { openFromElement, isActive } = useImageZoom();
 
