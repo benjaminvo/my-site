@@ -6,12 +6,13 @@
     <nav
       ref="navRef"
       :class="[
-        'flex rounded-full border border-slate-200 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md transition-[box-shadow,transform] duration-200 ease-out dark:bg-slate-800/85 xs:w-auto',
+        'flex rounded-full border border-slate-200 bg-slate-100/85 px-[1px] py-[2px] backdrop-blur-md dark:bg-slate-800/85 xs:w-auto',
         isStuck
-          ? 'fixed top-6 right-6 left-6 z-30 w-auto shadow-xs xs:relative xs:right-auto xs:left-auto'
+          ? 'fixed top-6 z-30 shadow-xs xs:relative'
           : 'relative w-full shadow-none',
         'xs:shadow-none',
-      ]">
+      ]"
+      :style="isStuck ? stickyNavStyle : undefined">
       <div
         aria-hidden="true"
         class="pointer-events-none absolute inset-y-[2px] left-0 rounded-full border border-slate-200 bg-white shadow-xs"
@@ -46,9 +47,50 @@ const navSlot = ref(null);
 const linkEls = ref([]);
 const isStuck = ref(false);
 const navHeight = ref(0);
+const stickyNavStyle = ref({});
 
 const stickyTop = 24;
+const stickyInset = 16;
 const mobileQuery = "(max-width: 519px)";
+let stickyAnimationFrame = null;
+let stickyAnimationTimeout = null;
+let isAnimatingSticky = false;
+
+const clearStickyAnimation = () => {
+  if (stickyAnimationFrame) cancelAnimationFrame(stickyAnimationFrame);
+  if (stickyAnimationTimeout) clearTimeout(stickyAnimationTimeout);
+  stickyAnimationFrame = null;
+  stickyAnimationTimeout = null;
+};
+
+const animateToStickyBounds = () => {
+  if (!navRef.value || !navSlot.value) return;
+
+  const slotRect = navSlot.value.getBoundingClientRect();
+  navHeight.value = navRef.value.offsetHeight;
+  isStuck.value = true;
+  isAnimatingSticky = true;
+  stickyNavStyle.value = {
+    left: `${slotRect.left}px`,
+    width: `${slotRect.width}px`,
+    transition: "none",
+  };
+
+  clearStickyAnimation();
+  stickyAnimationFrame = requestAnimationFrame(() => {
+    stickyAnimationFrame = requestAnimationFrame(() => {
+      stickyNavStyle.value = {
+        left: `${stickyInset}px`,
+        width: `${window.innerWidth - stickyInset * 2}px`,
+        transition: "left 200ms ease-out, width 200ms ease-out, box-shadow 200ms ease-out",
+      };
+      stickyAnimationTimeout = window.setTimeout(() => {
+        isAnimatingSticky = false;
+        stickyAnimationTimeout = null;
+      }, 220);
+    });
+  });
+};
 
 const updateStuckState = () => {
   if (!import.meta.client || !navRef.value || !navSlot.value) return;
@@ -57,7 +99,21 @@ const updateStuckState = () => {
   const slotTop = navSlot.value.getBoundingClientRect().top;
 
   navHeight.value = navRef.value.offsetHeight;
-  isStuck.value = isMobile && slotTop <= stickyTop;
+  const shouldStick = isMobile && slotTop <= stickyTop;
+
+  if (shouldStick && !isStuck.value) {
+    animateToStickyBounds();
+  } else if (!shouldStick && isStuck.value && !isAnimatingSticky) {
+    clearStickyAnimation();
+    isStuck.value = false;
+    stickyNavStyle.value = {};
+  } else if (shouldStick && !isAnimatingSticky) {
+    stickyNavStyle.value = {
+      left: `${stickyInset}px`,
+      width: `${window.innerWidth - stickyInset * 2}px`,
+      transition: "left 200ms ease-out, width 200ms ease-out, box-shadow 200ms ease-out",
+    };
+  }
 };
 
 const navItems = computed(() => {
@@ -133,6 +189,7 @@ onMounted(() => {
   window.addEventListener("resize", updateStuckState);
 
   onUnmounted(() => {
+    clearStickyAnimation();
     observer.disconnect();
     window.removeEventListener("scroll", updateStuckState);
     window.removeEventListener("resize", updateStuckState);
