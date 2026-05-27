@@ -42,7 +42,7 @@
         <Block
           label="Now"
           title="Freelance"
-          description="I currently freelance in product development (design, frontend) and product strategy.  I like coming in early to shape something new, or stepping in to elevate what exists. Reach out if you want to collaborate!" />
+          description="I help startups with product strategy, design, and frontend, whether that’s shaping something new or improving what exists. Reach out if you want to collaborate!" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
@@ -57,7 +57,7 @@
           label="2016–2020"
           title="Product Designer at GoMore"
           subTitle="Copenhagen"
-          description="GoMore is Europe’s leading car-sharing platform. I worked across design, frontend, and product management to lead the end-to-end development of GoMore Keyless, a core product which allows car owners to securely rent out their vehicles without meeting face-to-face." />
+          description="GoMore is Europe’s leading car-sharing platform. I worked across design, frontend, and product management, and my main project was leading the end-to-end development of GoMore Keyless – a product that lets car owners rent out their vehicles without meeting face-to-face." />
         <!--
         <Block
           label="2014–2015"
