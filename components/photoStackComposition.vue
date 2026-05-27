@@ -37,6 +37,8 @@
 <script setup>
 import { ref, nextTick, onMounted, onUnmounted } from "vue";
 
+const posthog = usePostHog();
+
 const photos = useState(() => [
   {
     src: "/img/lemons.jpg",
@@ -315,6 +317,9 @@ function dragPhoto(index, event) {
   isDragging = true;
   draggedPhotoIndex.value = index;
 
+  const startPosition = { ...photos.value[index].position };
+  let moved = false;
+
   // Save offset to place the photo in the right position behind the cursor when moving
   const offset = {
     x: photos.value[index].position.x - event.clientX,
@@ -332,6 +337,13 @@ function dragPhoto(index, event) {
     };
     photos.value[index].position = newPosition;
 
+    if (
+      Math.abs(newPosition.x - startPosition.x) > 2 ||
+      Math.abs(newPosition.y - startPosition.y) > 2
+    ) {
+      moved = true;
+    }
+
     // Bring it to the top of the photo stack
     if (isNotBehindOtherPhotos(index) && photos.value[index].zIndex !== getMaxZIndex()) {
       photos.value[index].zIndex = getMaxZIndex() + 1;
@@ -341,6 +353,13 @@ function dragPhoto(index, event) {
 
   // Drop the photo
   document.onmouseup = function () {
+    if (moved) {
+      posthog?.capture("about_photo_stack_dragged", {
+        photo_src: photos.value[index].src,
+        photo_caption: photos.value[index].caption,
+      });
+    }
+
     // Save positions
     localStorage.setItem("photos", JSON.stringify(photos.value));
 

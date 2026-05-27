@@ -7,7 +7,7 @@
 
     <div v-for="podcast in podcasts" :key="podcast.slug" class="grid gap-8">
       <!-- Podcast header row — matches the Block component's two-column layout -->
-      <div class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
+      <div class="xs:gap-8 flex gap-6 sm:grid sm:grid-cols-8">
         <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto">
           <NuxtLink
             :to="`/podcasts/${podcast.slug}`"
@@ -26,12 +26,9 @@
 
           <!-- Recommended episodes -->
           <div v-if="podcast.recommendedEpisodes.length" class="grid gap-4">
-            <small class="text-xs uppercase text-slate-400 dark:text-neutral-500">My picks</small>
+            <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">My picks</small>
 
-            <div
-              v-for="episode in podcast.recommendedEpisodes"
-              :key="episode.guid"
-              class="flex items-start gap-3">
+            <div v-for="episode in podcast.recommendedEpisodes" :key="episode.guid" class="flex items-start gap-3">
               <!-- Play button -->
               <button
                 :title="`Play: ${episode.title}`"
@@ -83,8 +80,6 @@ const playEpisode = (podcastSlug: string, podcastName: string, episode: CuratedE
       audioUrl: episode.audioUrl,
     });
   } else {
-    // No audio URL in the curated data — go to the detail page where the live
-    // feed is loaded and any episode can be played directly.
     navigateTo(`/podcasts/${podcastSlug}`);
   }
 };

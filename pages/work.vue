@@ -6,7 +6,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>3D Web Viewer</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">Speckle, 2025</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">Speckle, 2025</small>
         <p>
           Speckle makes it easy to work on 3D data across tools and teams. I led the development of the web platform,
           including the viewer, and managed the design and frontend teams.
@@ -70,7 +70,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Transparent employer branding</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">The Org, 2023</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">The Org, 2023</small>
         <p>
           Every company is competing to hire the best talent. At The Org I helped build an employer branding platform
           where companies attract new talent by being radically transparent about their team and how they work.
@@ -143,7 +143,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Dashboard</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">The Org, 2023</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">The Org, 2023</small>
         <p>
           Companies on The Org asked for better user onboarding and an easier way to build their profiles. We built a
           Dashboard to solve those problems. A lot of work went into the integrations that can pull in all relevant data
@@ -195,7 +195,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Keyless car rental</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">GoMore, 2019</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">GoMore, 2019</small>
         <p>
           GoMore is a platform where people share cars. I led the development of GoMore Keyless which allows car owners
           to rent out their car to strangers without ever meeting.
@@ -237,7 +237,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Finding your driver</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">GoMore, 2018</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">GoMore, 2018</small>
         <p>GoMore is also a platform where people share rides with other people heading in the same direction.</p>
         <p>
           One friction point is that it can sometimes be hard to find your driver or passengers when it’s time to meet.
@@ -267,7 +267,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Colorful car leasing</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">GoMore, 2018</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">GoMore, 2018</small>
         <p>On GoMore you can lease a car and share it with other people to decrease the monthly lease.</p>
         <p>
           I was the primary designer on everything leasing related. Our goal was to build a leasing platform that
@@ -296,7 +296,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">Regnsky, 2016</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">Regnsky, 2016</small>
         <p>Regnsky was a popular music blog among the Danish indie youth. They asked if I could do a redesign.</p>
         <p>
           We agreed on the keywords Cute, Friendly, Colourful, and Handmade. Seven years later I still think the design
@@ -327,7 +327,7 @@
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Motivating students to read</h2>
-        <small class="text-xs text-slate-400 dark:text-neutral-500 uppercase">Research, 2016</small>
+        <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">Research, 2016</small>
         <p>
           I was not the most motivated student. That’s why I decided to build Quasi with Simon Lind and Andreas
           Reffstrup to see if we could build a platform that motivated students to read more academic literature.
@@ -371,7 +371,7 @@
         thumbhash="" />
     </section> -->
     <a
-      class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 dark:text-neutral-500 hover:no-underline"
+      class="col-span-full mx-auto block cursor-pointer text-center text-slate-400 hover:no-underline dark:text-neutral-500"
       @click="scrollToTop"
       >↑<br />Back to top</a
     >

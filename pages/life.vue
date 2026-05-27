@@ -1,6 +1,5 @@
 <template>
-  <main
-    class="pb-20 sm:col-span-8 md:col-span-8 md:col-start-2 lg:col-span-12 xl:col-span-16">
+  <main class="pb-20 sm:col-span-8 md:col-span-8 md:col-start-2 lg:col-span-12 xl:col-span-16">
     <section
       class="grid items-stretch gap-6 sm:grid-cols-8 sm:gap-x-8 md:grid-cols-10 md:gap-x-8 lg:grid-cols-12 xl:grid-cols-16">
       <div
@@ -28,18 +27,11 @@
         aria-hidden="true"
         @click="close" />
       <div :style="styles.wrapper">
-        <img
-          :src="imageSrc"
-          alt=""
-          :style="styles.image"
-          class="cursor-zoom-out"
-          @click.stop="close" />
+        <img :src="imageSrc" alt="" :style="styles.image" class="cursor-zoom-out" @click.stop="close" />
       </div>
-      <p
-        v-if="caption"
-        :style="styles.caption"
-        class="pointer-events-none font-sans text-xs">
-        <span class="text-black dark:text-neutral-100">{{ caption.title }}</span><span class="ml-1 text-slate-400 dark:text-neutral-500">{{ caption.date }}</span>
+      <p v-if="caption" :style="styles.caption" class="pointer-events-none font-sans text-xs">
+        <span class="text-black dark:text-neutral-100">{{ caption.title }}</span
+        ><span class="ml-1 text-slate-400 dark:text-neutral-500">{{ caption.date }}</span>
       </p>
     </template>
   </Teleport>

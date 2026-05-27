@@ -2,7 +2,9 @@
   <main class="grid gap-12 sm:col-span-8 md:col-start-2 lg:col-start-3 xl:col-span-8 xl:col-start-5">
     <!-- Not found -->
     <div v-if="!podcast">
-      <NuxtLink to="/podcasts" class="text-sm text-slate-400 dark:text-neutral-500 hover:text-slate-600">&larr; Podcasts</NuxtLink>
+      <NuxtLink to="/podcasts" class="text-sm text-slate-400 hover:text-slate-600 dark:text-neutral-500"
+        >&larr; Podcasts</NuxtLink
+      >
       <p class="mt-8">Podcast not found.</p>
     </div>
 
@@ -15,7 +17,7 @@
       </NuxtLink>
 
       <!-- Podcast header -->
-      <div class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
+      <div class="xs:gap-8 flex gap-6 sm:grid sm:grid-cols-8">
         <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto">
           <!-- Artwork -->
           <img
@@ -23,9 +25,7 @@
             :src="feedData.artwork"
             :alt="podcast.name"
             class="aspect-square w-16 rounded-lg object-cover sm:w-full" />
-          <div
-            v-else
-            class="aspect-square w-16 rounded-lg bg-slate-100 dark:bg-neutral-800 sm:w-full" />
+          <div v-else class="aspect-square w-16 rounded-lg bg-slate-100 sm:w-full dark:bg-neutral-800" />
         </div>
 
         <div class="grid gap-3 sm:col-span-6">
@@ -49,7 +49,7 @@
           <div
             v-for="ep in podcast.recommendedEpisodes"
             :key="ep.guid"
-            class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
+            class="xs:gap-8 flex gap-6 sm:grid sm:grid-cols-8">
             <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto" />
             <div class="grid gap-3 sm:col-span-6">
               <div class="flex items-start gap-3">
@@ -63,7 +63,7 @@
                   </svg>
                 </button>
                 <div>
-                  <p class="text-sm font-medium leading-snug dark:text-neutral-100">{{ ep.title }}</p>
+                  <p class="text-sm leading-snug font-medium dark:text-neutral-100">{{ ep.title }}</p>
                   <p class="mt-1 text-sm text-slate-500">{{ ep.note }}</p>
                 </div>
               </div>
@@ -78,7 +78,7 @@
 
         <!-- Loading -->
         <div v-if="feedPending" class="grid gap-3">
-          <div v-for="n in 6" :key="n" class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
+          <div v-for="n in 6" :key="n" class="xs:gap-8 flex gap-6 sm:grid sm:grid-cols-8">
             <div class="w-[88px] shrink-0 sm:col-span-2 sm:w-auto" />
             <div class="sm:col-span-6">
               <div class="h-4 w-2/3 animate-pulse rounded bg-slate-100 dark:bg-neutral-800" />
@@ -94,12 +94,9 @@
 
         <!-- Episodes list -->
         <div v-else class="grid gap-4">
-          <div
-            v-for="ep in displayedEpisodes"
-            :key="ep.guid"
-            class="flex gap-6 xs:gap-8 sm:grid sm:grid-cols-8">
+          <div v-for="ep in displayedEpisodes" :key="ep.guid" class="xs:gap-8 flex gap-6 sm:grid sm:grid-cols-8">
             <!-- Date / duration column -->
-            <div class="w-[88px] shrink-0 text-slate-400 dark:text-neutral-500 sm:col-span-2 sm:w-auto">
+            <div class="w-[88px] shrink-0 text-slate-400 sm:col-span-2 sm:w-auto dark:text-neutral-500">
               <span class="block text-xs">{{ formatDate(ep.publishDate) }}</span>
               <span v-if="ep.duration" class="block text-xs">{{ ep.duration }}</span>
             </div>
@@ -117,11 +114,13 @@
               </button>
 
               <div class="min-w-0">
-                <p class="text-sm leading-snug dark:text-neutral-100" :class="{ 'font-medium': isRecommended(ep.guid) }">
+                <p
+                  class="text-sm leading-snug dark:text-neutral-100"
+                  :class="{ 'font-medium': isRecommended(ep.guid) }">
                   {{ ep.title }}
                   <span
                     v-if="isRecommended(ep.guid)"
-                    class="ml-2 inline-block align-middle text-[10px] uppercase tracking-wide text-slate-400 dark:text-neutral-500">
+                    class="ml-2 inline-block align-middle text-[10px] tracking-wide text-slate-400 uppercase dark:text-neutral-500">
                     pick
                   </span>
                 </p>
@@ -166,31 +165,18 @@ function parseRss(xml: string): FeedData {
   const channel = parser.parse(xml)?.rss?.channel;
   if (!channel) throw new Error("No channel in RSS");
 
-  const artwork =
-    channel["itunes:image"]?.["@_href"] ||
-    channel["itunes:image"] ||
-    channel.image?.url ||
-    "";
+  const artwork = channel["itunes:image"]?.["@_href"] || channel["itunes:image"] || channel.image?.url || "";
 
-  const rawItems: any[] = Array.isArray(channel.item)
-    ? channel.item
-    : channel.item
-      ? [channel.item]
-      : [];
+  const rawItems: any[] = Array.isArray(channel.item) ? channel.item : channel.item ? [channel.item] : [];
 
   return {
     name: channel.title?.["__cdata"] ?? channel.title ?? "",
     artwork: String(artwork),
-    description: String(
-      channel["itunes:summary"] ||
-        channel.description?.["__cdata"] ||
-        channel.description ||
-        "",
-    ),
+    description: String(channel["itunes:summary"] || channel.description?.["__cdata"] || channel.description || ""),
     episodes: rawItems.map((item: any) => ({
       guid:
         typeof item.guid === "object"
-          ? item.guid?.["#text"] ?? item.guid?.["__cdata"] ?? ""
+          ? (item.guid?.["#text"] ?? item.guid?.["__cdata"] ?? "")
           : String(item.guid ?? ""),
       title: item.title?.["__cdata"] ?? item["itunes:title"] ?? item.title ?? "",
       description:
@@ -252,8 +238,7 @@ const feedAudioMap = computed<Record<string, string>>(() => {
 const resolvedAudio = (guid: string) =>
   feedAudioMap.value[guid] ?? podcast?.recommendedEpisodes.find((e) => e.guid === guid)?.audioUrl ?? "";
 
-const isRecommended = (guid: string) =>
-  podcast?.recommendedEpisodes.some((e) => e.guid === guid) ?? false;
+const isRecommended = (guid: string) => podcast?.recommendedEpisodes.some((e) => e.guid === guid) ?? false;
 
 const playRecommended = (ep: CuratedEpisode) => {
   play({

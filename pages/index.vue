@@ -79,10 +79,22 @@
     <section>
       <h2 class="mb-8">Contact</h2>
       <div class="grid gap-3">
-        <Block label="Email" title="benjamin.ottensten@gmail.com" link="mailto:benjamin.ottensten@gmail.com" />
-        <Block label="Phone" title="+45 21952390" link="tel:+4521952390" />
-        <Block label="Twitter" title="@benjavo ↗" link="https://www.twitter.com/benjavo" />
-        <Block label="LinkedIn" title="@benjaminvo ↗" link="https://www.linkedin.com/in/benjaminvo" />
+        <Block
+          label="Email"
+          title="benjamin.ottensten@gmail.com"
+          link="mailto:benjamin.ottensten@gmail.com"
+          @click="trackContact('email')" />
+        <Block label="Phone" title="+45 21952390" link="tel:+4521952390" @click="trackContact('phone')" />
+        <Block
+          label="Twitter"
+          title="@benjavo ↗"
+          link="https://www.twitter.com/benjavo"
+          @click="trackContact('twitter')" />
+        <Block
+          label="LinkedIn"
+          title="@benjaminvo ↗"
+          link="https://www.linkedin.com/in/benjaminvo"
+          @click="trackContact('linkedin')" />
       </div>
     </section>
   </main>
@@ -100,6 +112,12 @@ let loadPhotos = ref(false);
 onMounted(() => {
   loadPhotos.value = true;
 });
+
+const posthog = usePostHog();
+
+function trackContact(linkType) {
+  posthog?.capture("contact_link_clicked", { link_type: linkType });
+}
 </script>
 
 <style>
