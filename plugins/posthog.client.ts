@@ -11,7 +11,8 @@ export default defineNuxtPlugin({
     }
 
     posthog.init(publicKey, {
-      api_host: config.public.posthogHost,
+      api_host: config.public.posthogApiHost,
+      ui_host: config.public.posthogUiHost,
       capture_pageview: false,
       capture_exceptions: true,
     });

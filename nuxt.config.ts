@@ -9,7 +9,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       posthogPublicKey: process.env.NUXT_POSTHOG_CONFIG_PUBLIC_KEY || "",
-      posthogHost: process.env.NUXT_POSTHOG_CONFIG_HOST || "https://eu.i.posthog.com",
+      posthogApiHost: process.env.NUXT_POSTHOG_CONFIG_API_HOST || "/livy-capture",
+      posthogUiHost: process.env.NUXT_POSTHOG_CONFIG_UI_HOST || "https://eu.posthog.com",
     },
   },
 
