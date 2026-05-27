@@ -15,6 +15,10 @@ export default defineNuxtPlugin({
       ui_host: config.public.posthogUiHost,
       capture_pageview: false,
       capture_exceptions: true,
+      disable_session_recording: true,
+      capture_dead_clicks: false,
+      disable_surveys: true,
+      capture_performance: false,
     });
 
     if (import.meta.dev) {
