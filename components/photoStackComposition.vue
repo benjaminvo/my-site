@@ -16,7 +16,7 @@
         :srcset="photo.srcset"
         ref="photoElements"
         @mousedown.prevent="dragPhoto(index, $event)"
-        @mouseenter="showCaption(index, $event)"
+        @mouseenter="showCaption(index)"
         @mouseleave="removeCaption"
         :style="{
           left: photo.position.x + 'px',
@@ -77,6 +77,16 @@ let photoPositionsLoaded = ref(false);
 let isDragging = false;
 const hasAnimated = ref(false);
 
+let captionMouseMoveHandler = null;
+
+function clearCaption() {
+  if (captionMouseMoveHandler) {
+    document.removeEventListener("mousemove", captionMouseMoveHandler);
+    captionMouseMoveHandler = null;
+  }
+  document.getElementById("caption")?.remove();
+}
+
 // Keep only originalPositions
 const originalPositions = [
   { x: 20, y: -35, rotate: "rotate-1", zIndex: 0 },
@@ -99,13 +109,14 @@ onMounted(() => {
     updatePhotoDimensions();
   });
 
-  // Add keyboard event listener
   window.addEventListener("keydown", handleKeyPress);
+  window.addEventListener("pagehide", clearCaption);
 });
 
-// Remove event listener on component unmount
 onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyPress);
+  window.removeEventListener("pagehide", clearCaption);
+  clearCaption();
 });
 
 function animatePhotosOnLoad() {
@@ -278,38 +289,30 @@ function findNonOverlappingPosition(photoIndex) {
   };
 }
 
-function showCaption(index, event) {
+function showCaption(index) {
   if (isDragging) {
-    return false;
+    return;
   }
 
-  // Create a new div element
+  clearCaption();
+
   const caption = document.createElement("div");
-  caption.setAttribute("id", "caption");
-  caption.setAttribute(
-    "class",
-    "absolute bg-black dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl",
-  );
-
-  // Add text to the div
-  const captionText = document.createTextNode(photos.value[index].caption);
-  caption.appendChild(captionText);
-
-  // Add div to the DOM
+  caption.id = "caption";
+  caption.className =
+    "absolute bg-black dark:bg-neutral-100 text-white dark:text-neutral-900 text-sm whitespace-nowrap px-3 py-1 z-[99999] rounded-full shadow-xl";
+  caption.textContent = photos.value[index].caption;
   document.body.appendChild(caption);
 
-  const onMouseMove = (e) => {
-    caption.style.left = e.pageX + 16 + "px";
-    caption.style.top = e.pageY - 32 + "px";
-    //caption.style.zIndex = photos.value[index].zIndex;
+  captionMouseMoveHandler = (e) => {
+    caption.style.left = `${e.pageX + 16}px`;
+    caption.style.top = `${e.pageY - 32}px`;
   };
-  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mousemove", captionMouseMoveHandler);
 }
 
 function removeCaption() {
   if (!isDragging) {
-    const caption = document.getElementById("caption");
-    caption.remove();
+    clearCaption();
   }
 }
 
