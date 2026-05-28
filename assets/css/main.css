@@ -21,7 +21,7 @@
   }
 
   p {
-    @apply font-serif text-slate-500 dark:text-neutral-300;
+    @apply font-serif text-slate-600 dark:text-neutral-400;
   }
 
   h2 {
