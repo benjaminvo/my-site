@@ -1,8 +1,10 @@
 <template>
   <main
     class="sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+    <WorkToc />
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="3d-web-viewer"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>3D Web Viewer</h2>
@@ -66,7 +68,8 @@
         thumbhash="PAgCBIA6puCUecaQibWld2CICA" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="transparent-employer-branding"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Transparent employer branding</h2>
@@ -139,7 +142,8 @@
         thumbhash="OwgGBQCnqH+FJZjXZ4ZoiJaAfgjH" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="dashboard"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Dashboard</h2>
@@ -191,7 +195,8 @@
         thumbhash="PfgBBYBQqTVnpniZhzd4mrmv2TBH" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="keyless-car-rental"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Keyless car rental</h2>
@@ -233,10 +238,11 @@
         thumbhash="udcJCwa3iUp4f3c+54tw2gg" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="finding-your-driver"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
-        <h2>Finding your driver</h2>
+        <h2>Find your driver</h2>
         <small class="text-xs text-slate-400 uppercase dark:text-neutral-500">GoMore, 2018</small>
         <p>GoMore is also a platform where people share rides with other people heading in the same direction.</p>
         <p>
@@ -263,7 +269,8 @@
         thumbhash="NwgCDAKBB7/XQ7hJlFmKf6z2qA" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="colorful-car-leasing"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Colorful car leasing</h2>
@@ -292,7 +299,8 @@
         thumbhash="+/cBAoLDyKtqpvdY/lfYf5U" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
+      id="blog-redesign"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Blog redesign</h2>
@@ -323,7 +331,8 @@
         thumbhash="s0gGDQqHeHB3h2cnd3Q4OIiMgHgI" />
     </section>
     <section
-      class="mb-20 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:grid-cols-16">
+      id="motivating-students-to-read"
+      class="mb-20 scroll-mt-16 items-start sm:col-span-8 sm:grid sm:grid-cols-8 sm:gap-x-8 md:col-span-10 md:grid-cols-10 lg:col-span-12 lg:mb-28 lg:grid-cols-12 xl:col-span-16 xl:mb-40 xl:grid-cols-16">
       <div
         class="mb-10 grid gap-3 sm:col-span-8 md:col-start-2 lg:col-start-3 lg:mb-14 xl:sticky xl:top-16 xl:col-span-4 xl:col-start-1 xl:mb-0">
         <h2>Motivating students to read</h2>
