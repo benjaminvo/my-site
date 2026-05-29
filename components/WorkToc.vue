@@ -1,6 +1,10 @@
 <template>
-  <nav aria-label="Work projects" class="fixed top-1/2 right-3 z-30 hidden -translate-y-1/2 lg:block">
-    <div class="relative" @mouseenter="openCard" @mouseleave="closeCard">
+  <nav
+    aria-label="Work projects"
+    class="fixed top-1/2 right-0 z-30 hidden -translate-y-1/2 pr-3 lg:block"
+    @mouseenter="openCard"
+    @mouseleave="closeCard">
+    <div class="relative">
       <div
         class="flex flex-col items-end gap-1.5 transition-opacity duration-200"
         :class="isCardOpen ? 'opacity-0' : 'opacity-100'"
@@ -9,14 +13,14 @@
           v-for="project in projects"
           :key="project.id"
           :class="[
-            'h-[2px] rounded-full transition-all duration-200',
-            activeId === project.id ? 'w-4 bg-slate-900 dark:bg-neutral-100' : 'w-2.5 bg-slate-200 dark:bg-neutral-700',
+            'block h-[2px] rounded-full transition-[width,background-color] duration-100 ease-out',
+            activeId === project.id ? 'w-4 bg-slate-900 dark:bg-neutral-100' : 'w-2.5 bg-slate-300 dark:bg-neutral-600',
           ]" />
       </div>
 
       <div
         :class="[
-          'absolute top-1/2 right-0 w-max -translate-y-1/2 rounded-xl border border-black/8 bg-white px-3 py-2 shadow-lg transition-all duration-200 ease-out motion-reduce:translate-x-0 dark:border-white/6 dark:bg-neutral-900',
+          'absolute top-1/2 right-0 w-max -translate-y-1/2 rounded-xl border border-black/8 bg-white px-1.5 py-2 shadow-xs transition-all duration-200 ease-out motion-reduce:translate-x-0 dark:border-white/6 dark:bg-neutral-800',
           isCardOpen
             ? 'pointer-events-auto translate-x-0 opacity-100'
             : 'pointer-events-none translate-x-1.5 opacity-0',
@@ -27,7 +31,7 @@
               :href="`#${project.id}`"
               :aria-label="project.title"
               :class="[
-                'block min-w-[140px] py-1 text-sm whitespace-nowrap no-underline transition-colors duration-150 hover:no-underline',
+                'block min-w-[150px] px-1.5 py-1 text-sm whitespace-nowrap no-underline transition-colors duration-150 hover:no-underline',
                 activeId === project.id
                   ? 'text-black dark:text-neutral-100'
                   : 'text-slate-400 hover:text-slate-500 dark:text-neutral-500 dark:hover:text-neutral-300',

@@ -21,7 +21,7 @@
   }
 
   p {
-    @apply font-serif text-slate-500 dark:text-neutral-300;
+    @apply font-serif text-slate-500 dark:text-[oklch(78%_0_0)];
   }
 
   h2 {
