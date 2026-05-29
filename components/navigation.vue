@@ -1,8 +1,6 @@
 <template>
-  <div
-    ref="navSlot"
-    class="self-start"
-    :style="isStuck ? { height: `${navHeight}px` } : undefined">
+  <div class="contents xs:block self-start">
+    <div ref="sentinel" class="xs:hidden h-px w-full" aria-hidden="true" />
     <div
       aria-hidden="true"
       :class="[
@@ -15,15 +13,7 @@
         class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)] dark:[background:linear-gradient(to_bottom,var(--color-neutral-950)_0%,var(--color-neutral-950)_50%,rgba(3,7,18,0)_100%)]" />
     </div>
     <nav
-      ref="navRef"
-      :class="[
-        'flex gap-2 xs:w-auto',
-        isStuck
-          ? 'fixed top-4 ml-0 w-auto z-50 xs:relative'
-          : 'relative -ml-1 w-[calc(100%+8px)] shadow-none',
-        'xs:shadow-none',
-      ]"
-      :style="isStuck ? stickyNavStyle : undefined">
+      class="sticky top-4 z-50 -ml-1 mb-12 flex w-[calc(100%+8px)] gap-2 self-start xs:static xs:ml-0 xs:mb-0 xs:w-auto">
       <NuxtLink
         v-for="item in navItems"
         :key="item.to"
@@ -45,34 +35,8 @@
 const showLifeNav = true;
 
 const route = useRoute();
-const navRef = ref(null);
-const navSlot = ref(null);
+const sentinel = ref(null);
 const isStuck = ref(false);
-const navHeight = ref(0);
-const stickyNavStyle = ref({});
-
-const stickyTop = 16;
-const stickyLeft = 20;
-const stickyRight = 20;
-const mobileQuery = "(max-width: 519px)";
-
-const updateStuckState = () => {
-  if (!import.meta.client || !navRef.value || !navSlot.value) return;
-
-  const isMobile = window.matchMedia(mobileQuery).matches;
-  const slotTop = navSlot.value.getBoundingClientRect().top;
-
-  navHeight.value = navRef.value.offsetHeight;
-  const shouldStick = isMobile && slotTop <= stickyTop;
-
-  isStuck.value = shouldStick;
-  stickyNavStyle.value = shouldStick
-    ? {
-        left: `${stickyLeft}px`,
-        right: `${stickyRight}px`,
-      }
-    : {};
-};
 
 const navItems = computed(() => {
   const items = [
@@ -100,20 +64,18 @@ const activeColorClass = computed(() => {
 });
 
 onMounted(() => {
-  updateStuckState();
+  if (!import.meta.client || !sentinel.value) return;
 
-  const observer = new ResizeObserver(() => {
-    updateStuckState();
-  });
-  if (navRef.value) observer.observe(navRef.value);
-
-  window.addEventListener("scroll", updateStuckState, { passive: true });
-  window.addEventListener("resize", updateStuckState);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isStuck.value = !entry.isIntersecting;
+    },
+    { rootMargin: "-16px 0px 0px 0px", threshold: 0 },
+  );
+  observer.observe(sentinel.value);
 
   onUnmounted(() => {
     observer.disconnect();
-    window.removeEventListener("scroll", updateStuckState);
-    window.removeEventListener("resize", updateStuckState);
   });
 });
 </script>
