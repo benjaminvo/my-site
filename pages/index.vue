@@ -46,7 +46,7 @@
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
-          subTitle="Copenhagen (Remote) · Series A · 30 employees"
+          subTitle="Remote · Series A · 30 employees"
           description="Speckle is a popular 3D data platform for the AEC industry. I led the web product, managed the design and frontend teams, and played a key role in transitioning Speckle from a free open-source project to a paid enterprise product." />
         <Block
           label="2020–2023"
