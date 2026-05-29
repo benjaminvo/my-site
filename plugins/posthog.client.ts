@@ -13,6 +13,7 @@ export default defineNuxtPlugin({
     posthog.init(publicKey, {
       api_host: config.public.posthogApiHost,
       ui_host: config.public.posthogUiHost,
+      person_profiles: "always",
       capture_pageview: false,
       capture_exceptions: true,
       disable_session_recording: true,
