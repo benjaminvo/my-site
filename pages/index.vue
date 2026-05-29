@@ -4,12 +4,12 @@
       class="xs:w-[calc(100vw-80px)] w-[calc(100vw-48px)] sm:grid sm:w-auto sm:grid-cols-8 sm:items-center sm:gap-8">
       <div class="mb-9 sm:col-span-5 sm:mb-0">
         <p class="mb-3">
-          I'm a product builder with 10 years of experience in product leadership, design and frontend at startups.
+          I'm a product builder with 10+ years of experience in product leadership, design and frontend at startups.
         </p>
         <p class="mb-10">
-          I enjoy building high-quality user experiences that bring joy and drive growth. I have the best experience
-          doing that when the team is small and made up of talented, technical and kind people who care about the
-          details.
+          I care about good strategy and high-quality user experiences. I like when the team is small and made up of
+          technical and kind people who care about the details. And I enjoy leading those teams while staying hands-on
+          myself too.
         </p>
       </div>
       <div class="xs:-ml-10 -ml-6 w-[100vw] overflow-hidden sm:hidden">
