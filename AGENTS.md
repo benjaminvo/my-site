@@ -80,3 +80,27 @@ No Pinia/Vuex. Uses Nuxt's `useState()` for SSR-safe shared state.
 - All components use `<script setup>` (Vue 3 Composition API)
 - SEO via `useSeoMeta()` on each page
 - Prettier + `prettier-plugin-tailwindcss` enforces class ordering
+
+---
+
+## Cursor Cloud specific instructions
+
+### Running the dev server
+
+Single service: `npm run dev` starts the Nuxt SSR dev server on `http://localhost:3000`. No external services (databases, Docker, Redis) are required.
+
+### Lint & format
+
+- `npx prettier --check .` — check formatting (repo currently has pre-existing style diffs; do not auto-fix unless asked)
+- `npx prettier --write <file>` — format specific files you modify
+
+### Build
+
+- `npm run build` — production build (runs `prebuild` which generates `data/imageDimensions.ts` via `sharp`)
+
+### Key caveats
+
+- No automated test suite exists (no `test` script in `package.json`). Verify changes via build + manual browser testing.
+- `nuxt prepare` runs automatically via `postinstall` and generates `.nuxt/` types. If TypeScript errors appear after dependency changes, re-run `npm install`.
+- The `data/imageDimensions.ts` file is auto-generated. To regenerate after adding images: `npm run sync:life`.
+- Environment variables (`NUXT_POSTHOG_CONFIG_PUBLIC_KEY`, etc.) are optional; the app runs fully without them.
