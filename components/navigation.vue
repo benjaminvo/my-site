@@ -92,11 +92,27 @@ onMounted(() => {
   position: absolute;
   inset-inline: 0;
   top: 0;
-  /* Solid fill through sticky nav (top-4 + pills), short fade below */
-  height: 3.75rem;
+  /* Solid through nav, then a longer eased ramp (no hard jump to full white) */
+  height: 4rem;
   background-color: white;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 75%,
+    rgba(0, 0, 0, 0.88) 80%,
+    rgba(0, 0, 0, 0.62) 87%,
+    rgba(0, 0, 0, 0.3) 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 75%,
+    rgba(0, 0, 0, 0.88) 80%,
+    rgba(0, 0, 0, 0.62) 87%,
+    rgba(0, 0, 0, 0.3) 94%,
+    transparent 100%
+  );
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-size: 100% 100%;
