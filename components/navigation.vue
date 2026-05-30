@@ -92,11 +92,11 @@ onMounted(() => {
   position: absolute;
   inset-inline: 0;
   top: 0;
-  /* Solid fill through sticky nav (top-4 + pills), soft fade below */
-  height: 4.5rem;
+  /* Solid fill through sticky nav (top-4 + pills), short fade below */
+  height: 3.75rem;
   background-color: white;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-size: 100% 100%;
