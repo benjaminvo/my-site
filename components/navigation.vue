@@ -2,15 +2,13 @@
   <div class="contents xs:block self-start">
     <div ref="sentinel" class="xs:hidden h-px w-full" aria-hidden="true" />
     <div
-      aria-hidden="true"
-      :class="[
-        'pointer-events-none fixed inset-x-0 top-0 z-40 h-16 overflow-hidden transition-opacity duration-200 ease-out xs:hidden',
-        isStuck ? 'opacity-100' : 'opacity-0',
-      ]">
+      class="pointer-events-none fixed inset-x-0 top-0 z-40 h-0 overflow-visible xs:hidden"
+      aria-hidden="true">
       <div
-        class="absolute inset-0 backdrop-blur-md [mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_62%,transparent_100%)]" />
-      <div
-        class="absolute inset-0 [background:linear-gradient(to_bottom,white_0%,white_50%,rgba(255,255,255,0)_100%)] dark:[background:linear-gradient(to_bottom,var(--color-neutral-950)_0%,var(--color-neutral-950)_50%,rgba(3,7,18,0)_100%)]" />
+        :class="[
+          'nav-scroll-fade',
+          { 'nav-scroll-fade--visible': isStuck && !supportsScrollTimeline },
+        ]" />
     </div>
     <nav
       class="sticky top-4 z-50 -ml-1 mb-12 flex w-[calc(100%+8px)] gap-2 self-start xs:static xs:ml-0 xs:mb-0 xs:w-auto">
@@ -37,6 +35,7 @@ const showLifeNav = true;
 const route = useRoute();
 const sentinel = ref(null);
 const isStuck = ref(false);
+const supportsScrollTimeline = ref(false);
 
 const navItems = computed(() => {
   const items = [
@@ -66,6 +65,8 @@ const activeColorClass = computed(() => {
 onMounted(() => {
   if (!import.meta.client || !sentinel.value) return;
 
+  supportsScrollTimeline.value = CSS.supports("animation-timeline", "scroll()");
+
   const observer = new IntersectionObserver(
     ([entry]) => {
       isStuck.value = !entry.isIntersecting;
@@ -79,3 +80,55 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped>
+@reference "~/assets/css/main.css";
+
+/*
+ * Mask-based top fade: solid page background clipped by a gradient mask
+ * (replaces stacked semi-transparent gradients + backdrop-blur).
+ */
+.nav-scroll-fade {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 4rem;
+  background-color: white;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+
+:global(.dark) .nav-scroll-fade {
+  background-color: var(--color-neutral-950);
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav-scroll-fade {
+    opacity: 0;
+    animation: nav-scroll-fade-in linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 1rem;
+  }
+
+  @keyframes nav-scroll-fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .nav-scroll-fade {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+  }
+
+  .nav-scroll-fade--visible {
+    opacity: 1;
+  }
+}
+</style>
