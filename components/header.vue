@@ -6,7 +6,7 @@
         to="/"
         class="tap-highlight-none block no-underline outline-none ring-0 select-none hover:no-underline focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 dark:text-neutral-100">
         <h1>Benjamin Ottensten</h1>
-        <div class="text-slate-400 dark:text-neutral-500">Product & Design Lead</div>
+        <div class="text-slate-400 dark:text-neutral-500">Product Lead & Builder</div>
         <div class="text-slate-400 dark:text-neutral-500">Copenhagen, Denmark</div>
       </NuxtLink>
     </div>
