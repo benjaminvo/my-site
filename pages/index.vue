@@ -113,10 +113,10 @@ onMounted(() => {
   loadPhotos.value = true;
 });
 
-const posthog = usePostHog();
+const mixpanel = useMixpanel();
 
 function trackContact(linkType) {
-  posthog?.capture("contact_link_clicked", { link_type: linkType });
+  mixpanel?.track("contact_link_clicked", { link_type: linkType });
 }
 </script>
 

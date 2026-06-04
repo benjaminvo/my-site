@@ -1,12 +1,12 @@
 export default defineNuxtPlugin({
-  name: "posthog-pageviews",
-  dependsOn: ["posthog-client"],
+  name: "mixpanel-pageviews",
+  dependsOn: ["mixpanel-client"],
   setup() {
     const router = useRouter();
-    const posthog = usePostHog();
+    const mixpanel = useMixpanel();
 
     const capturePageview = () => {
-      posthog?.capture("$pageview");
+      mixpanel?.track_pageview();
     };
 
     capturePageview();

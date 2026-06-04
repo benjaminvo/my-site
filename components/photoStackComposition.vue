@@ -37,7 +37,7 @@
 <script setup>
 import { ref, nextTick, onMounted, onUnmounted } from "vue";
 
-const posthog = usePostHog();
+const mixpanel = useMixpanel();
 
 const photos = useState(() => [
   {
@@ -357,7 +357,7 @@ function dragPhoto(index, event) {
   // Drop the photo
   document.onmouseup = function () {
     if (moved) {
-      posthog?.capture("about_photo_stack_dragged", {
+      mixpanel?.track("about_photo_stack_dragged", {
         photo_src: photos.value[index].src,
         photo_caption: photos.value[index].caption,
       });
