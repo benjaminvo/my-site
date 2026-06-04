@@ -11,6 +11,7 @@ export default defineNuxtPlugin({
     }
 
     mixpanel.init(token, {
+      api_host: config.public.mixpanelApiHost,
       debug: import.meta.dev,
       track_pageview: false,
       persistence: "localStorage",

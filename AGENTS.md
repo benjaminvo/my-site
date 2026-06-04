@@ -103,4 +103,4 @@ Single service: `npm run dev` starts the Nuxt SSR dev server on `http://localhos
 - No automated test suite exists (no `test` script in `package.json`). Verify changes via build + manual browser testing.
 - `nuxt prepare` runs automatically via `postinstall` and generates `.nuxt/` types. If TypeScript errors appear after dependency changes, re-run `npm install`.
 - The `data/imageDimensions.ts` file is auto-generated. To regenerate after adding images: `npm run sync:life`.
-- Environment variable `NUXT_PUBLIC_MIXPANEL_TOKEN` overrides the default Mixpanel project token; if unset, the token in `nuxt.config.ts` is used. Tracking is disabled in dev (`opt_out_tracking`).
+- `NUXT_PUBLIC_MIXPANEL_TOKEN` overrides the project token; `NUXT_PUBLIC_MIXPANEL_API_HOST` overrides the ingestion host (default `https://api-eu.mixpanel.com` for EU data residency). Tracking is disabled in dev (`opt_out_tracking`).

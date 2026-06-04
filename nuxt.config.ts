@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     public: {
       mixpanelToken:
         process.env.NUXT_PUBLIC_MIXPANEL_TOKEN || "c952ce59e338054fba682695002a4b67",
+      // EU projects must use api-eu; US default is api-js.mixpanel.com
+      mixpanelApiHost:
+        process.env.NUXT_PUBLIC_MIXPANEL_API_HOST || "https://api-eu.mixpanel.com",
     },
   },
 
