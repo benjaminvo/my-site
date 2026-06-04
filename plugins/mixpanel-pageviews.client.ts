@@ -1,7 +1,7 @@
-const sectionViewEvents: Record<string, string> = {
-  "/": "Viewed About",
-  "/work": "Viewed Work",
-  "/life": "Viewed Life",
+const pageByPath: Record<string, "about" | "work" | "life"> = {
+  "/": "about",
+  "/work": "work",
+  "/life": "life",
 };
 
 export default defineNuxtPlugin({
@@ -12,12 +12,13 @@ export default defineNuxtPlugin({
     const mixpanel = useMixpanel();
 
     const capturePageview = (path: string) => {
-      mixpanel?.track_pageview();
-
-      const sectionEvent = sectionViewEvents[path];
-      if (sectionEvent) {
-        mixpanel?.track(sectionEvent);
+      const page = pageByPath[path];
+      if (page) {
+        mixpanel?.track("Page Viewed", { page });
+        return;
       }
+
+      mixpanel?.track_pageview();
     };
 
     capturePageview(router.currentRoute.value.path);
