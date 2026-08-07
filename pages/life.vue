@@ -41,8 +41,8 @@
 import { buildLifeGridItems, LIFE_ZOOM_FRAME, lifePhotos } from "~/data/life";
 
 useSeoMeta({
-  title: "Life | Benjamin Ottensten, Product Lead & Builder",
-  ogTitle: "Life | Benjamin Ottensten, Product Lead & Builder",
+  title: "Life | Benjamin Ottensten, Product lead & Designer",
+  ogTitle: "Life | Benjamin Ottensten, Product lead & Designer",
 });
 
 const gridItems = computed(() => buildLifeGridItems(lifePhotos));
