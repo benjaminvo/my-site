@@ -20,6 +20,12 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
+  nitro: {
+    prerender: {
+      ignore: ["/cabinet/download"],
+    },
+  },
+
   app: {
     head: {
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
