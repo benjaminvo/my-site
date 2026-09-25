@@ -4,6 +4,15 @@
         <title>Cabinet</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Fri, 25 Sep 2026 17:30:32 +0200</pubDate>
+            <link>https://www.benjaminottensten.com/cabinet</link>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://www.benjaminottensten.com/cabinet/releases/Cabinet-0.1.0-3.zip" length="7705692" type="application/octet-stream" sparkle:edSignature="+3i52XKfCQhIR/M7R4YmcqlbzTwPF5JqcDeyG0QITC4e3+f1RZF/5ZN+h43vYV0JKXPALw7fEvoLLjveTd7UCQ=="/>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Fri, 25 Sep 2026 16:51:18 +0200</pubDate>
             <link>https://www.benjaminottensten.com/cabinet</link>
             <sparkle:version>2</sparkle:version>
