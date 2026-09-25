@@ -4,7 +4,7 @@
     <h1 class="mt-0 text-3xl font-semibold tracking-tight text-neutral-950">Cabinet</h1>
     <a
       href="/cabinet/download"
-      class="mt-10 inline-flex min-h-12 items-center justify-center rounded-2xl bg-black px-7 text-base font-medium text-white no-underline transition-colors hover:bg-neutral-800 hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
+      class="mt-8 inline-flex min-h-12 items-center justify-center rounded-2xl bg-black px-7 text-base font-medium text-white no-underline transition-colors hover:bg-neutral-800 hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
       Download for Mac
     </a>
   </main>
