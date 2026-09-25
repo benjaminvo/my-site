@@ -38,8 +38,11 @@ plugins/vercel.ts          # Vercel Analytics (client-only)
 | `pages/index.vue` | `/`     | About / work experience |
 | `pages/work.vue`  | `/work` | Portfolio case studies  |
 | `pages/life.vue`  | `/life` | Personal photo grid with zoom          |
+| `pages/cabinet.vue` | `/cabinet` | Minimal Cabinet Mac download page |
 
 **Adding Life photos:** edit `lifePhotoEntries` in `data/life.ts`, add files under `public/img/life/`, then `/sync-life-photos` or `npm run sync:life`.
+
+**Cabinet releases:** Share `/cabinet` with testers. Its button points to `/cabinet/download`, a temporary redirect in `vercel.json` to the latest immutable ZIP under `public/cabinet/releases/`. Update that redirect only after publishing and verifying the new ZIP. Keep old ZIP URLs unchanged because Sparkle's signed appcast entries reference them. The appcast is `public/cabinet/appcast.xml`; the release workflow is documented in the Cabinet app repository's `MAC_DISTRIBUTION.md`.
 
 ---
 

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/cabinet/download",
+      "destination": "/cabinet/releases/Cabinet-0.1.0-1.zip",
+      "permanent": false
+    }
+  ]
+}

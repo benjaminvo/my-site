@@ -1,16 +1,20 @@
 <template>
   <div
     :class="[
-      'xs:px-10 xs:py-20 mx-auto px-6 py-14 sm:grid sm:max-w-[calc(640px-56px)] sm:grid-cols-8 sm:gap-x-8 sm:px-0 md:max-w-[calc(768px-30px)] md:grid-cols-10 lg:max-w-[calc(1024px-132px)] lg:grid-cols-12 xl:max-w-[calc(1280px-80px)] xl:grid-cols-16',
-      currentEpisode ? 'pb-28' : '',
+      isCabinetPage
+        ? 'mx-auto flex min-h-screen items-center justify-center bg-white px-6 py-16'
+        : 'xs:px-10 xs:py-20 mx-auto px-6 py-14 sm:grid sm:max-w-[calc(640px-56px)] sm:grid-cols-8 sm:gap-x-8 sm:px-0 md:max-w-[calc(768px-30px)] md:grid-cols-10 lg:max-w-[calc(1024px-132px)] lg:grid-cols-12 xl:max-w-[calc(1280px-80px)] xl:grid-cols-16',
+      currentEpisode && !isCabinetPage ? 'pb-28' : '',
     ]">
-    <Header />
+    <Header v-if="!isCabinetPage" />
     <NuxtPage />
   </div>
-  <PodcastPlayer />
+  <PodcastPlayer v-if="!isCabinetPage" />
 </template>
 
 <script setup>
+const route = useRoute();
+const isCabinetPage = computed(() => route.path === "/cabinet");
 const { currentEpisode } = usePodcastPlayer();
 
 useHead({
