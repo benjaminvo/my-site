@@ -47,22 +47,9 @@
 </template>
 
 <script setup lang="ts">
-type Project = {
-  id: string;
-  title: string;
-  shortTitle?: string;
-};
+import { workProjects } from "~/data/workProjects";
 
-const projects: Project[] = [
-  { id: "3d-web-viewer", title: "3D Web Viewer" },
-  { id: "transparent-employer-branding", title: "Transparent employer branding", shortTitle: "Employer branding" },
-  { id: "dashboard", title: "Dashboard" },
-  { id: "keyless-car-rental", title: "Keyless car rental", shortTitle: "Keyless rental" },
-  { id: "finding-your-driver", title: "Find your driver" },
-  { id: "colorful-car-leasing", title: "Colorful car leasing", shortTitle: "Car leasing" },
-  { id: "blog-redesign", title: "Blog redesign" },
-  { id: "motivating-students-to-read", title: "Motivating students to read", shortTitle: "Motivating to read" },
-];
+const projects = workProjects;
 
 const { activeId } = useScrollSpy(projects.map((project) => project.id));
 

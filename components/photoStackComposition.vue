@@ -94,6 +94,8 @@ const originalPositions = [
   { x: -5, y: 27, rotate: "-rotate-2", zIndex: 2 },
 ];
 
+const { registerSummonHandler, unregisterSummonHandler } = usePhotoStackSummon();
+
 onMounted(() => {
   if (localStorage.photos) {
     photos.value = JSON.parse(localStorage.photos);
@@ -104,17 +106,16 @@ onMounted(() => {
   }
   photoPositionsLoaded.value = true;
 
-  // Update photo dimensions after initial load
   nextTick(() => {
     updatePhotoDimensions();
   });
 
-  window.addEventListener("keydown", handleKeyPress);
   window.addEventListener("pagehide", clearCaption);
+  registerSummonHandler(resetPhotoPositions);
 });
 
 onUnmounted(() => {
-  window.removeEventListener("keydown", handleKeyPress);
+  unregisterSummonHandler();
   window.removeEventListener("pagehide", clearCaption);
   clearCaption();
 });
@@ -151,13 +152,6 @@ function animatePhotosOnLoad() {
       updatePhotoDimensions();
     });
   }, 1500);
-}
-
-// Function to handle key press
-function handleKeyPress(event) {
-  if (event.key.toLowerCase() === "p") {
-    resetPhotoPositions();
-  }
 }
 
 // Function to reset photo positions

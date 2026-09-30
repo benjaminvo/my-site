@@ -10,6 +10,7 @@
     <NuxtPage />
   </div>
   <PodcastPlayer v-if="!isCabinetPage" />
+  <KeyboardShortcutsPanel v-if="!isCabinetPage" />
 </template>
 
 <script setup>

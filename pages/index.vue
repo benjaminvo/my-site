@@ -76,7 +76,7 @@
       <h2 class="mb-8">Education</h2>
       <Block label="2011–2016" title="MSc in Digital Design from the IT University of Copenhagen" />
     </section>
-    <section>
+    <section id="contact">
       <h2 class="mb-8">Contact</h2>
       <div class="grid gap-3">
         <Block
