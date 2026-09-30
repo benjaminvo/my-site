@@ -4,6 +4,8 @@
       <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 select-none dark:text-neutral-500">
         Press
         <span
+          :key="summonFlashCount"
+          :class="{ 'photo-summon-flash': summonFlashCount > 0 }"
           class="rounded-md border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-500"
           >P</span
         >
@@ -77,6 +79,7 @@ let photoPositionsLoaded = ref(false);
 let isDragging = false;
 let finishActiveDrag = null;
 const hasAnimated = ref(false);
+const summonFlashCount = ref(0);
 
 let captionMouseMoveHandler = null;
 
@@ -158,6 +161,7 @@ function animatePhotosOnLoad() {
 // Function to handle key press
 function handleKeyPress(event) {
   if (event.key.toLowerCase() === "p") {
+    summonFlashCount.value += 1;
     resetPhotoPositions();
   }
 }
@@ -448,6 +452,25 @@ function updatePhotoDimensions() {
 </script>
 
 <style>
+.photo-summon-flash {
+  --photo-summon-active-border: rgb(0 0 0 / 8%);
+  animation: photo-summon-flash 280ms ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .photo-summon-flash {
+    --photo-summon-active-border: rgb(255 255 255 / 6%);
+  }
+}
+
+@keyframes photo-summon-flash {
+  30% {
+    background-color: #5f8f6d;
+    color: white;
+    border-color: var(--photo-summon-active-border);
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.15s ease;
