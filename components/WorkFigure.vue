@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="relative w-full overflow-hidden">
-      <div
-        class="block w-full leading-none"
-        :style="spacerStyle"
-        aria-hidden="true" />
+      <div class="block w-full leading-none" :style="spacerStyle" aria-hidden="true" />
       <div ref="imageWrapRef" class="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-neutral-900">
         <img
           v-if="placeholderSrc"
@@ -39,16 +36,11 @@ const props = defineProps({
   thumbhash: { type: String, required: true },
 });
 
-const { dimensions, spacerStyle, placeholderRatio, effectiveThumbhash } = useReservedImageFrame({
+const { dimensions, spacerStyle, placeholderRatio } = useReservedImageFrame({
   srcSet: () => props.srcSet,
-  thumbhash: () => props.thumbhash,
-  thumbhashTolerance: WORK_IMAGE_THUMBHASH_TOLERANCE,
 });
 
-const placeholderSrc = useThumbhashPlaceholderSrc(
-  () => effectiveThumbhash.value,
-  placeholderRatio,
-);
+const placeholderSrc = useThumbhashPlaceholderSrc(() => props.thumbhash, placeholderRatio);
 
 const imageWrapRef = ref<HTMLElement | null>(null);
 

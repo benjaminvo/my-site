@@ -1,10 +1,10 @@
 <template>
   <Transition name="fade">
     <div v-show="photoPositionsLoaded" class="relative" @mouseenter.once="updatePhotoDimensions">
-      <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 dark:text-neutral-500 select-none">
+      <div class="absolute top-[60px] left-[70px] text-center text-xs text-slate-400 select-none dark:text-neutral-500">
         Press
         <span
-          class="rounded-md border border-slate-200 dark:border-neutral-600 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:text-neutral-500 dark:bg-neutral-800"
+          class="rounded-md border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-medium text-slate-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-500"
           >P</span
         >
         to summon
@@ -15,7 +15,7 @@
         :src="photo.src"
         :srcset="photo.srcset"
         ref="photoElements"
-        @mousedown.prevent="dragPhoto(index, $event)"
+        @mousedown="dragPhoto(index, $event)"
         @mouseenter="showCaption(index)"
         @mouseleave="removeCaption"
         :style="{
@@ -75,6 +75,7 @@ let animatePhotos = useState(() => true);
 let draggedPhotoIndex = ref(null);
 let photoPositionsLoaded = ref(false);
 let isDragging = false;
+let finishActiveDrag = null;
 const hasAnimated = ref(false);
 
 let captionMouseMoveHandler = null;
@@ -114,6 +115,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  finishActiveDrag?.();
   window.removeEventListener("keydown", handleKeyPress);
   window.removeEventListener("pagehide", clearCaption);
   clearCaption();
@@ -317,6 +319,13 @@ function removeCaption() {
 }
 
 function dragPhoto(index, event) {
+  // Leave secondary clicks (including macOS Control-click) to the browser.
+  if (event.button !== 0 || event.ctrlKey) {
+    return;
+  }
+
+  event.preventDefault();
+  finishActiveDrag?.();
   isDragging = true;
   draggedPhotoIndex.value = index;
 
@@ -331,6 +340,12 @@ function dragPhoto(index, event) {
 
   // Move the photo
   function movePhoto(event) {
+    // Recover when the browser consumes mouseup outside the page.
+    if ((event.buttons & 1) === 0) {
+      finishDrag();
+      return;
+    }
+
     event.preventDefault();
 
     // Update position
@@ -340,10 +355,7 @@ function dragPhoto(index, event) {
     };
     photos.value[index].position = newPosition;
 
-    if (
-      Math.abs(newPosition.x - startPosition.x) > 2 ||
-      Math.abs(newPosition.y - startPosition.y) > 2
-    ) {
+    if (Math.abs(newPosition.x - startPosition.x) > 2 || Math.abs(newPosition.y - startPosition.y) > 2) {
       moved = true;
     }
 
@@ -352,10 +364,18 @@ function dragPhoto(index, event) {
       photos.value[index].zIndex = getMaxZIndex() + 1;
     }
   }
-  document.addEventListener("mousemove", movePhoto);
-
   // Drop the photo
-  document.onmouseup = function () {
+  function finishDrag() {
+    isDragging = false;
+    draggedPhotoIndex.value = null;
+    finishActiveDrag = null;
+    document.removeEventListener("mousemove", movePhoto);
+    document.removeEventListener("mouseup", finishDrag);
+    document.removeEventListener("contextmenu", finishDrag);
+    window.removeEventListener("blur", finishDrag);
+    window.removeEventListener("pagehide", finishDrag);
+    clearCaption();
+
     if (moved) {
       mixpanel?.track("about_photo_stack_dragged", {
         photo_src: photos.value[index].src,
@@ -365,12 +385,14 @@ function dragPhoto(index, event) {
 
     // Save positions
     localStorage.setItem("photos", JSON.stringify(photos.value));
+  }
 
-    // Reset variables and remove event listener
-    isDragging = false;
-    draggedPhotoIndex.value = null;
-    document.removeEventListener("mousemove", movePhoto);
-  };
+  finishActiveDrag = finishDrag;
+  document.addEventListener("mousemove", movePhoto);
+  document.addEventListener("mouseup", finishDrag);
+  document.addEventListener("contextmenu", finishDrag);
+  window.addEventListener("blur", finishDrag);
+  window.addEventListener("pagehide", finishDrag);
 }
 
 function getMaxZIndex() {

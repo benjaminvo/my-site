@@ -140,7 +140,9 @@ function calculateZoomRect(naturalWidth: number, naturalHeight: number): DocRect
 }
 
 function buildRestStyles(docRect: DocRect, animate: boolean): ZoomStyles {
-  const transition = animate ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms` : "none";
+  const transition = animate
+    ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms`
+    : "none";
   return {
     wrapper: {
       position: "absolute",
@@ -179,7 +181,9 @@ function buildZoomedStyles(
   animate: boolean,
 ): ZoomStyles {
   const zoomRect = calculateZoomRect(naturalWidth, naturalHeight);
-  const transition = animate ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms` : "none";
+  const transition = animate
+    ? `top ${TRANSITION_MS}ms, left ${TRANSITION_MS}ms, width ${TRANSITION_MS}ms, height ${TRANSITION_MS}ms`
+    : "none";
 
   return {
     wrapper: {
@@ -485,12 +489,7 @@ export function useImageZoom() {
       imageSrc.value = src;
       caption.value = photoCaptions.value[key] ?? null;
       initialRect.value = gridRect;
-      styles.value = buildZoomedStyles(
-        gridRect,
-        uniformZoomSize.value.width,
-        uniformZoomSize.value.height,
-        false,
-      );
+      styles.value = buildZoomedStyles(gridRect, uniformZoomSize.value.width, uniformZoomSize.value.height, false);
       return;
     }
 
