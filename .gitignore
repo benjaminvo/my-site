@@ -10,3 +10,4 @@ node_modules
 .env.*
 # System files
 *.log
+.DS_Store

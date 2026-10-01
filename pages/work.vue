@@ -388,8 +388,8 @@
 </template>
 <script setup>
 useSeoMeta({
-  title: "Work | Benjamin Ottensten, Product lead & Designer",
-  ogTitle: "Work | Benjamin Ottensten, Product lead & Designer",
+  title: "Work | Benjamin Ottensten, Product Lead & Builder",
+  ogTitle: "Work | Benjamin Ottensten, Product Lead & Builder",
 });
 
 function scrollToTop() {

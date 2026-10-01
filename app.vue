@@ -24,8 +24,8 @@ useHead({
 });
 useSeoMeta({
   ogSiteName: "Benjamin Ottensten",
-  title: "Benjamin Ottensten, Product lead & Designer",
-  ogTitle: "Benjamin Ottensten, Product lead & Designer",
+  title: "Benjamin Ottensten, Product Lead & Builder",
+  ogTitle: "Benjamin Ottensten, Product Lead & Builder",
   description: "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
   ogDescription: "Experienced product builder based in Copenhagen with a background in product, design and frontend.",
   ogImage: "https://benjaminottensten.com/img/social.jpg",

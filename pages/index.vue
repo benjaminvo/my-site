@@ -7,9 +7,9 @@
           I'm a product builder with 10+ years of experience in product leadership, design and frontend at startups.
         </p>
         <p class="mb-10">
-          I care about good strategy and high-quality user experiences. I like when the team is small and made up of
-          technical and kind people who care about the details. And I enjoy leading those teams while staying hands-on
-          myself too.
+          I care about good strategy and high-quality user experiences. I do my best work with small teams of technical
+          and kind people who care about the details. And I like staying hands-on throughout, from strategy down to the
+          code.
         </p>
       </div>
       <div class="xs:-ml-10 -ml-6 w-[100vw] overflow-hidden sm:hidden">
@@ -41,8 +41,8 @@
       <div class="grid gap-8">
         <Block
           label="Now"
-          title="Freelance"
-          description="I help startups with product strategy, design, and frontend, whether that’s shaping something new or improving what exists. Reach out if you want to collaborate!" />
+          title="Founder at Studio Benjamin"
+          description="Studio Benjamin is a product studio run by—surprise—myself. I help startups and growing teams with strategy, design, and code, and I build my own products on the side. Reach out if you want to collaborate!" />
         <Block
           label="2023–2026"
           title="Product Lead at Speckle"
@@ -102,8 +102,8 @@
 
 <script setup>
 useSeoMeta({
-  title: "Benjamin Ottensten, Product lead & Designer",
-  ogTitle: "Benjamin Ottensten, Product lead & Designer",
+  title: "Benjamin Ottensten, Product Lead & Builder",
+  ogTitle: "Benjamin Ottensten, Product Lead & Builder",
 });
 
 import { ref, onMounted } from "vue";
