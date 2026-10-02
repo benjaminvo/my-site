@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "/cabinet/download",
-      "destination": "/cabinet/releases/Cabinet-0.1.0-4.zip",
+      "destination": "/cabinet/releases/Cabinet-0.1.0-5.zip",
       "permanent": false
     }
   ]

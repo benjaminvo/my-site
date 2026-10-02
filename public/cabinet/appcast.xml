@@ -4,6 +4,20 @@
         <title>Cabinet</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Fri, 02 Oct 2026 14:35:54 +0200</pubDate>
+            <link>https://www.benjaminottensten.com/cabinet</link>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>Unified is now the default theme, with a consistent background across the sidebar and title bar.</li>
+<li>Your saved theme choice is preserved. Colored sidebars remains available in the Theme menu.</li>
+</ul>
+]]></description>
+            <enclosure url="https://www.benjaminottensten.com/cabinet/releases/Cabinet-0.1.0-5.zip" length="10555801" type="application/octet-stream" sparkle:edSignature="dITtlLTCuZqodynk+TmBTkmC2CeIydyTtwHLl/fSgI0DBkWFeXvsw3KM1iUbqrX7T2IH+Jom9tA9UwDAjzMUAA=="/>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Fri, 02 Oct 2026 14:17:24 +0200</pubDate>
             <link>https://www.benjaminottensten.com/cabinet</link>
             <sparkle:version>4</sparkle:version>
