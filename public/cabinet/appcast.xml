@@ -4,6 +4,23 @@
         <title>Cabinet</title>
         <item>
             <title>0.1.0</title>
+            <pubDate>Fri, 02 Oct 2026 14:17:24 +0200</pubDate>
+            <link>https://www.benjaminottensten.com/cabinet</link>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>Save website links and posts to Cabinet, browse them in the app, and use the new Mac sharing extension.</li>
+<li>Preview GLB and Rhino 3D models with improved materials, lighting, and navigation controls.</li>
+<li>Watch videos with updated playback controls that automatically hide.</li>
+<li>Organize drawers in nested groups and see clearer analysis progress.</li>
+<li>Improved link imports, library recovery, and scrolling behavior.</li>
+</ul>
+]]></description>
+            <enclosure url="https://www.benjaminottensten.com/cabinet/releases/Cabinet-0.1.0-4.zip" length="10555799" type="application/octet-stream" sparkle:edSignature="BAKAwUFbVzHqGZN6029wgLlJYPBqSGZnPg0g64NVIwlGvfon5VdbMvoYu13HFf795jMnnPPa/WXLgcXMsvWVCw=="/>
+        </item>
+        <item>
+            <title>0.1.0</title>
             <pubDate>Fri, 25 Sep 2026 17:30:32 +0200</pubDate>
             <link>https://www.benjaminottensten.com/cabinet</link>
             <sparkle:version>3</sparkle:version>
